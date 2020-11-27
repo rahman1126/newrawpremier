@@ -1,0 +1,39 @@
+{
+  "name": "clp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "autoprefixer": "latest",
+    "cssnano": "^4.1.10",
+    "node-sass": "^5.0.0",
+    "onchange": "latest",
+    "postcss": "^8.1.10",
+    "postcss-cli": "latest",
+    "uglifyjs": "^2.4.11"
+  },
+  "scripts": {
+    "uglify": "uglifyjs 1/PA_esf-ca-app-content/content/indonesia/pws-2.0/js/client-main.js --compress --mangle --warn --output 1/PA_esf-ca-app-content/content/indonesia/pws-2.0/js/client-main.min.js",
+    "build:sass": "node-sass --output-style=expanded --source-map=true scss/custom.scss css/clpv2.css",
+    "prefix": "npm run build:sass && postcss css/clpv2.css --use=autoprefixer --map false --output=css/clpv2.build.css",
+    "minify": "npm run prefix && postcss css/clpv2.build.css --use=cssnano --map false --output=1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/stylev2.build.min.css",
+    "start": "concurrently \"onchange \"scss/*.scss\" -- npm run minify\" \"onchange \"1/PA_esf-ca-app-content/content/indonesia/pws-2.0/js/client-main.js\" -- npm run uglify \""
+  },
+  "browserslist": [
+    "last 3 versions"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "Repo/Path"
+  },
+  "keywords": [
+    "SASS"
+  ],
+  "author": "art",
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "concurrently": "^5.3.0"
+  }
+}

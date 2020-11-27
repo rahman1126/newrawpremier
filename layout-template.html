@@ -1,0 +1,2726 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="summary" content="" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<title>PWS 2.0 Draft - Edukasi Nasabah</title>
+
+		<!-- ? preload key fonts -->
+		<link rel="preload" href="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-Rg.woff.txt" as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-Lt.woff.txt" as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-Bd.woff.txt" as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/hsbc-general-icon.ttf.txt" as="font" type="font/ttf" crossorigin />
+
+		<link rel="stylesheet" href="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/icon-general.css" />
+		<link rel="stylesheet" href="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/stylev2.build.min.css" />
+		<style>
+			body {
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="main-wrapper" class="d-flex flex-column min-vh-100">
+			<header class="wrapper">
+				<div id="header" class="container-fluid bg-white header-bar fixed-top header header-shadow py-0 px-0">
+					<!-- ? mobile menu template -->
+					<script id="mobile-menu-template" type="text/template">
+						{{#mobilemenu}}
+							<div class="{{class}}">
+								{{#content}}
+									{{#header}}
+										<div class="mb-3">
+											<div class="border-bottom border-silver">
+												<h2 class="mb-2 h6"><b>{{.}}</b></h2>
+											</div>
+											<ul class="list-unstyled pt-2 pb-3">
+												{{#link}}
+												<li class="ml-0 pl-0 py-2">
+													<a href="{{url}}" class="text-90 text-body"> {{caption}} </a>
+												</li>
+												{{/link}}
+											</ul>
+										</div>
+									{{/header}}
+									{{#headerLink}}
+									<a href="{{headerLink}}" class="text-body dropdown-item py-1">
+										<h2 class="py-1 h6">{{caption}}</h2>
+									</a>
+									{{/headerLink}}
+								{{/content}}
+							</div>
+						{{/mobilemenu}}
+					</script>
+
+					<!-- ? mobile important-info template -->
+					<script id="important-info-mobile-template" type="text/template">
+						{{#importantinfomobile}}
+							<div class="border-bottom border-silver pt-2">
+								<h2 class="mb-2 h6"><b>Bantuan dan layanan</b></h2>
+							</div>
+							{{#headerLink}}
+								<a href="{{url}}" class="text-white text-90 d-block mt-2 mb-1 py-1 border-0">{{caption}}</a>
+							{{/headerLink}}
+							{{#content}}
+								<a href="{{url}}" class="text-white text-90 d-block mt-2 mb-1 py-1 border-0">{{caption}}</a>
+							{{/content}}
+						{{/importantinfomobile}}
+					</script>
+
+					<!-- ! mobile navigation -->
+					<div id="mobile-nav-drawer" class="off-canvas">
+						<div class="container">
+							<div class="row d-flex">
+								<div class="m-0 p-0">
+									<span class="mnd-opening m-0 p-0">Menu</span>
+								</div>
+								<div class="close-mnd-content initially-hidden" role="button" tabindex="0" aria-label="Close submenu">
+									<span class="cmc-icon"></span>
+								</div>
+								<div class="mnd-header px-0 flex-grow-1">
+									<ul class="list-unstyled p-0 m-0 text-90" role="menu">
+										<li class="mnd-list" role="presentation">
+											<div class="mnd-menuitem" data-target="mnd-perbankan-container" tabindex="0" role="menuitem" aria-haspopup="true" aria-expanded="false">
+												<span class="mnd-menuitem-icon icon-account" aria-hidden="true"></span>
+												<span class="mnd-menuitem-caption">Perbankan</span>
+												<span class="mnd-menuitem-chevron"></span>
+											</div>
+											<div id="" class="mnd-menucontent min-vh-100" aria-hidden="true" data-source="mnd-perbankan-container">
+												<div class="container px-0 py-2 vh-100">
+													<div class="row">
+														<!-- ? mobile menu section -->
+														<div id="mobile-menu-perbankan-section" class="col pt-2 pb-3"></div>
+													</div>
+													<div class="row px-2">
+														<div class="mobile-important-info-section col pt-2"></div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li role="presentation">
+											<div class="mnd-menuitem" data-target="mnd-pinjaman-container" tabindex="0" role="menuitem" aria-haspopup="true" aria-expanded="false">
+												<span class="mnd-menuitem-icon icon-card" aria-hidden="true"></span>
+												<span class="mnd-menuitem-caption">Pinjaman</span>
+												<span class="mnd-menuitem-chevron"></span>
+											</div>
+											<div id="" class="mnd-menucontent min-vh-100" aria-hidden="true" data-source="mnd-pinjaman-container">
+												<div class="container px-0 py-2 vh-100">
+													<div class="row">
+														<!-- ? mobile menu section -->
+														<div id="mobile-menu-pinjaman-section" class="col pt-2 pb-3"></div>
+													</div>
+													<div class="row px-2">
+														<div class="mobile-important-info-section col pt-2"></div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li role="presentation">
+											<div class="mnd-menuitem" data-target="mnd-wem-container" tabindex="0" role="menuitem" aria-haspopup="true" aria-expanded="false">
+												<span class="mnd-menuitem-icon icon-investment" aria-hidden="true"></span>
+												<span class="mnd-menuitem-caption">Wealth Management</span>
+												<span class="mnd-menuitem-chevron"></span>
+											</div>
+											<div id="" class="mnd-menucontent min-vh-100" aria-hidden="true" data-source="mnd-wem-container">
+												<div class="container px-0 py-2 vh-100">
+													<div class="row">
+														<!-- ? mobile menu section -->
+														<div id="mobile-menu-wem-section" class="col pt-2 pb-3"></div>
+													</div>
+													<div class="row px-2">
+														<div class="mobile-important-info-section col pt-2"></div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li role="presentation">
+											<div class="mnd-menuitem" data-target="mnd-offers-container" tabindex="0" role="menuitem" aria-haspopup="true" aria-expanded="false">
+												<span class="mnd-menuitem-icon icon-shopping_cart" aria-hidden="true"></span>
+												<span class="mnd-menuitem-caption">Offers</span>
+												<span class="mnd-menuitem-chevron"></span>
+											</div>
+											<div id="" class="mnd-menucontent" aria-hidden="true" data-source="mnd-offers-container">
+												<div class="container px-0 py-2 vh-100">
+													<div class="row">
+														<!-- ? mobile menu section -->
+														<div id="mobile-menu-offers-section" class="col pt-2 pb-3"></div>
+													</div>
+													<div class="row px-2">
+														<div class="mobile-important-info-section col pt-2"></div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li role="presentation">
+											<div class="mnd-menuitem" data-target="mnd-language-container" tabindex="0" role="menuitem" aria-haspopup="true" aria-expanded="false">
+												<span class="mnd-menuitem-icon icon-settings" aria-hidden="true"></span>
+												<span class="mnd-menuitem-caption">Change language</span>
+												<span class="mnd-menuitem-chevron"></span>
+											</div>
+											<div id="" class="mnd-menucontent" aria-hidden="true" data-source="mnd-language-container">
+												<p class="text-body">language</p>
+											</div>
+										</li>
+										<li role="presentation">
+											<div class="mnd-menuitem" data-target="mnd-tentang-container" tabindex="0" role="menuitem" aria-haspopup="true" aria-expanded="false">
+												<span class="mnd-menuitem-icon icon-document_article" aria-hidden="true"></span>
+												<span class="mnd-menuitem-caption">Tentang HSBC</span>
+												<span class="mnd-menuitem-chevron"></span>
+											</div>
+											<div id="" class="mnd-menucontent min-vh-100" aria-hidden="true" data-source="mnd-tentang-container">
+												<div class="container px-0 py-2 vh-100">
+													<div class="row border-bottom border-pewter">
+														<!-- ? mobile menu section -->
+														<div id="mobile-menu-tentang-section" class="col pt-2 pb-1"></div>
+													</div>
+													<div class="row">
+														<div class="col pl-4 pt-2 pb-3">
+															<!-- ? footer link template -->
+															<script id="mobile-footer-link-template" type="text/template">
+																{{#mobilefooterlink}}
+																	<li class="py-2">
+																		<a class="text-body" href="{{link}}" target="{{target}}">
+																			{{caption}}
+																		</a>
+																	</li>
+																{{/mobilefooterlink}}
+															</script>
+															<ul id="mobile-footer-link-section" class="list-unstyled pt-3 mb-0 text-80 text-left"></ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="mnd-footer">
+									<ul class="list-unstyled p-0 m-0 text-90">
+										<li>
+											<a href="http://www.hsbc.co.id/register" class="text-body mnd-footer-item mnd-footer-first">
+												Register Personal Internet Banking
+												<span class="mnd-footer-chevron"></span>
+											</a>
+										</li>
+										<li>
+											<a href="https://www.hsbc.co.id/1/2/HUB_IDV2/IDV_EPP?__IWCountry=US&__IWLang=en&__Destination=HUB_IDV_REGISTRATION&__registrationType=IB-Registration&__menuType=__LOGON&PROPOSITION_TYPE=CMBPFS" class="text-body mnd-footer-item">
+												Register Business Internet Banking
+												<span class="mnd-footer-chevron"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#" class="text-body mnd-footer-item">
+												UKM
+												<span class="mnd-footer-chevron"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#" class="text-body mnd-footer-item">
+												Business
+												<span class="mnd-footer-chevron"></span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- ? MAJOR NOTIFICATION -->
+					<div class="major-announcement initially-hidden" data-store-var="HBID_IMP_ANN_001" data-store-dur="1.00004">
+						<div class="container">
+							<div class="row">
+								<div class="col">
+									<div class="d-inline-block align-middle pl-0 pr-5 py-2">
+										<div class="d-block p-0 m-0">
+											<h2>Announcement</h2>
+											<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum, accusamus maiores officia dolor fuga eligendi beatae quisquam quasi inventore ratione suscipit illo id veritatis omnis non qui. Blanditiis, molestiae quod!</p>
+										</div>
+									</div>
+									<div class="close-major-announcement">
+										<button type="button" class="close-x close-major-announcement-button" data-dismiss="alert" aria-label="Close">
+											<span class="text-white font-weight-bold h2" aria-hidden="true">&times;</span>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="major-announcement initially-hidden" data-store-var="HBID_COOKIE_USG_GLB" data-store-dur="14.00004">
+						<div class="container">
+							<div class="row">
+								<div class="col">
+									<div class="d-inline-block align-middle pl-0 pr-5 py-2">
+										<div class="d-block p-0 m-0">
+											<p class="mb-0 text-90">
+												We use cookies to give you the best possible experience on our website. For more details please read our <a href="#" class="text-white text-underline">cookie policy</a>. By continuing to browse this site, you give consent for
+												cookies to be used.
+											</p>
+										</div>
+									</div>
+									<div class="close-major-announcement">
+										<button type="button" class="close-x close-major-announcement-button" data-dismiss="alert" aria-label="Close">
+											<span class="text-white font-weight-bold h2" aria-hidden="true">&times;</span>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- ! download mobile banking app -->
+					<div id="mobile-banking" class="bg-dark text-white initially-hidden-container initially-hidden">
+						<div class="container">
+							<div class="row">
+								<div class="col">
+									<div class="px-0 mx-0 position-absolute close-mobile-banking">
+										<button type="button" class="close-x" data-dismiss="alert" aria-label="Close">
+											<span class="text-white" aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="d-inline pl-3">
+										<img src="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0-content/home/images/mobile_banking.png" class="py-2 mobile-banking-download" alt="" />
+									</div>
+									<div class="d-inline-block align-middle pl-2">
+										<div class="d-block p-0 m-0">
+											<small><b>Unduh aplikasi</b></small>
+										</div>
+										<div class="d-block p-0 m-0">
+											<small>HSBC Mobile Banking</small>
+										</div>
+									</div>
+									<div class="d-inline-block h-100 float-right align-end">
+										<div class="d-flex h-100 align-items-end align-content-end">
+											<a href="https://play.google.com/store/apps/details?id=com.htsu.hsbcpersonalbanking" target="_blank" class="mobile-banking-android initially-hidden text-80 btn btn-success bg-cyan px-3 py-1 mb-2 text-white">Unduh</a>
+											<a href="http://itunes.apple.com/us/app/hsbc-personal-banking/id565993818?ls=1&mt=8" target="_blank" class="mobile-banking-ios initially-hidden text-80 btn btn-success bg-cyan px-3 py-1 mb-2 text-white">Unduh</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- ! system bar -->
+					<div class="bg-black text-white system-bar d-none d-lg-block px-0 mx-0">
+						<div class="container bg-black system-bar">
+							<!-- ? business line menu -->
+							<div class="d-inline-block align-middle float-left text-75">
+								<a class="sr-only sr-only-focusable text-white position-absolute bg-black skiplink" href="#main"> Skip to main content</a>
+								<ul class="list-unstyled list-inline mb-0 text-left d-inline align-middle h-100">
+									<li class="list-inline-item align-middle position-relative h-100 system-bar-group">
+										<a href="#" class="text-white px-1 selected">Personal<span class="sr-only">currently selected</span></a>
+									</li>
+									<li class="list-inline-item align-middle position-relative h-100 system-bar-group">
+										<a href="#" class="text-white px-1">UKM</a>
+									</li>
+									<li class="list-inline-item align-middle position-relative h-100 system-bar-group">
+										<a href="#" class="text-white px-1">Business</a>
+									</li>
+								</ul>
+							</div>
+
+							<!-- ? language and internet banking menu -->
+							<div class="d-inline-block align-middle float-right text-75 h-100">
+								<ul class="list-unstyled list-inline mb-0 text-left d-inline align-middle h-100">
+									<li class="list-inline-item align-middle position-relative px-2 h-100 system-bar-group">
+										<div class="btn-group dropdown-container">
+											<a href="#" class="text-white dropdown-toggle pt-0 mt-0 px-1 h-100 system-bar-toggle" data-toggle="dropdown" data-offset="8px" aria-haspopup="true" aria-expanded="false"> Language (bahasa) </a>
+											<div class="dropdown-menu dropdown-menu-right bg-pearl border-0 border-radius-0 text-80 text-body px-2">
+												<div class="d-flex justify-content-between w-100">
+													<a href="#" class="dropdown-item px-1 d-inline h-100">Bahasa Indonesia <span class="sr-only">currently selected</span></a>
+													<span class="icon-chevron_right text-decoration-none text-60em font-weight-bold px-1 my-auto h-100"></span>
+												</div>
+												<div class="d-flex justify-content-between w-100">
+													<a href="https://www.google.co.id" class="dropdown-item px-1 d-inline h-100">English</a>
+													<span class="icon-chevron_right text-decoration-none text-60em font-weight-bold px-1 my-auto h-100"></span>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="list-inline-item align-middle position-relative h-100 system-bar-group">
+										<div class="btn-group dropdown-container">
+											<a href="#" class="text-white dropdown-toggle pt-0 mt-0 px-1 h-100 system-bar-toggle" data-toggle="dropdown" data-offset="0px" aria-haspopup="true" aria-expanded="false"> Register </a>
+											<div class="dropdown-menu dropdown-menu-right bg-pearl border-0 border-radius-0 text-80 text-body px-2">
+												<div class="d-flex justify-content-between w-100">
+													<a href="#" class="dropdown-item px-1 d-inline h-100"> Register HSBC Personal Internet Banking </a>
+													<span class="icon-chevron_right text-decoration-none text-60em font-weight-bold px-1 my-auto h-100"></span>
+												</div>
+												<div class="d-flex justify-content-between w-100">
+													<a href="#" class="dropdown-item px-1 d-inline h-100"> Register HSBC Business Internet Banking </a>
+													<span class="icon-chevron_right text-decoration-none text-60em font-weight-bold px-1 my-auto h-100"></span>
+												</div>
+
+												<!-- <a href="#" class="dropdown-item pl-1">
+													Register HSBC Business Internet Banking
+													<span class="icon-chevron_right hover-no-decoration"></span>
+												</a> -->
+											</div>
+										</div>
+									</li>
+									<li class="list-inline-item align-middle bg-primary position-relative px-2 h-100 system-bar-group">
+										<!-- <a href="#" class="text-white px-1">Log On</a> -->
+										<div class="btn-group dropdown-container">
+											<a href="#" class="text-white dropdown-toggle pt-0 mt-0 px-1 h-100 system-bar-toggle" data-toggle="dropdown" data-offset="8px" aria-haspopup="true" aria-expanded="false"> Log On </a>
+											<div class="dropdown-menu dropdown-menu-right bg-pearl border-0 border-radius-0 text-80 text-body px-2">
+												<div class="d-flex justify-content-between w-100">
+													<a href="#" class="dropdown-item px-1 d-inline h-100">HSBC Personal Internet Banking</a>
+													<span class="icon-chevron_right text-decoration-none text-60em font-weight-bold px-1 my-auto h-100"></span>
+												</div>
+												<div class="d-flex justify-content-between w-100">
+													<a href="#" class="dropdown-item px-1 d-inline h-100">HSBC Business Internet Banking</a>
+													<span class="icon-chevron_right text-decoration-none text-60em font-weight-bold px-1 my-auto h-100"></span>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div id="mobile-menu-wrapper">
+						<div class="container bg-white">
+							<nav class="row position-relative" aria-label="mobile navigation">
+								<div class="col col-lg-2 min">
+									<div class="row align-items-center py-2 py-lg-0 flex-nowrap">
+										<!-- ? mobile menu -->
+										<div class="col d-lg-none menu-button pl-1 pr-0">
+											<div class="d-inline-flex text-90 pr-0">
+												<button id="mobile-menu-button" type="button" class="btn ml-2 px-0 align-content-center align-items-center d-inline-flex" aria-label="Open menu">
+													<span class="text-body align-middle">
+														<svg viewBox="0 0 80 50" width="30" height="15">
+															<rect width="80" height="8"></rect>
+															<rect y="20" width="80" height="8"></rect>
+															<rect y="40" width="80" height="8"></rect>
+														</svg>
+													</span>
+													<span class="d-none d-sm-inline text-body menu-button-span-text">Menu</span>
+												</button>
+												<span class="border-right pl-2"></span>
+											</div>
+										</div>
+										<div class="col logo-container">
+											<div class="main-logo">
+												<svg
+													version="1.1"
+													id="HSBC_x5F_MASTERBRAND_x5F_LOGO_x5F_WW_x5F_CMYK"
+													xmlns="http://www.w3.org/2000/svg"
+													xmlns:xlink="http://www.w3.org/1999/xlink"
+													x="0px"
+													y="0px"
+													viewBox="0 0 177 38"
+													style="enable-background: new 0 0 177 38"
+													xml:space="preserve"
+												>
+													<style type="text/css">
+														.st0 {
+															fill: #ffffff;
+														}
+														.st1 {
+															fill: #db0011;
+														}
+														.st2 {
+															display: none;
+														}
+														.st3 {
+															display: inline;
+														}
+														.st4 {
+															display: none;
+															fill: #fef382;
+														}
+													</style>
+													<g>
+														<path d="M94.3,20.1h-6.7v6.6h-3.4V11.2h3.4v6.3h6.7v-6.3h3.4v15.5h-3.4V20.1z" />
+														<path
+															d="M105.8,27c-3.3,0-6.1-1.3-6.2-5h3.4c0,1.7,1,2.6,2.9,2.6c1.4,0,2.9-0.7,2.9-2.2c0-1.2-1.1-1.6-2.8-2.1l-1.1-0.3c-2.4-0.7-4.9-1.7-4.9-4.4c0-3.5,3.2-4.6,6.2-4.6c3,0,5.6,1.1,5.6,4.5h-3.4c-0.1-1.4-0.9-2.2-2.5-2.2c-1.2,0-2.5,0.7-2.5,2c0,1.1,1,1.5,3.2,2.2l1.3,0.4c2.7,0.8,4.3,1.8,4.3,4.3C112.2,25.7,108.8,27,105.8,27z"
+														/>
+														<path
+															d="M114.1,11.2h5.4c1.7,0,2.4,0,3,0.2c1.9,0.4,3.3,1.7,3.3,3.7c0,2-1.3,3-3.1,3.5c2.1,0.4,3.6,1.5,3.6,3.8c0,3.5-3.5,4.3-6.2,4.3h-6.1V11.2z M119.5,17.7c1.5,0,3-0.3,3-2.1c0-1.6-1.4-2-2.8-2h-2.4v4.1H119.5z M119.9,24.4c1.6,0,3.1-0.4,3.1-2.3c0-1.8-1.3-2.3-2.9-2.3h-2.7v4.5H119.9z"
+														/>
+														<path d="M135.2,27c-5,0-7.3-3.2-7.3-7.9c0-4.7,2.5-8.2,7.4-8.2c3.1,0,6.1,1.4,6.2,4.9h-3.5c-0.2-1.5-1.2-2.4-2.7-2.4c-3,0-3.9,3.3-3.9,5.7c0,2.5,0.9,5.3,3.8,5.3c1.5,0,2.6-0.8,2.9-2.4h3.5C141.2,25.7,138.4,27,135.2,27z" />
+														<g>
+															<rect x="22.5" y="0.5" class="st0" width="37" height="37" />
+															<polygon class="st1" points="59.6,37.5 78.1,19 59.6,0.5 59.6,0.5 		" />
+															<polygon class="st1" points="22.5,37.5 4,19 22.5,0.5 22.5,0.5 		" />
+															<polygon class="st1" points="59.6,0.5 41,19 22.5,0.5 22.5,0.5 		" />
+															<polygon class="st1" points="22.5,37.5 41,19 59.6,37.5 59.6,37.5 		" />
+														</g>
+													</g>
+													<g class="st2">
+														<path class="st3" d="M88.6,13.8l0.1,0.1l1.2-1.7l-0.1-0.1C89,11,87,9.8,85.6,9.2l-0.1,0l-1,1.5l0.2,0.1C86.1,11.3,87.5,12.3,88.6,13.8z" />
+														<path class="st3" d="M88.1,18.3l0.1,0.1l1.1-1.7l-0.1-0.1c-0.9-1.1-2.9-2.4-4.4-2.9l-0.1,0l-1,1.6l0.2,0.1C85.2,15.8,86.9,16.9,88.1,18.3z" />
+														<polygon class="st3" points="93.4,11.6 102.7,11.6 102.7,9.7 91.4,9.7 91.4,27.5 103.6,27.5 103.6,25.6 93.4,25.6" />
+														<path class="st3" d="M88.5,19.6c-1.1,3-2.2,5.2-4.5,7.5l-0.1,0.1l1.5,1.4l0.1-0.1c2.5-2.3,3.8-5.6,4.6-8l0.1-0.2l-1.7-0.8L88.5,19.6z" />
+														<polygon
+															class="st3"
+															points="119.7,21.6 119.7,18.6 127,18.6 127,16.7 119.7,16.7 119.7,13.9 127.3,13.9 127.3,12 119.7,12 119.7,8.8 117.7,8.8 117.7,12 110,12 110,13.9 117.7,13.9 117.7,16.7 110.3,16.7 110.3,18.6 117.7,18.6 117.7,21.6 109.1,21.6 109.1,23.5 117.7,23.5 117.7,29.2 119.7,29.2 119.7,23.5 128.4,23.5 128.4,21.6 	"
+														/>
+														<g class="st3">
+															<rect x="22.5" y="0.5" class="st0" width="37" height="37" />
+															<polygon class="st1" points="59.6,0.5 59.6,37.5 78.1,19 		" />
+															<polygon class="st1" points="22.5,0.5 41,19 59.6,0.5 		" />
+															<polygon class="st1" points="22.5,0.5 4,19 22.5,37.5 		" />
+															<polygon class="st1" points="22.5,37.5 59.6,37.5 41,19 		" />
+														</g>
+													</g>
+													<g class="st2">
+														<g class="st3"></g>
+														<g class="st3"></g>
+														<g class="st3"></g>
+														<g class="st3"></g>
+													</g>
+													<g class="st2">
+														<g class="st3">
+															<g>
+																<polygon class="st1" points="78.2,19 59.6,0.5 59.6,37.6 			" />
+																<polygon class="st1" points="41.1,19 59.6,0.5 22.5,0.5 			" />
+																<polygon class="st1" points="4,19 22.5,37.6 22.5,0.5 			" />
+																<polygon class="st1" points="41.1,19 22.5,37.6 59.6,37.6 			" />
+															</g>
+														</g>
+														<path
+															class="st3"
+															d="M84.4,15.2l1-1.1c1,0.7,2.4,1.9,3.1,3.3l-1.1,1.1C86.8,17.4,85.7,16,84.4,15.2z M84.4,28.4c2.2-2.5,3.2-5.7,3.7-8.2l1.3,0.6c-0.5,3-2,6.1-3.9,8.5L84.4,28.4z M85.9,10.1L87,9.2c1.2,0.7,2.1,1.6,2.8,2.8L88.7,13C88,11.5,86.9,10.7,85.9,10.1z M90.2,9.8h15v1.4h-6.6c0.8,0.6,1.3,1.1,1.8,2l-0.6,0.4h5V15h-4.6v2.4h3.8v1.4h-3.8v2.3h3.8v1.4h-3.8v2.6h4.7v1.4H93.8l0-8.7c-0.3,0.5-0.8,1-1.2,1.5c-0.2-0.1-0.6-0.4-0.9-0.8c0,0.8,0,6.5,0,9.5h14l0,1.4c-5.2,0-10.3,0-15.5,0L90.2,9.8z M91.7,18.2c0.9-1,2.7-4.4,3.1-7h-3.1V18.2z M97.9,11.2h-3c0.4,0.2,0.7,0.3,1.2,0.5c-0.1,0.7-0.3,1.3-0.5,1.9H99c-0.3-0.7-1-1.3-1.7-1.9L97.9,11.2z M95.2,17.4h3.5V15h-3.5V17.4z M95.2,21.1h3.5v-2.3h-3.5V21.1z M95.2,22.5v2.6h3.5v-2.6H95.2z"
+														/>
+														<path
+															class="st3"
+															d="M117,28c-0.2-0.5-0.7-0.9-1.1-1.3l-0.6-0.5l-2,0l0-4l13.8,0l0,3.9h-2.3c-0.3,0.7-0.7,1.3-1.2,1.9l6.8,0v1.4		H110V28L117,28z M129.6,21.2h-18.9v-1.3l18.9,0V21.2z M127.4,17.6l0-7h1.5l0,8.3h-17.5v-8.2l1.5,0v6.9l6.6,0V9.2h1.5v8.4H127.4z		 M118.7,16.3h-2l0,1.1h-1.4l0-1.1h-1.9l0-1h1.9l0-1.3l-1.9,0v-1h1.9l0-1.2l-1.9,0l0-1h1.9V9.5h1.4v1.3l2,0l0,0.9h-2V13l2,0v1h-2		v1.3h2L118.7,16.3z M114.8,25l10.8,0v-1.6l-10.8,0L114.8,25z M121.7,28c0.7-0.5,1.2-1.2,1.5-1.9h-6c0.6,0.6,1.1,1.2,1.4,1.9		L121.7,28z M124.9,17.4h-1.3v-1.2l-2,0v-1h2v-1.3h-2V13h2l0-1.3h-2l0-0.9l1.9,0l0-1.3h1.3v1.3l2,0v0.9l-2,0l0,1.3l2,0l0,0.9h-2v1.2		h2.1v1h-2L124.9,17.4z"
+														/>
+													</g>
+													<rect y="19.4" class="st4" width="4" height="4" />
+												</svg>
+											</div>
+										</div>
+										<div class="col d-lg-none pl-0 logon-button text-right">
+											<div class="btn-group">
+												<div class="bg-primary py-1 px-2 text-70 logon-app-bar">
+													<a href="#" class="text-white dropdown-toggle pt-0 mt-0 px-1 h-100 system-bar-toggle" data-toggle="dropdown" data-offset="20,3" aria-haspopup="true" aria-expanded="false"> Log On </a>
+													<div class="dropdown-menu dropdown-menu-right bg-pearl border-0 border-radius-0 text-80 text-body px-2">
+														<ul class="list-unstyled py-1 mb-0">
+															<li class="py-1">
+																<a href="#" class="dropdown-item pl-1 pr-1 py-1 d-inline">HSBC Personal Internet Banking<span class="icon-chevron_right text-decoration-none text-60em font-weight-bold pl-3 pr-0"></span></a>
+															</li>
+															<li class="py-1">
+																<a href="#" class="dropdown-item pl-1 pr-1 py-1 d-inline">HSBC Business Internet Banking<span class="icon-chevron_right text-decoration-none text-60em font-weight-bold pl-3 pr-0"></span></a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- <img src="/images/hsbc-logo.png" alt="HSBC logo" class="d-block w-100" /> -->
+										<!-- <img src="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/images/hsbc-logo.png" alt="HSBC logo" class="d-block" /> -->
+									</div>
+								</div>
+
+								<!-- ? desktop menu template -->
+								<script id="desktop-menu-template" type="text/template">
+									{{#desktopmenu}}
+										<div class="{{class}}">
+											{{#content}}
+												{{#header}}
+													<div class="mb-4">
+														<h2 class="mb-2 h5"><b>{{.}}</b></h2>
+														<ul class="list-unstyled">
+															{{#link}}
+															<li class="ml-0">
+																<a href="{{url}}" class="text-90 text-body dropdown-item"> {{caption}} </a>
+															</li>
+															{{/link}}
+														</ul>
+													</div>
+												{{/header}}
+												{{#headerLink}}
+												<a href="{{headerLink}}" class="text-body dropdown-item py-1">
+													<h2 class="py-1 h6">{{caption}}</h2>
+												</a>
+												{{/headerLink}}
+											{{/content}}
+										</div>
+									{{/desktopmenu}}
+								</script>
+
+								<!-- ? important-info template -->
+								<script id="important-info-desktop-template" type="text/template">
+									{{#importantinfodesktop}}
+										{{#headerLink}}
+											<a href="{{url}}" class="text-white d-block font-weight-bold border-0  text-wrap dropdown-item">{{caption}}</a>
+										{{/headerLink}}
+										<ul class="list-unstyled">
+											{{#content}}
+											<li>
+												<a href="{{url}}" class="text-white text-80 d-block mt-2 mb-1 ml-1 pl-2 border-0  text-wrap dropdown-item">{{caption}}</a>
+											</li>
+											{{/content}}
+										</ul>
+									{{/importantinfodesktop}}
+								</script>
+
+								<div class="col col-lg-10 d-none d-lg-inline-block pl-5 h-100 position-static">
+									<ul class="list-unstyled list-inline m-0 p-0 menu-list position-static">
+										<li class="dropdown list-inline-item menu-list-item px-3 py-4 m-0 float-left position-static">
+											<a class="dropdown-toggle text-decoration-none text-body doormat-trigger" href="#" role="button" id="drop-down-menu-perbankan" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+												<span class="mb-0 pb-0 d-block">Perbankan</span>
+												<span class="text-80 mt-0 pt-0">Rekening & kartu kredit</span>
+											</a>
+											<div class="dropdown-menu megamenu" aria-labelledby="drop-down-menu-perbankan">
+												<div class="container">
+													<div class="row">
+														<div class="col col-9">
+															<div class="container pt-3" ```````````>
+																<!-- ? menu perbankan section -->
+																<div id="desktop-menu-perbankan-section" class="row"></div>
+															</div>
+														</div>
+														<!-- ? important-info section -->
+														<div class="col col-3 important-info p-3 h-100"></div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="dropdown list-inline-item menu-list-item px-3 py-4 m-0 float-left position-static">
+											<a class="dropdown-toggle text-decoration-none text-body doormat-trigger" href="#" role="button" id="drop-down-menu-pinjaman" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+												<span class="mb-0 pb-0 d-block">Pinjaman</span>
+												<span class="text-80 mt-0 pt-0">Kartu Kredit & Pinjaman</span>
+											</a>
+											<div class="dropdown-menu megamenu" aria-labelledby="drop-down-menu-pinjaman">
+												<div class="container">
+													<div class="row">
+														<div class="col col-9">
+															<div class="container pt-3">
+																<!-- ? menu pinjaman section -->
+																<div id="desktop-menu-pinjaman-section" class="row"></div>
+															</div>
+														</div>
+														<!-- ? important-info section -->
+														<div class="col col-3 important-info p-3 h-100"></div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="dropdown list-inline-item menu-list-item px-3 py-4 m-0 float-left position-static">
+											<a class="dropdown-toggle text-decoration-none text-body doormat-trigger" href="#" role="button" id="drop-down-menu-wem" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+												<span class="mb-0 pb-0 d-block">Wealth Management</span>
+												<span class="text-80 mt-0 pt-0">Jangka pendek & panjang</span>
+											</a>
+											<div class="dropdown-menu megamenu" aria-labelledby="drop-down-menu-wem">
+												<div class="container">
+													<div class="row">
+														<div class="col col-9">
+															<span class="lead pl-2">#InvestWithTheBest</span>
+															<div class="container pt-3">
+																<!-- ? menu wem section -->
+																<div id="desktop-menu-wem-section" class="row"></div>
+															</div>
+														</div>
+														<!-- ? important-info section -->
+														<div class="col col-3 important-info p-3 h-100"></div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="dropdown list-inline-item menu-list-item px-3 py-4 m-0 float-left position-static">
+											<a class="dropdown-toggle text-decoration-none text-body doormat-trigger" href="#" role="button" id="drop-down-menu-offers" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+												<span class="mb-0 pb-0 d-block">Offers</span>
+												<span class="text-80 mt-0 pt-0">Rewards & gaya hidup terbaru</span>
+											</a>
+											<div class="dropdown-menu megamenu" aria-labelledby="drop-down-menu-offers">
+												<div class="container">
+													<div class="row">
+														<div class="col col-9">
+															<div class="container pt-3">
+																<!-- ? menu offers section -->
+																<div id="desktop-menu-offers-section" class="row"></div>
+															</div>
+														</div>
+														<!-- ? important-info section -->
+														<div class="col col-3 important-info p-3 h-100"></div>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div class="main-overlay initially-hidden" aria-hidden="true"></div>
+
+			<main id="main" class="main min-vh-100 px-0">
+				<!-- ? H01 - Hero  Banner -->
+				<div class="container">
+					<div class="row">
+						<div class="col col-12">
+							<div class="mb-3 mb-sm-0">
+								<div class="position-relative">
+									<img
+										src="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0-content/template/images/sample-desktop.jpg"
+										data-src-desktop="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0-content/template/images/sample-desktop.jpg"
+										data-src-mobile="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0-content/template/images/sample-mobile.jpg"
+										data-breakpoint="576"
+										class="img-fluid w-100 px-0 responsive-image"
+										alt="An image of ABC"
+									/>
+									<div class="mb-panel-lg-40 col-12 bg-white p-3">
+										<h1 class="mb-2"><b>H01</b> - Hero Banner</h1>
+										<p class="my-1">Lorem ipsum dolor sit amet.</p>
+										<button href="#" class="btn btn-success border-radius-0 px-5 mt-2 mbp-link reveal-code" data-code="code-h01">Reveal/hide code</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="code-h01" class="row d-none">
+						<div class="col">
+							<div class="code">
+								<span class="title">H01 Code</span>
+								<div class="code-block">
+									<span class="level-1">&lt;div class="container"&gt;</span>
+									<span class="level-2">&lt;div class="row"&gt;</span>
+									<span class="level-3">&lt;div class="col col-12"&gt;</span>
+									<span class="level-4">&lt;div class="mb-3 mb-sm-0"&gt;</span>
+									<span class="level-5">&lt;div class="position-relative"&gt;</span>
+									<span class="level-6 usercontent">&lt;img</span>
+									<span class="level-7 usercontent">src="/1/PA_esf-ca-app-content/content/indonesia/~/sample-desktop.jpg" </span>
+									<span class="level-7 usercontent">data-src-desktop="/1/PA_esf-ca-app-content/content/indonesia/~/sample-desktop.jpg"</span>
+									<span class="level-7 usercontent">data-src-mobile="/1/PA_esf-ca-app-content/content/indonesia/~/sample-mobile.jpg"</span>
+									<span class="level-7 usercontent">data-breakpoint="576"</span>
+									<span class="level-7 usercontent">class="img-fluid w-100 px-0 responsive-image"</span>
+									<span class="level-7 usercontent">alt="An image of ABC"</span>
+									<span class="level-6 usercontent">&gt;</span>
+									<span class="level-6">&lt;div class="<span class="usercontent d-inline">mb-panel-lg-40</span> col-12 bg-white p-3"&gt;</span>
+									<span class="level-7 usercontent">&lt;h1 class="mb-2"&gt;Lorem&lt;/h1&gt;</span>
+									<span class="level-7 usercontent">&lt;p class="my-1"&gt;Lorem ipsum&lt;/p&gt;</span>
+									<span class="level-7 usercontent">&lt;a href="#" class="btn btn-primary border-radius-0 px-5 mt-2 mbp-link"&gt;Click here&lt;/a&gt;</span>
+									<span class="level-6">&lt;/div&gt;</span>
+									<span class="level-5">&lt;/div&gt;</span>
+									<span class="level-4">&lt;/div&gt;</span>
+									<span class="level-3">&lt;/div&gt;</span>
+									<span class="level-2">&lt;/div&gt;</span>
+									<span class="level-1">&lt;/div&gt;</span>
+								</div>
+								<div class="information bg-white text-black mt-3 p-3 h6">
+									<div class="col">
+										<b>Important</b>
+										<p>
+											The <code>class="responsive-image"</code> is needed for responsive image functionality. This is needed by <code>data-src-desktop</code> and <code>data-src-mobile</code>. Using the native <code>src</code> is still required as
+											fall back.
+										</p>
+										<p>The <code>mb-panel-lg-40</code> class is required to set the width of floating text relative to the total width of the image on desktop.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- ? H02 - Hero Text -->
+				<div class="container">
+					<div class="row">
+						<div class="col px-4">
+							<div class="py-3 border-bottom border-silver">
+								<h1><b>H02</b> - Hero Text</h1>
+								<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae, expedita dicta deserunt, molestiae, voluptas sed esse non nostrum magnam totam voluptates aut eum. Voluptates itaque nam esse atque ipsam eligendi?</p>
+								<button href="#" class="btn btn-success border-radius-0 px-5 mt-2 mbp-link reveal-code" data-code="code-h02">Reveal/hide code</button>
+								<div id="code-h02" class="code d-none">
+									<span class="title">H02 Code</span><br />
+									<div class="code-block">
+										<span class="level-1">&lt;div class="container"&gt;</span>
+										<span class="level-2">&lt;div class="row"&gt;</span>
+										<span class="level-3">&lt;div class="col px-4"&gt;</span>
+										<span class="level-4">&lt;div class="py-3 border-bottom border-silver"&gt;</span>
+										<span class="level-5 usercontent">&lt;h1&gt;Lorem&lt;/h1&gt;</span>
+										<span class="level-5 usercontent">&lt;p&gt;Lorem ipsum&lt;/p&gt;</span>
+										<span class="level-4">&lt;/div&gt;</span>
+										<span class="level-3">&lt;/div&gt;</span>
+										<span class="level-2">&lt;/div&gt;</span>
+										<span class="level-1">&lt;/div&gt;</span>
+									</div>
+									<div class="information bg-white text-black mt-3 p-3 h6">
+										<div class="col">
+											<b>Important</b>
+											<p>Either use H01 or H02. Do not use both at the same time.</p>
+											<p>H02 is to be used for page that does not require the usage of hero image.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- ? M01 - Important Notice Dismissable -->
+				<div class="container mt-3 px-3">
+					<div id="m01-important-notice-dismissable" class="row">
+						<div class="col">
+							<div class="alert bg-info border-info border-radius-0 d-flex px-2" role="alert">
+								<div>
+									<span class="icon-info-circle h2 p-0 m-0"></span>
+								</div>
+								<div class="row mx-1 mx-lg-2 w-100">
+									<div class="col col-12 text-90">
+										<h2 class="alert-heading"><b>M01</b> - Miscellaneous - Dismissable Important Information</h2>
+										<p>
+											<b>Important</b>. <i>Lorem ipsum</i> dolor sit amet consectetur adipisicing elit. Doloremque nulla deleniti tempora eos delectus quisquam doloribus, iusto distinctio ea enim mollitia
+											<a href="#" class="text-body text-underline">temporibus</a> officiis consequuntur earum nisi sunt fuga nesciunt necessitatibus.
+										</p>
+										<button href="#" class="btn btn-success border-radius-0 px-5 mt-2 mbp-link reveal-code" data-code="code-m01">Reveal/hide code</button>
+									</div>
+									<div id="code-m01" class="col px-0 d-none">
+										<div class="col">
+											<div class="code">
+												<span class="title">M01 Code</span>
+												<div class="code-block">
+													<span class="level-1">&lt;div class="container mt-3 px-3"&gt;</span>
+													<span class="level-2">&lt;div id="main-content-important-notice" class="row"&gt;</span>
+													<span class="level-3">&lt;div class="col"&gt;</span>
+													<span class="level-4">&lt;div class="alert bg-info border-info border-radius-0 d-flex px-2" role="alert"&gt;</span>
+													<span class="level-5">&lt;div&gt;</span>
+													<span class="level-6">&lt;span class="icon-info-circle h2 p-0 m-0"&gt;&lt;/span&gt;</span>
+													<span class="level-5">&lt;/div&gt;</span>
+													<span class="level-5">&lt;div class="row mx-1 mx-lg-2 w-100"&gt;</span>
+													<span class="level-6">&lt;div class="col col-12 text-90"&gt;</span>
+													<span class="level-7 usercontent">&lt;p&gt;Lorem&lt;/p&gt;</span>
+													<span class="level-6">&lt;/div&gt;</span>
+													<span class="level-5">&lt;/div&gt;</span>
+													<span class="level-5">&lt;button type="button" class="close align-self-start pr-2" data-dismiss="alert" aria-label="Close"&gt;</span>
+													<span class="level-6">&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;</span>
+													<span class="level-5">&lt;/button&gt;</span>
+													<span class="level-4">&lt;/div&gt;</span>
+													<span class="level-3">&lt;/div&gt;</span>
+													<span class="level-2">&lt;/div&gt;</span>
+													<span class="level-1">&lt;/div&gt;</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<button type="button" class="close align-self-start pr-2" data-dismiss="alert" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- ? M02 - Important Notice Collapse -->
+				<div class="container mt-3 px-3">
+					<div class="row">
+						<div class="col">
+							<div class="accordion">
+								<div class="card">
+									<div class="card-header bg-white px-2 position-relative">
+										<h2 class="mb-0">
+											<button id="collapse-toggle-m02" class="btn btn-link btn-block text-left text-body collapse-chevron" type="button" data-toggle="collapse" data-target="#c-panel-m02" aria-expanded="false" aria-controls="c-panel-m02">
+												<b>M02</b> - Miscellaneous - Collapsible Important Information
+											</button>
+										</h2>
+									</div>
+									<div id="c-panel-m02" class="collapse" aria-labelledby="collapse-toggle-m02">
+										<div class="card-body">
+											<p>
+												Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae amet nam eum explicabo illum, dolores minus nesciunt architecto asperiores temporibus. Similique dolor voluptatem sit enim commodi eum molestiae consequatur
+												ad?
+											</p>
+											<a href="https://www.hsbc.co.id/1/PA_esf-ca-app-content/content/indonesia/misc/notoken/index_id.html" class="text-body">
+												Lebih lanjut<span class="icon-chevron_right_thick text-primary text-70 font-weight-bold d-inline-block pl-2 pb-1"></span>
+											</a>
+											<button href="#" class="btn btn-success border-radius-0 px-5 mt-2 mbp-link d-block reveal-code" data-code="code-m02">Reveal/hide code</button>
+											<div id="code-m02" class="col px-0 d-none">
+												<div class="code">
+													<span class="title">M02 Code</span>
+													<div class="code-block">
+														<span class="level-1">&lt;div class="container mt-3 px-3"&gt;</span>
+														<span class="level-2">&lt;div class="row"&gt;</span>
+														<span class="level-3">&lt;div class="col"&gt;</span>
+														<span class="level-4">&lt;div class="accordion"&gt;</span>
+														<span class="level-5">&lt;div class="card"&gt;</span>
+														<span class="level-6">&lt;div class="card-header bg-white px-2 position-relative"&gt;</span>
+														<span class="level-7">&lt;h2 class="mb-0"&gt;</span>
+														<span class="level-8"> &lt;button </span>
+														<span class="level-9"> type="button" </span>
+														<span class="level-9">
+															<span class="text-primary">id="collapse-toggle-m02"</span>
+														</span>
+														<span class="level-9">
+															<span class="text-primary">data-target="#c-panel-m02"</span>
+														</span>
+														<span class="level-9">
+															<span class="text-primary">aria-controls="c-panel-m02"</span>
+														</span>
+														<span class="level-9">
+															<span class="text-primary">aria-expanded="true"</span>
+														</span>
+														<span class="level-9"> data-toggle="collapse" </span>
+														<span class="level-9"> class="btn btn-link btn-block text-left text-body collapse-chevron" </span>
+														<span class="level-8">&gt;</span>
+														<span class="level-9 usercontent">Lorem</span>
+														<span class="level-8">&lt;/button&gt;</span>
+														<span class="level-7">&lt;/h2&gt;</span>
+														<span class="level-6">&lt;/div&gt;</span>
+														<span class="level-6"> &lt;div </span>
+														<span class="level-7">
+															<span class="text-primary">id="c-panel-m02"</span>
+														</span>
+														<span class="level-7">
+															<span class="text-primary">aria-labelledby="collapse-toggle-m02"</span>
+														</span>
+														<span class="level-7"> class="collapse show" </span>
+														<span class="level-6"> &gt; </span>
+														<span class="level-7">&lt;div class="card-body"&gt;</span>
+														<span class="level-8 usercontent">&lt;p&gt;Lorem ipsum.&lt;/p&gt;</span>
+														<span class="level-7">&lt;/div&gt;</span>
+														<span class="level-6">&lt;/div&gt;</span>
+														<span class="level-5">&lt;/div&gt;</span>
+														<span class="level-4">&lt;/div&gt;</span>
+														<span class="level-3">&lt;/div&gt;</span>
+														<span class="level-2">&lt;/div&gt;</span>
+														<span class="level-1">&lt;/div&gt;</span>
+													</div>
+													<div class="information bg-white text-black mt-3 p-3 h6">
+														<b>Important</b>
+														<ul class="pt-3">
+															<li>
+																Button <code>id</code>, <code>data-target</code>, <code>aria-expanded</code>, <code>aria-controls</code> must be set properly.
+																<ul class="pl-3">
+																	<li><code>id</code> refers to the button. Must be unique per page. No duplicate ID is allowed.</li>
+																	<li><code>data-target</code> refers to the target collapse div. In the example, it is the <code>#c-panel-m02</code>. Must use hash (<code>#</code>) symbol. This is used for the purpose for javascript.</li>
+																	<li><code>aria-controls</code> is quite similar with <code>data-target</code>, except <code>aria-controls</code> doesn't use <code>#</code>. This is used for the purpose of accessibility.</li>
+																	<li>
+																		If target div (in the example, it is the div with <code>id="c-panel-m02"</code>) is using class <code>show</code> (panel is expanded by default), then <code>aria-expanded</code> must be set to <code>true</code>.
+																	</li>
+																</ul>
+															</li>
+															<li>Target div (in the example, it is the div with <code>id="c-panel-m02"</code>) must have unique ID. The ID will be referenced by the toggle button.</li>
+															<li>
+																For accessibility purpose, target div requires <code>aria-labelledby</code> attribute with value equal to the <code>id</code> of the toggle button. In the example, the value is
+																<code>aria-labelledby="collapse-toggle-m02"</code>.
+															</li>
+															<li>To set the target div to be opened by default, add <code>class</code> of <code>show</code> to the target div. Do not forget to set <code>aria-expanded</code> on <code>button</code> element to <code>true</code></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- 
+					TODO ELEMENT STYLING
+						! Link with chevron
+						! Button - primary, etc
+						! link with button looks
+						! downloadable PDF code
+				-->
+
+				<div id="main-content" class="container pt-4">
+					<!-- ? breadcrumb template -->
+					<script id="breadcrumb-template" type="text/template">
+						{{#breadcrumb}}
+							{{^current}}
+							<li class="list-inline-item">
+								<a href="{{url}}" class="text-body"> {{caption}} </a>
+								<span class="icon-chevron_right_thick pl-1 text-primary font-weight-bolder text-70"></span>
+							</li>
+							{{/current}}
+							{{#current}}
+							<li class="list-inline-item font-weight-bold">{{caption}}</li>
+							{{/current}}
+						{{/breadcrumb}}
+					</script>
+
+					<!-- ? breadcrumb section -->
+					<div class="container d-none d-sm-block pt-4">
+						<div class="row">
+							<nav aria-label="You are here" class="col">
+								<ol id="breadcrumb-section" class="list-unstyled list-inline"></ol>
+							</nav>
+						</div>
+					</div>
+
+					<!-- ? OC01 - Opening Content 2 Columns -->
+					<!-- ? OC01 - No Header left liner -->
+					<div class="container pt-3 pb-4 mb-3">
+						<div class="row">
+							<div class="col col-12 col-lg-9">
+								<div class="border-lg-right pr-3 border-silver">
+									<h2><b>OC01</b> - Opening Content 2 Cols No Header Line</h2>
+									<p>
+										Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, quasi? Blanditiis voluptas consectetur ipsam sunt at modi porro perspiciatis, corrupti, assumenda harum deserunt commodi, laboriosam placeat quos tempora
+										similique magnam.
+									</p>
+
+									<button href="#" class="btn btn-success border-radius-0 px-5 mt-2 mbp-link reveal-code" data-code="code-oc01">Reveal/hide code</button>
+									<div id="code-oc01" class="col px-0 d-none">
+										<div class="code">
+											<span class="title">OC01 Code</span>
+											<div class="code-block">
+												<span class="level-1"> &lt;div class="container pt-3 pb-4 mb-3"&gt; </span>
+												<span class="level-2">&lt;div class="row"&gt;</span>
+												<span class="level-3">&lt;div class="col col-12 col-lg-9"&gt;</span>
+												<span class="level-4">&lt;div class="border-lg-right pr-3 border-silver"&gt;</span>
+												<span class="level-5 usercontent">&lt;p&gt;Lorem left column&lt;/p&gt;</span>
+												<span class="level-4">&lt;/div&gt;</span>
+												<span class="level-3">&lt;/div&gt;</span>
+												<span class="level-3">&lt;div class="col col-12 col-lg-3 pl-lg-3"&gt;</span>
+												<span class="level-4 usercontent">&lt;p&gt;Lorem right column.&lt;/p&gt;</span>
+												<span class="level-3">&lt;/div&gt;</span>
+												<span class="level-2">&lt;/div&gt;</span>
+												<span class="level-1">&lt;/div&gt;</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col col-12 col-lg-3 pl-lg-3">
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit architecto quasi.</p>
+								<a href="" class="btn btn-secondary border-radius-0">Lorem ipsum</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- ? OC02 - Opening Content 2 Columns -->
+					<!-- ? OC02 - With Header Left Line -->
+					<div class="container pt-3 pb-4 mb-3">
+						<div class="row">
+							<div class="col col-12 col-lg-9">
+								<div class="border-lg-right pr-3 border-silver">
+									<div class="row">
+										<div class="col">
+											<h2 id="oc02-opening-content-2-cols" class="section-header"><b>OC02</b> - Opening Content 2 Cols w/ Header Line</h2>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col">
+											<p>
+												Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis ex voluptates ipsa ratione perferendis laudantium tempora facere repellendus, animi unde natus architecto consectetur, molestiae laborum impedit maxime non
+												magnam fuga?
+											</p>
+
+											<button href="#" class="btn btn-success border-radius-0 px-5 mt-2 mbp-link reveal-code" data-code="code-oc02">Reveal/hide code</button>
+											<div id="code-oc02" class="col px-0 d-none">
+												<div class="code">
+													<span class="title">OC02 Code</span>
+													<div class="code-block">
+														<span class="level-1">&lt;div class="container pt-3 pb-4 mb-3"&gt;</span>
+														<span class="level-2">&lt;div class="row"&gt;</span>
+														<span class="level-3">&lt;div class="col col-12 col-lg-9"&gt;</span>
+														<span class="level-4">&lt;div class="border-lg-right pr-3 border-silver"&gt;</span>
+														<span class="level-5">&lt;div class="row"&gt;</span>
+														<span class="level-6">&lt;div class="col"&gt;</span>
+														<span class="level-7 usercontent">&lt;h2 id="pengkinian-data" class="section-header"&gt;Lorem header&lt;/h2&gt;</span>
+														<span class="level-6">&lt;/div&gt;</span>
+														<span class="level-5">&lt;/div&gt;</span>
+														<span class="level-5">&lt;div class="row"&gt;</span>
+														<span class="level-6">&lt;div class="col"&gt;</span>
+														<span class="level-7 usercontent">&lt;p&gt;Lorem ipsum left column.&lt;/p&gt;</span>
+														<span class="level-6">&lt;/div&gt;</span>
+														<span class="level-5">&lt;/div&gt;</span>
+														<span class="level-4">&lt;/div&gt;</span>
+														<span class="level-3">&lt;/div&gt;</span>
+														<span class="level-3">&lt;div class="col col-12 col-lg-3 pl-lg-3"&gt;</span>
+														<span class="level-4 usercontent">&lt;p&gt;Lorem ipsum right column.&lt;/p&gt;</span>
+														<span class="level-3">&lt;/div&gt;</span>
+														<span class="level-2">&lt;/div&gt;</span>
+														<span class="level-1">&lt;/div&gt;</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col col-12 col-lg-3 pl-lg-3">
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit architecto quasi.</p>
+								<a href="" class="btn btn-secondary border-radius-0">Lorem ipsum</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- ? MCH01 - Main Content Header -->
+					<div class="container pt-3 pb-4 mb-3">
+						<div class="row">
+							<div class="col">
+								<h2 id="mch01-main-content-header" class="section-header"><b>MCH01</b> - Main Content Header</h2>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<button href="#" class="btn btn-success border-radius-0 px-5 mt-2 mbp-link reveal-code" data-code="code-mch01">Reveal/hide code</button>
+								<div id="code-mch01" class="col px-0 d-none">
+									<div class="code">
+										<span class="title">MCH01 Code</span>
+										<div class="code-block">
+											<span class="level-1">&lt;div class="container pt-3 pb-4 mb-3"&gt;</span>
+											<span class="level-2">&lt;div class="row"&gt;</span>
+											<span class="level-3">&lt;div class="col"&gt;</span>
+											<span class="level-4 usercontent">&lt;h2 id="mc02-main-content-card-layout" class="section-header"&gt;Lorem Header&lt;/h2&gt;</span>
+											<span class="level-3">&lt;/div&gt;</span>
+											<span class="level-2">&lt;/div&gt;</span>
+											<span class="level-1">&lt;/div&gt;</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- ? MC01 - Card Layout -->
+					<div class="container pt-3 pb-4 mb-3">
+						<div class="row">
+							<div class="col">
+								<h2 id="mc01-main-content-card-layout" class="section-header"><b>MC01</b> - Main Content Card Layout</h2>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col col-12 col-sm-6 py-3">
+								<div class="card h-100 border-radius-0">
+									<div class="card-link-container">
+										<h3>
+											<a href="#" class="font-weight-lighter text-body">
+												<div>
+													<img src="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0-content/template/images/sample-card.jpg" class="link-image" alt="..." />
+													<div class="text">
+														<span class="text-caption h3">Lorem ipsum dolor sit ame</span>
+														<span class="text-chevron text-primary" aria-hidden="true"></span>
+													</div>
+												</div>
+											</a>
+										</h3>
+									</div>
+									<div class="card-body pt-1">
+										<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis similique.</p>
+									</div>
+									<div class="card-footer align-right text-right"><a href="#" class="text-black font-weight-bold">Find out more</a><span class="icon-chevron_right_thick pl-2 text-70 font-weight-bold text-primary"></span></div>
+									<div class="card-footer align-right text-right"><a href="#" class="text-black font-weight-bold">Click here</a><span class="icon-chevron_right_thick pl-2 text-70 font-weight-bold text-primary"></span></div>
+									<div class="card-footer align-right text-right"><a href="#" class="text-black font-weight-bold">Register</a><span class="icon-chevron_right_thick pl-2 text-70 font-weight-bold text-primary"></span></div>
+								</div>
+							</div>
+							<div class="col col-12 col-sm-6 py-3">
+								<div class="card h-100 border-radius-0">
+									<div class="card-link-container">
+										<h3>
+											<a href="#" class="font-weight-lighter text-body">
+												<div>
+													<img src="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0-content/template/images/sample-card.jpg" class="link-image" alt="..." />
+													<div class="text">
+														<span class="text-caption h3">Lorem ipsum dolor sit ame</span>
+														<span class="text-chevron text-primary" aria-hidden="true"></span>
+													</div>
+												</div>
+											</a>
+										</h3>
+									</div>
+									<div class="card-body pt-1">
+										<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis similique.</p>
+										<p class="card-text">
+											Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus dolores rerum dolorem pariatur corporis, magnam, quo cumque et est, ullam cupiditate repudiandae a eos magni commodi harum placeat cum repellat.
+										</p>
+									</div>
+									<div class="card-footer align-right text-right"><a href="#" class="text-black font-weight-bold">Find out more</a><span class="icon-chevron_right_thick pl-2 text-70 font-weight-bold text-primary"></span></div>
+								</div>
+							</div>
+							<div class="col col-12 col-sm-6 col-lg-3 py-3">
+								<div class="card h-100 border-radius-0">
+									<div class="card-link-container">
+										<h3>
+											<a href="#" class="font-weight-lighter text-body">
+												<div>
+													<img src="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0-content/template/images/sample-mobile.jpg" class="link-image" alt="..." />
+													<div class="text">
+														<span class="text-caption h3">MC01 - Version 1</span>
+														<span class="text-chevron text-primary" aria-hidden="true"></span>
+													</div>
+												</div>
+											</a>
+										</h3>
+									</div>
+
+									<div class="card-body pt-1">
+										<p class="card-text font-weight-bold">Card with image and footer</p>
+										<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis similique.</p>
+									</div>
+									<div class="card-footer align-right text-left">Lorem ipsum footer information</div>
+								</div>
+							</div>
+							<div class="col col-12 col-sm-6 col-lg-3 py-3">
+								<div class="card h-100 border-radius-0">
+									<div class="card-link-container">
+										<h3>
+											<a href="#" class="font-weight-lighter text-body">
+												<div>
+													<img src="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0-content/template/images/sample-mobile.jpg" class="link-image" alt="..." />
+													<div class="text">
+														<span class="text-caption h3">MC01 - Version 2</span>
+														<span class="text-chevron text-primary" aria-hidden="true"></span>
+													</div>
+												</div>
+											</a>
+										</h3>
+									</div>
+
+									<div class="card-body pt-1">
+										<p class="card-text font-weight-bold">Card with image and without footer</p>
+										<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis similique.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col col-12 col-sm-6 col-lg-3 py-3">
+								<div class="card h-100 border-radius-0">
+									<div class="card-link-container">
+										<h3>
+											<a href="#" class="font-weight-lighter text-body">
+												<div>
+													<div class="text">
+														<span class="text-caption h3">MC01 - Version 3</span>
+														<span class="text-chevron text-primary" aria-hidden="true"></span>
+													</div>
+												</div>
+											</a>
+										</h3>
+									</div>
+
+									<div class="card-body pt-1">
+										<p class="card-text font-weight-bold">Card without image and with footer</p>
+										<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis similique.</p>
+										<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis similique.</p>
+										<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis similique.</p>
+									</div>
+									<div class="card-footer align-right text-left">Lorem ipsum footer information</div>
+								</div>
+							</div>
+
+							<div class="col col-12 col-sm-6 col-lg-3 py-3">
+								<div class="card h-100 border-radius-0">
+									<div class="card-link-container">
+										<h3>
+											<a href="#" class="font-weight-lighter text-body">
+												<div>
+													<div class="text">
+														<span class="text-caption h3">MC01 - Version 4</span>
+														<span class="text-chevron text-primary" aria-hidden="true"></span>
+													</div>
+												</div>
+											</a>
+										</h3>
+									</div>
+									<div class="card-body pt-1">
+										<p class="card-text font-weight-bold">Card without image and without footer</p>
+										<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis similique.</p>
+										<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis similique.</p>
+										<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis similique.</p>
+										<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis similique.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<button href="#" class="btn btn-success border-radius-0 px-5 mt-2 mbp-link reveal-code" data-code="code-mc01">Reveal/hide code</button>
+								<div id="code-mc01" class="col px-0 d-none">
+									<div class="code">
+										<div>
+											<span class="title">MC01 Code - Version 1 - With Image and Footer</span>
+											<div class="code-block">
+												<span class="level-1"> &lt;div class="container pt-3 pb-4 mb-3"&gt; </span>
+												<span class="level-2"> &lt;div class="row"&gt; </span>
+												<span class="level-3 text-primary"> &lt;div class="col col-12 col-sm-6 col-lg-3 py-3"&gt; </span>
+												<span class="level-4"> &lt;div class="card h-100 border-radius-0"&gt; </span>
+												<span class="level-5"> &lt;div class="card-link-container"&gt; </span>
+												<span class="level-6 usercontent"> &lt;h3&gt; </span>
+												<span class="level-7 usercontent"> &lt;a href="#" class="font-weight-lighter text-body"&gt; </span>
+												<span class="level-8 usercontent"> &lt;div&gt; </span>
+												<span class="level-9 usercontent"> &lt;img src="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0-content/template/images/sample-card.jpg" class="link-image" alt="..." /&gt; </span>
+												<span class="level-9 usercontent"> &lt;div class="text"&gt; </span>
+												<span class="level-10 usercontent"> &lt;span class="text-caption h3"&gt;Lorem ipsum&lt;/span&gt; </span>
+												<span class="level-10 usercontent"> &lt;span class="text-chevron text-primary" aria-hidden="true"&gt;&lt;/span&gt; </span>
+												<span class="level-9 usercontent"> &lt;/div&gt; </span>
+												<span class="level-8 usercontent"> &lt;/div&gt; </span>
+												<span class="level-7 usercontent"> &lt;/a&gt; </span>
+												<span class="level-6 usercontent"> &lt;/h3&gt; </span>
+												<span class="level-5"> &lt;/div&gt; </span>
+												<span class="level-5"> &lt;div class="card-body pt-1"&gt; </span>
+												<span class="level-6"> &lt;p class="card-text"&gt;Lorem ipsum.&lt;/p&gt; </span>
+												<span class="level-5"> &lt;/div&gt; </span>
+												<span class="level-5 usercontent"> &lt;div class="card-footer align-right text-right"&gt; </span>
+												<span class="level-6 usercontent"> &lt;a href="#" class="text-black font-weight-bold"&gt;Find out more&lt;/a&gt; </span>
+												<span class="level-6 usercontent"> &lt;span class="icon-chevron_right_thick pl-2 text-70 font-weight-bold text-primary"&gt;&lt;/span&gt; </span>
+												<span class="level-5 usercontent">&lt;/div&gt;</span>
+												<span class="level-4">&lt;/div&gt;</span>
+												<span class="level-3">&lt;/div&gt;</span>
+												<span class="level-2">&lt;/div&gt;</span>
+												<span class="level-1">&lt;/div&gt;</span>
+												<span class="level-"></span>
+											</div>
+										</div>
+
+										<div class="mt-5">
+											<span class="title">MC01 Code - Version 2 - With Image and Without Footer</span>
+											<div class="code-block">
+												<span class="level-1"> &lt;div class="container pt-3 pb-4 mb-3"&gt; </span>
+												<span class="level-2"> &lt;div class="row"&gt; </span>
+												<span class="level-3 text-primary"> &lt;div class="col col-12 col-sm-6 col-lg-3 py-3"&gt; </span>
+												<span class="level-4"> &lt;div class="card h-100 border-radius-0"&gt; </span>
+												<span class="level-5"> &lt;div class="card-link-container"&gt; </span>
+												<span class="level-6 usercontent"> &lt;h3&gt; </span>
+												<span class="level-7 usercontent"> &lt;a href="#" class="font-weight-lighter text-body"&gt; </span>
+												<span class="level-8 usercontent"> &lt;div&gt; </span>
+												<span class="level-9 usercontent"> &lt;img src="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0-content/template/images/sample-card.jpg" class="link-image" alt="..." /&gt; </span>
+												<span class="level-9 usercontent"> &lt;div class="text"&gt; </span>
+												<span class="level-10 usercontent"> &lt;span class="text-caption h3"&gt;Lorem ipsum&lt;/span&gt; </span>
+												<span class="level-10 usercontent"> &lt;span class="text-chevron text-primary" aria-hidden="true"&gt;&lt;/span&gt; </span>
+												<span class="level-9 usercontent"> &lt;/div&gt; </span>
+												<span class="level-8 usercontent"> &lt;/div&gt; </span>
+												<span class="level-7 usercontent"> &lt;/a&gt; </span>
+												<span class="level-6 usercontent"> &lt;/h3&gt; </span>
+												<span class="level-5"> &lt;/div&gt; </span>
+												<span class="level-5"> &lt;div class="card-body pt-1"&gt; </span>
+												<span class="level-6"> &lt;p class="card-text"&gt;Lorem ipsum.&lt;/p&gt; </span>
+												<span class="level-5"> &lt;/div&gt; </span>
+												<span class="level-4">&lt;/div&gt;</span>
+												<span class="level-3">&lt;/div&gt;</span>
+												<span class="level-2">&lt;/div&gt;</span>
+												<span class="level-1">&lt;/div&gt;</span>
+												<span class="level-"></span>
+											</div>
+										</div>
+
+										<div class="mt-5">
+											<span class="title pt-5">MC01 Code - Version 3 - Without Image and With Footer</span>
+											<div class="code-block">
+												<span class="level-1"> &lt;div class="container pt-3 pb-4 mb-3"&gt; </span>
+												<span class="level-2"> &lt;div class="row"&gt; </span>
+												<span class="level-3 text-primary"> &lt;div class="col col-12 col-sm-6 col-lg-3 py-3"&gt; </span>
+												<span class="level-4"> &lt;div class="card h-100 border-radius-0"&gt; </span>
+												<span class="level-5"> &lt;div class="card-link-container"&gt; </span>
+												<span class="level-6 usercontent"> &lt;h3&gt; </span>
+												<span class="level-7 usercontent"> &lt;a href="#" class="font-weight-lighter text-body"&gt; </span>
+												<span class="level-8 usercontent"> &lt;div&gt; </span>
+												<span class="level-9 usercontent"> &lt;div class="text"&gt; </span>
+												<span class="level-10 usercontent"> &lt;span class="text-caption h3"&gt;Lorem ipsum&lt;/span&gt; </span>
+												<span class="level-10 usercontent"> &lt;span class="text-chevron text-primary" aria-hidden="true"&gt;&lt;/span&gt; </span>
+												<span class="level-9 usercontent"> &lt;/div&gt; </span>
+												<span class="level-8 usercontent"> &lt;/div&gt; </span>
+												<span class="level-7 usercontent"> &lt;/a&gt; </span>
+												<span class="level-6 usercontent"> &lt;/h3&gt; </span>
+												<span class="level-5"> &lt;/div&gt; </span>
+												<span class="level-5"> &lt;div class="card-body pt-1"&gt; </span>
+												<span class="level-6"> &lt;p class="card-text"&gt;Lorem ipsum.&lt;/p&gt; </span>
+												<span class="level-5"> &lt;/div&gt; </span>
+												<span class="level-5 usercontent"> &lt;div class="card-footer align-right text-right"&gt; </span>
+												<span class="level-6 usercontent"> &lt;a href="#" class="text-black font-weight-bold"&gt;Find out more&lt;/a&gt; </span>
+												<span class="level-6 usercontent"> &lt;span class="icon-chevron_right_thick pl-2 text-70 font-weight-bold text-primary"&gt;&lt;/span&gt; </span>
+												<span class="level-5 usercontent">&lt;/div&gt;</span>
+												<span class="level-4">&lt;/div&gt;</span>
+												<span class="level-3">&lt;/div&gt;</span>
+												<span class="level-2">&lt;/div&gt;</span>
+												<span class="level-1">&lt;/div&gt;</span>
+												<span class="level-"></span>
+											</div>
+										</div>
+
+										<div class="mt-5">
+											<span class="title">MC01 Code - Version 4 - Without Image and Without Footer</span>
+											<div class="code-block">
+												<span class="level-1"> &lt;div class="container pt-3 pb-4 mb-3"&gt; </span>
+												<span class="level-2"> &lt;div class="row"&gt; </span>
+												<span class="level-3 text-primary"> &lt;div class="col col-12 col-sm-6 col-lg-3 py-3"&gt; </span>
+												<span class="level-4"> &lt;div class="card h-100 border-radius-0"&gt; </span>
+												<span class="level-5"> &lt;div class="card-link-container"&gt; </span>
+												<span class="level-6 usercontent"> &lt;h3&gt; </span>
+												<span class="level-7 usercontent"> &lt;a href="#" class="font-weight-lighter text-body"&gt; </span>
+												<span class="level-8 usercontent"> &lt;div&gt; </span>
+												<span class="level-9 usercontent"> &lt;div class="text"&gt; </span>
+												<span class="level-10 usercontent"> &lt;span class="text-caption h3"&gt;Lorem ipsum&lt;/span&gt; </span>
+												<span class="level-10 usercontent"> &lt;span class="text-chevron text-primary" aria-hidden="true"&gt;&lt;/span&gt; </span>
+												<span class="level-9 usercontent"> &lt;/div&gt; </span>
+												<span class="level-8 usercontent"> &lt;/div&gt; </span>
+												<span class="level-7 usercontent"> &lt;/a&gt; </span>
+												<span class="level-6 usercontent"> &lt;/h3&gt; </span>
+												<span class="level-5"> &lt;/div&gt; </span>
+												<span class="level-5"> &lt;div class="card-body pt-1"&gt; </span>
+												<span class="level-6"> &lt;p class="card-text"&gt;Lorem ipsum.&lt;/p&gt; </span>
+												<span class="level-5"> &lt;/div&gt; </span>
+												<span class="level-4">&lt;/div&gt;</span>
+												<span class="level-3">&lt;/div&gt;</span>
+												<span class="level-2">&lt;/div&gt;</span>
+												<span class="level-1">&lt;/div&gt;</span>
+												<span class="level-"></span>
+											</div>
+										</div>
+
+										<div class="information bg-white text-black mt-3 p-3 h6">
+											<p>To have multiple footers, copy the following code:</p>
+											<div class="code-block">
+												<span class="level-5 usercontent"> &lt;div class="card-footer align-right text-right"&gt; </span>
+												<span class="level-6 usercontent"> &lt;a href="#" class="text-black font-weight-bold"&gt;Find out more&lt;/a&gt; </span>
+												<span class="level-6 usercontent"> &lt;span class="icon-chevron_right_thick pl-2 text-70 font-weight-bold text-primary"&gt;&lt;/span&gt; </span>
+												<span class="level-5 usercontent">&lt;/div&gt;</span>
+											</div>
+											<p class="pt-3">Class <code>col col-12</code> is based on bootstrap 12-columns layout system.</p>
+											<ul>
+												<li><code>col-12</code> will occupy the whole width of it's container. <code>col-6</code> will occupy half of its container width (6/12). <code>col-3</code> will occupy 25% of its container width (3/12). And so on.</li>
+												<li>
+													Width of each card can be set for each breakpoints. Usage is like the following <code>col-breakpoints-xx</code>. <br />
+													<code>breakpoint</code> is breakpoint code (see below). <br />
+													<code>xx</code> is the column size, from 1 to 12.
+												</li>
+												<li><b>Breakpoints</b> is using standard bootstrap breakpoints. <code>sm</code> is 576px. <code>md</code> is 768px. <code>lg</code> is 992px. <code>xl</code> is 1200px.</li>
+											</ul>
+
+											<p><b>Example</b>. To make 4 cards in a row on large screen size, 2 cards in a row on medium size, and 1 card per row on mobile, use the following code <code>col col-12 col-md-6 col-lg-3</code></p>
+											<div class="row mb-3">
+												<div class="col-12 p-3">
+													<div class="row py-3 border">
+														<div class="col-12">Simulated result on large screen size. Defined by <code>col-lg-3</code></div>
+														<div class="col col-3">
+															<div class="box-loader h-125p"></div>
+														</div>
+														<div class="col col-3">
+															<div class="box-loader h-125p"></div>
+														</div>
+														<div class="col col-3">
+															<div class="box-loader h-125p"></div>
+														</div>
+														<div class="col col-3">
+															<div class="box-loader h-125p"></div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row mb-3">
+												<div class="col-6 p-3">
+													<div class="row py-3 border">
+														<div class="col-12">Simulated result on medium screen size up to large screen size. Defined by <code>col-md-6</code></div>
+														<div class="col col-6">
+															<div class="box-loader h-125p"></div>
+														</div>
+														<div class="col col-6">
+															<div class="box-loader h-125p"></div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row mb-3">
+												<div class="col-3 p-3">
+													<div class="row py-3 border">
+														<div class="col-12">Simulated result on mobile screen size up to medium screen size. Defined by <code>col-12</code></div>
+														<div class="col col-12">
+															<div class="box-loader h-125p"></div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<p>Please read <a href="https://getbootstrap.com/docs/4.0/layout/grid/" target="_blank">here</a> for further information.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- ? MC02 - Collapsible/Accordion Content -->
+					<div class="container pt-3 pb-4 mb-3">
+						<div class="row">
+							<div class="col">
+								<h2 id="mc02-main-content-collapsible" class="section-header"><b>MC02</b> - Accordion Content Layout</h2>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<p>
+									This is similar to <a href="#collapse-toggle-m02"><b>M02 - Miscellaneous - Collapsible Important Information.</b></a>
+								</p>
+								<p>The following sample and code just to demonstrate how to do multiple accordion/collapsible opened at the same time or only one can be opened at the same time.</p>
+							</div>
+						</div>
+
+						<!-- ? example 1 -->
+						<div class="row">
+							<div class="col col-12">
+								<h3>Multiple accordion can be opened at the same time - no gap between accordion</h3>
+							</div>
+							<div class="col col-12">
+								<div class="accordion">
+									<div class="card">
+										<div class="card-header bg-white px-2 position-relative">
+											<h2 class="mb-0">
+												<button
+													id="collapse-toggle-mc02-01"
+													class="btn btn-link btn-block text-left text-body collapse-chevron"
+													type="button"
+													data-toggle="collapse"
+													data-target="#c-panel-mc02-01"
+													aria-expanded="false"
+													aria-controls="c-panel-mc02-01"
+												>
+													MC02 - Accordion Content Layout Accordion - Multiple Open - No Gap - #1
+												</button>
+											</h2>
+										</div>
+										<div id="c-panel-mc02-01" class="collapse" aria-labelledby="collapse-toggle-mc02-01">
+											<div class="card-body">
+												<p>
+													Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae amet nam eum explicabo illum, dolores minus nesciunt architecto asperiores temporibus. Similique dolor voluptatem sit enim commodi eum molestiae
+													consequatur ad?
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="accordion">
+									<div class="card">
+										<div class="card-header bg-white px-2 position-relative">
+											<h2 class="mb-0">
+												<button
+													id="collapse-toggle-mc02-02"
+													class="btn btn-link btn-block text-left text-body collapse-chevron"
+													type="button"
+													data-toggle="collapse"
+													data-target="#c-panel-mc02-02"
+													aria-expanded="false"
+													aria-controls="c-panel-mc02-02"
+												>
+													MC02 - Accordion Content Layout Accordion - Multiple Open - No Gap - #2
+												</button>
+											</h2>
+										</div>
+										<div id="c-panel-mc02-02" class="collapse" aria-labelledby="collapse-toggle-mc02-02">
+											<div class="card-body">
+												<p>
+													Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae amet nam eum explicabo illum, dolores minus nesciunt architecto asperiores temporibus. Similique dolor voluptatem sit enim commodi eum molestiae
+													consequatur ad?
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<button href="#" class="btn btn-success border-radius-0 px-5 mt-2 mbp-link reveal-code" data-code="code-mc02-01">Reveal/hide code</button>
+								<div id="code-mc02-01" class="col px-0 d-none">
+									<div class="code">
+										<span class="title">MC02 Code - Version 1 - Multiple Opened no Gap</span>
+										<div class="code-block">
+											<span class="level-1">&lt;div class="col col-12"&gt;</span>
+
+											<span class="level-2">&lt;div class="accordion"&gt;</span>
+											<span class="level-3">&lt;div class="card"&gt;</span>
+											<span class="level-4">&lt;div class="card-header bg-white px-2 position-relative"&gt;</span>
+											<span class="level-5">&lt;h2 class="mb-0"&gt;</span>
+											<span class="level-6">&lt;button</span>
+											<span class="level-7">type="button"</span>
+											<span class="level-7 text-primary">id="collapse-toggle-mc02-01"</span>
+											<span class="level-7 text-primary">data-target="#c-panel-mc02-01"</span>
+											<span class="level-7 text-primary">aria-expanded="false"</span>
+											<span class="level-7 text-primary">aria-controls="c-panel-mc02-01"</span>
+											<span class="level-7">class="btn btn-link btn-block text-left text-body collapse-chevron"</span>
+											<span class="level-7">data-toggle="collapse"</span>
+											<span class="level-6">&gt;</span>
+											<span class="level-7 usercontent">Lorem 01</span>
+											<span class="level-6">&lt;/button&gt;</span>
+											<span class="level-5">&lt;/h2&gt;</span>
+											<span class="level-4">&lt;/div&gt;</span>
+											<span class="level-4 text-primary">&lt;div id="c-panel-mc02-01" class="collapse" aria-labelledby="collapse-toggle-mc02-01"&gt;</span>
+											<span class="level-5">&lt;div class="card-body"&gt;</span>
+											<span class="level-6">&lt;p&gt;</span>
+											<span class="level-7 usercontent">Lorem ipsum dolor sit amet.</span>
+											<span class="level-6">&lt;/p&gt;</span>
+											<span class="level-5">&lt;/div&gt;</span>
+											<span class="level-4">&lt;/div&gt;</span>
+											<span class="level-3">&lt;/div&gt;</span>
+											<span class="level-2">&lt;/div&gt;</span>
+
+											<span class="level-2">&lt;div class="accordion"&gt;</span>
+											<span class="level-3">&lt;div class="card"&gt;</span>
+											<span class="level-4">&lt;div class="card-header bg-white px-2 position-relative"&gt;</span>
+											<span class="level-5">&lt;h2 class="mb-0"&gt;</span>
+											<span class="level-6">&lt;button</span>
+											<span class="level-7">type="button"</span>
+											<span class="level-7 text-primary">id="collapse-toggle-mc02-02"</span>
+											<span class="level-7 text-primary">data-target="#c-panel-mc02-02"</span>
+											<span class="level-7 text-primary">aria-expanded="false"</span>
+											<span class="level-7 text-primary">aria-controls="c-panel-mc02-02"</span>
+											<span class="level-7">class="btn btn-link btn-block text-left text-body collapse-chevron"</span>
+											<span class="level-7">data-toggle="collapse"</span>
+											<span class="level-6">&gt;</span>
+											<span class="level-7 usercontent">Lorem 02</span>
+											<span class="level-6">&lt;/button&gt;</span>
+											<span class="level-5">&lt;/h2&gt;</span>
+											<span class="level-4">&lt;/div&gt;</span>
+											<span class="level-4 text-primary">&lt;div id="c-panel-mc02-02" class="collapse" aria-labelledby="collapse-toggle-mc02-02"&gt;</span>
+											<span class="level-5">&lt;div class="card-body"&gt;</span>
+											<span class="level-6">&lt;p&gt;</span>
+											<span class="level-7 usercontent">Lorem ipsum dolor sit amet.</span>
+											<span class="level-6">&lt;/p&gt;</span>
+											<span class="level-5">&lt;/div&gt;</span>
+											<span class="level-4">&lt;/div&gt;</span>
+											<span class="level-3">&lt;/div&gt;</span>
+											<span class="level-2">&lt;/div&gt;</span>
+
+											<span class="level-1">&lt;/div&gt;</span>
+										</div>
+										<div class="information bg-white text-black mt-3 p-3 h6">
+											<p><b>Important</b> The code needs to be inside container and row. Like the following:</p>
+											<div class="code-block">
+												<span class="level-3 line-height-12">
+													<code>&lt;div class="container"&gt;</code>
+												</span>
+												<span class="level-4 line-height-12">
+													<code>&lt;div class="row"&gt;</code>
+												</span>
+												<span class="level-5 line-height-12"><b>code above here</b></span>
+												<span class="level-4 line-height-12">
+													<code>&lt;/div&gt;</code>
+												</span>
+												<span class="level-3 line-height-12">
+													<code>&lt;/div&gt;</code>
+												</span>
+											</div>
+											<p>
+												Please note that if it is contained within same block of <b>MCH01</b>, then the <code>container</code> div element should be already there. In which case, instead of creating another <code>container</code> div, you just need
+												to add new <code>row</code> div.
+											</p>
+											<p class="pt-3">Similar with <b>M02</b>, please pay attention to the following:</p>
+											<ul>
+												<li>
+													Button <code>id</code>, <code>data-target</code>, <code>aria-expanded</code>, <code>aria-controls</code> must be set properly.
+													<ul class="pl-3">
+														<li><code>id</code> refers to the button. Must be unique per page. No duplicate ID is allowed.</li>
+														<li><code>data-target</code> refers to the target collapse div. Must use hash (<code>#</code>) symbol. This is used for the purpose for javascript.</li>
+														<li><code>aria-controls</code> is quite similar with <code>data-target</code>, except <code>aria-controls</code> doesn't use <code>#</code>. This is used for the purpose of accessibility.</li>
+														<li>If target div is using class <code>show</code> (panel is expanded by default), then <code>aria-expanded</code> must be set to <code>true</code>.</li>
+													</ul>
+												</li>
+												<li>Target div must have unique ID. The ID will be referenced by the toggle button.</li>
+												<li>For accessibility purpose, target div requires <code>aria-labelledby</code> attribute with value equal to the <code>id</code> of the toggle button.</li>
+												<li>To set the target div to be opened by default, add <code>class</code> of <code>show</code> to the target div. Do not forget to set <code>aria-expanded</code> on <code>button</code> element to <code>true</code></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- ? example 2 -->
+						<div class="row pt-4">
+							<div class="col col-12">
+								<h3>Multiple accordion can be opened at the same time - with gap between accordion</h3>
+							</div>
+							<div class="col col-12">
+								<div class="accordion">
+									<div class="card">
+										<div class="card-header bg-white px-2 position-relative">
+											<h2 class="mb-0">
+												<button
+													id="collapse-toggle-mc02-03"
+													class="btn btn-link btn-block text-left text-body collapse-chevron"
+													type="button"
+													data-toggle="collapse"
+													data-target="#c-panel-mc02-03"
+													aria-expanded="false"
+													aria-controls="c-panel-mc02-03"
+												>
+													MC02 - Accordion Content Layout Accordion - Multiple Open - With Gap - #3
+												</button>
+											</h2>
+										</div>
+										<div id="c-panel-mc02-03" class="collapse" aria-labelledby="collapse-toggle-mc02-03">
+											<div class="card-body">
+												<p>
+													Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae amet nam eum explicabo illum, dolores minus nesciunt architecto asperiores temporibus. Similique dolor voluptatem sit enim commodi eum molestiae
+													consequatur ad?
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="accordion mt-3">
+									<div class="card">
+										<div class="card-header bg-white px-2 position-relative">
+											<h2 class="mb-0">
+												<button
+													id="collapse-toggle-mc02-04"
+													class="btn btn-link btn-block text-left text-body collapse-chevron"
+													type="button"
+													data-toggle="collapse"
+													data-target="#c-panel-mc02-04"
+													aria-expanded="false"
+													aria-controls="c-panel-mc02-04"
+												>
+													MC02 - Accordion Content Layout Accordion - Multiple Open - With Gap - #4
+												</button>
+											</h2>
+										</div>
+										<div id="c-panel-mc02-04" class="collapse" aria-labelledby="collapse-toggle-mc02-04">
+											<div class="card-body">
+												<p>
+													Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae amet nam eum explicabo illum, dolores minus nesciunt architecto asperiores temporibus. Similique dolor voluptatem sit enim commodi eum molestiae
+													consequatur ad?
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<button href="#" class="btn btn-success border-radius-0 px-5 mt-2 mbp-link reveal-code" data-code="code-mc02-02">Reveal/hide code</button>
+								<div id="code-mc02-02" class="col px-0 d-none">
+									<div class="code">
+										<span class="title">MC02 Code - Version 2 - Multiple Opened With Gap</span>
+										<div class="code-block">
+											<span class="level-1">&lt;div class="col col-12"&gt;</span>
+
+											<span class="level-2">&lt;div class="accordion"&gt;</span>
+											<span class="level-3">&lt;div class="card"&gt;</span>
+											<span class="level-4">&lt;div class="card-header bg-white px-2 position-relative"&gt;</span>
+											<span class="level-5">&lt;h2 class="mb-0"&gt;</span>
+											<span class="level-6">&lt;button</span>
+											<span class="level-7">type="button"</span>
+											<span class="level-7 text-primary">id="collapse-toggle-mc02-01"</span>
+											<span class="level-7 text-primary">data-target="#c-panel-mc02-01"</span>
+											<span class="level-7 text-primary">aria-expanded="false"</span>
+											<span class="level-7 text-primary">aria-controls="c-panel-mc02-01"</span>
+											<span class="level-7">class="btn btn-link btn-block text-left text-body collapse-chevron"</span>
+											<span class="level-7">data-toggle="collapse"</span>
+											<span class="level-6">&gt;</span>
+											<span class="level-7 usercontent">Lorem 01</span>
+											<span class="level-6">&lt;/button&gt;</span>
+											<span class="level-5">&lt;/h2&gt;</span>
+											<span class="level-4">&lt;/div&gt;</span>
+											<span class="level-4 text-primary">&lt;div id="c-panel-mc02-01" class="collapse" aria-labelledby="collapse-toggle-mc02-01"&gt;</span>
+											<span class="level-5">&lt;div class="card-body"&gt;</span>
+											<span class="level-6">&lt;p&gt;</span>
+											<span class="level-7 usercontent">Lorem ipsum dolor sit amet.</span>
+											<span class="level-6">&lt;/p&gt;</span>
+											<span class="level-5">&lt;/div&gt;</span>
+											<span class="level-4">&lt;/div&gt;</span>
+											<span class="level-3">&lt;/div&gt;</span>
+											<span class="level-2">&lt;/div&gt;</span>
+
+											<span class="level-2">&lt;div class="accordion <span class="d-inline text-primary">mt-3</span>"&gt;</span>
+											<span class="level-3">&lt;div class="card"&gt;</span>
+											<span class="level-4">&lt;div class="card-header bg-white px-2 position-relative"&gt;</span>
+											<span class="level-5">&lt;h2 class="mb-0"&gt;</span>
+											<span class="level-6">&lt;button</span>
+											<span class="level-7">type="button"</span>
+											<span class="level-7 text-primary">id="collapse-toggle-mc02-02"</span>
+											<span class="level-7 text-primary">data-target="#c-panel-mc02-02"</span>
+											<span class="level-7 text-primary">aria-expanded="false"</span>
+											<span class="level-7 text-primary">aria-controls="c-panel-mc02-02"</span>
+											<span class="level-7">class="btn btn-link btn-block text-left text-body collapse-chevron"</span>
+											<span class="level-7">data-toggle="collapse"</span>
+											<span class="level-6">&gt;</span>
+											<span class="level-7 usercontent">Lorem 02</span>
+											<span class="level-6">&lt;/button&gt;</span>
+											<span class="level-5">&lt;/h2&gt;</span>
+											<span class="level-4">&lt;/div&gt;</span>
+											<span class="level-4 text-primary">&lt;div id="c-panel-mc02-02" class="collapse" aria-labelledby="collapse-toggle-mc02-02"&gt;</span>
+											<span class="level-5">&lt;div class="card-body"&gt;</span>
+											<span class="level-6">&lt;p&gt;</span>
+											<span class="level-7 usercontent">Lorem ipsum dolor sit amet.</span>
+											<span class="level-6">&lt;/p&gt;</span>
+											<span class="level-5">&lt;/div&gt;</span>
+											<span class="level-4">&lt;/div&gt;</span>
+											<span class="level-3">&lt;/div&gt;</span>
+											<span class="level-2">&lt;/div&gt;</span>
+
+											<span class="level-1">&lt;/div&gt;</span>
+										</div>
+										<div class="information bg-white text-black mt-3 p-3 h6">
+											<p><b>Important</b> The code needs to be inside container and row. Like the following:</p>
+											<div class="code-block">
+												<span class="level-3 line-height-12">
+													<code>&lt;div class="container"&gt;</code>
+												</span>
+												<span class="level-4 line-height-12">
+													<code>&lt;div class="row"&gt;</code>
+												</span>
+												<span class="level-5 line-height-12"><b>code above here</b></span>
+												<span class="level-4 line-height-12">
+													<code>&lt;/div&gt;</code>
+												</span>
+												<span class="level-3 line-height-12">
+													<code>&lt;/div&gt;</code>
+												</span>
+											</div>
+											<p>
+												Please note that if it is contained within same block of <b>MCH01</b>, then the <code>container</code> div element should be already there. In which case, instead of creating another <code>container</code> div, you just need
+												to add new <code>row</code> div.
+											</p>
+											<p>
+												<b>The only difference between MC02 - Version 2 vs Version 1</b> is the additional class of <code>mt-3</code> to add margin-top to the element. This way, the subsequent element will have vertical gap with the previous element.
+											</p>
+											<p class="pt-3">Similar with <b>M02</b>, please pay attention to the following:</p>
+											<ul>
+												<li>
+													Button <code>id</code>, <code>data-target</code>, <code>aria-expanded</code>, <code>aria-controls</code> must be set properly.
+													<ul class="pl-3">
+														<li><code>id</code> refers to the button. Must be unique per page. No duplicate ID is allowed.</li>
+														<li><code>data-target</code> refers to the target collapse div. Must use hash (<code>#</code>) symbol. This is used for the purpose for javascript.</li>
+														<li><code>aria-controls</code> is quite similar with <code>data-target</code>, except <code>aria-controls</code> doesn't use <code>#</code>. This is used for the purpose of accessibility.</li>
+														<li>If target div is using class <code>show</code> (panel is expanded by default), then <code>aria-expanded</code> must be set to <code>true</code>.</li>
+													</ul>
+												</li>
+												<li>Target div must have unique ID. The ID will be referenced by the toggle button.</li>
+												<li>For accessibility purpose, target div requires <code>aria-labelledby</code> attribute with value equal to the <code>id</code> of the toggle button.</li>
+												<li>To set the target div to be opened by default, add <code>class</code> of <code>show</code> to the target div. Do not forget to set <code>aria-expanded</code> on <code>button</code> element to <code>true</code></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- ? example 3 -->
+						<div class="row pt-4">
+							<div class="col col-12">
+								<h3>Only one accordion can be opened at the same time - with no gap between accordion</h3>
+							</div>
+							<div class="col col-12">
+								<div class="accordion" id="mc02-sample-3">
+									<div class="card">
+										<div class="card-header bg-white px-2 position-relative">
+											<h2 class="mb-0">
+												<button
+													id="collapse-toggle-mc02-05"
+													class="btn btn-link btn-block text-left text-body collapse-chevron"
+													type="button"
+													data-toggle="collapse"
+													data-target="#c-panel-mc02-05"
+													aria-expanded="false"
+													aria-controls="c-panel-mc02-05"
+												>
+													MC02 - Accordion Content Layout Accordion - Multiple Open - With Gap - #5
+												</button>
+											</h2>
+										</div>
+										<div id="c-panel-mc02-05" class="collapse" data-parent="#mc02-sample-3" aria-labelledby="collapse-toggle-mc02-05">
+											<div class="card-body">
+												<p>
+													Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae amet nam eum explicabo illum, dolores minus nesciunt architecto asperiores temporibus. Similique dolor voluptatem sit enim commodi eum molestiae
+													consequatur ad?
+												</p>
+											</div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header bg-white px-2 position-relative">
+											<h2 class="mb-0">
+												<button
+													id="collapse-toggle-mc02-06"
+													class="btn btn-link btn-block text-left text-body collapse-chevron"
+													type="button"
+													data-toggle="collapse"
+													data-target="#c-panel-mc02-06"
+													aria-expanded="false"
+													aria-controls="c-panel-mc02-06"
+												>
+													MC02 - Accordion Content Layout Accordion - Multiple Open - With Gap - #6
+												</button>
+											</h2>
+										</div>
+										<div id="c-panel-mc02-06" class="collapse" data-parent="#mc02-sample-3" aria-labelledby="collapse-toggle-mc02-06">
+											<div class="card-body">
+												<p>
+													Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae amet nam eum explicabo illum, dolores minus nesciunt architecto asperiores temporibus. Similique dolor voluptatem sit enim commodi eum molestiae
+													consequatur ad?
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<button href="#" class="btn btn-success border-radius-0 px-5 mt-2 mbp-link reveal-code" data-code="code-mc02-03">Reveal/hide code</button>
+								<div id="code-mc02-03" class="col px-0 d-none">
+									<div class="code">
+										<span class="title">MC02 Code - Version 3 - Only One Opened</span>
+										<div class="code-block">
+											<span class="level-1">&lt;div class="col col-12"&gt;</span>
+											<span class="level-2">&lt;div class="accordion" <span class="text-primary d-inline font-weight-bold">id="mc02-sample-3"</span>&gt;</span>
+											<span class="level-3">&lt;div class="card"&gt;</span>
+											<span class="level-4">&lt;div class="card-header bg-white px-2 position-relative"&gt;</span>
+											<span class="level-5">&lt;h2 class="mb-0"&gt;</span>
+											<span class="level-6">&lt;button</span>
+											<span class="level-7">type="button"</span>
+											<span class="level-7 text-primary">id="collapse-toggle-mc02-05"</span>
+											<span class="level-7 text-primary">data-target="#c-panel-mc02-05"</span>
+											<span class="level-7 text-primary">aria-expanded="false"</span>
+											<span class="level-7 text-primary">aria-controls="c-panel-mc02-05"</span>
+											<span class="level-7">class="btn btn-link btn-block text-left text-body collapse-chevron"</span>
+											<span class="level-7">data-toggle="collapse"</span>
+											<span class="level-6">&gt;</span>
+											<span class="level-7 usercontent">Lorem 01</span>
+											<span class="level-6">&lt;/button&gt;</span>
+											<span class="level-5">&lt;/h2&gt;</span>
+											<span class="level-4">&lt;/div&gt;</span>
+											<span class="level-4 text-primary">&lt;div id="c-panel-mc02-05" class="collapse" <b>data-parent="#mc02-sample-3"</b> aria-labelledby="collapse-toggle-mc02-05"&gt;</span>
+											<span class="level-5">&lt;div class="card-body"&gt;</span>
+											<span class="level-6">&lt;p&gt;</span>
+											<span class="level-7 usercontent">Lorem ipsum dolor sit amet.</span>
+											<span class="level-6">&lt;/p&gt;</span>
+											<span class="level-5">&lt;/div&gt;</span>
+											<span class="level-4">&lt;/div&gt;</span>
+											<span class="level-3">&lt;/div&gt;</span>
+											<span class="level-3">&lt;div class="card"&gt;</span>
+											<span class="level-4">&lt;div class="card-header bg-white px-2 position-relative"&gt;</span>
+											<span class="level-5">&lt;h2 class="mb-0"&gt;</span>
+											<span class="level-6">&lt;button</span>
+											<span class="level-7">type="button"</span>
+											<span class="level-7 text-primary">id="collapse-toggle-mc02-06"</span>
+											<span class="level-7 text-primary">data-target="#c-panel-mc02-06"</span>
+											<span class="level-7 text-primary">aria-expanded="false"</span>
+											<span class="level-7 text-primary">aria-controls="c-panel-mc02-06"</span>
+											<span class="level-7">class="btn btn-link btn-block text-left text-body collapse-chevron"</span>
+											<span class="level-7">data-toggle="collapse"</span>
+											<span class="level-6">&gt;</span>
+											<span class="level-7 usercontent">Lorem 02</span>
+											<span class="level-6">&lt;/button&gt;</span>
+											<span class="level-5">&lt;/h2&gt;</span>
+											<span class="level-4">&lt;/div&gt;</span>
+											<span class="level-4 text-primary">&lt;div id="c-panel-mc02-06" class="collapse" <b>data-parent="#mc02-sample-3"</b> aria-labelledby="collapse-toggle-mc02-06"&gt;</span>
+											<span class="level-5">&lt;div class="card-body"&gt;</span>
+											<span class="level-6">&lt;p&gt;</span>
+											<span class="level-7 usercontent">Lorem ipsum dolor sit amet.</span>
+											<span class="level-6">&lt;/p&gt;</span>
+											<span class="level-5">&lt;/div&gt;</span>
+											<span class="level-4">&lt;/div&gt;</span>
+											<span class="level-3">&lt;/div&gt;</span>
+											<span class="level-2">&lt;/div&gt;</span>
+											<span class="level-1">&lt;/div&gt;</span>
+										</div>
+										<div class="information bg-white text-black mt-3 p-3 h6">
+											<p><b>Important</b> The code needs to be inside container and row. Like the following:</p>
+											<div class="code-block">
+												<span class="level-3 line-height-12">
+													<code>&lt;div class="container"&gt;</code>
+												</span>
+												<span class="level-4 line-height-12">
+													<code>&lt;div class="row"&gt;</code>
+												</span>
+												<span class="level-5 line-height-12"><b>code above here</b></span>
+												<span class="level-4 line-height-12">
+													<code>&lt;/div&gt;</code>
+												</span>
+												<span class="level-3 line-height-12">
+													<code>&lt;/div&gt;</code>
+												</span>
+											</div>
+											<p>
+												Please note that if it is contained within same block of <b>MCH01</b>, then the <code>container</code> div element should be already there. In which case, instead of creating another <code>container</code> div, you just need
+												to add new <code>row</code> div.
+											</p>
+											<p class="pt-3">Notice that unlike the previous version, collapsible elements ( <code>&lt;div class="card"&gt;</code> ) are grouped within the same single div with <code>accordion</code> class.</p>
+											<p class="pt-3">Please also note that the usage of <code>data-parent</code> which must be equal to the <code>id</code> of the <code>accordion</code> element.</p>
+
+											<p class="pt-3">Similar with <b>M02</b>, please pay attention to the following:</p>
+											<ul>
+												<li>
+													Button <code>id</code>, <code>data-target</code>, <code>aria-expanded</code>, <code>aria-controls</code> must be set properly.
+													<ul class="pl-3">
+														<li><code>id</code> refers to the button. Must be unique per page. No duplicate ID is allowed.</li>
+														<li><code>data-target</code> refers to the target collapse div. Must use hash (<code>#</code>) symbol. This is used for the purpose for javascript.</li>
+														<li><code>aria-controls</code> is quite similar with <code>data-target</code>, except <code>aria-controls</code> doesn't use <code>#</code>. This is used for the purpose of accessibility.</li>
+														<li>If target div is using class <code>show</code> (panel is expanded by default), then <code>aria-expanded</code> must be set to <code>true</code>.</li>
+													</ul>
+												</li>
+												<li>Target div must have unique ID. The ID will be referenced by the toggle button.</li>
+												<li>For accessibility purpose, target div requires <code>aria-labelledby</code> attribute with value equal to the <code>id</code> of the toggle button.</li>
+												<li>To set the target div to be opened by default, add <code>class</code> of <code>show</code> to the target div. Do not forget to set <code>aria-expanded</code> on <code>button</code> element to <code>true</code></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- ? MC03 - tabs to collapse content -->
+					<div class="container pt-3 pb-4 mb-3">
+						<div class="row">
+							<div class="col">
+								<h2 id="mc03-main-content-tabs-to-collapse" class="section-header"><b>MC03</b> - Tabs to Collapse Content Layout</h2>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<p>This is for tabs layout which will transform to collapse/accordion on mobile for easier access and navigation</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col pt-0">
+								<div class="border-lg border-silver">
+									<ul class="nav nav-tabs responsive bg-silver" role="tablist">
+										<li class="nav-item" role="tab">
+											<a class="nav-link tabs-to-collapse active text-body p-0 p-lg-3 border-0" data-toggle="tab" data-disable-scroll="true" href="#tab-panel-01">
+												<h3 class="no-margin-block">Lorem ipsum tab 01</h3>
+											</a>
+										</li>
+										<li class="nav-item mt-3 mt-lg-0" role="tab">
+											<a class="nav-link tabs-to-collapse text-body p-0 p-lg-3 border-0" data-toggle="tab" data-disable-scroll="true" href="#tab-panel-02">
+												<h3 class="no-margin-block">Lorem ipsum tab 02</h3>
+											</a>
+										</li>
+									</ul>
+									<!-- Tab panes -->
+									<div class="tab-content responsive pt-4">
+										<div class="tab-pane active w-100" id="tab-panel-01" role="tabpanel">
+											<div class="container">
+												<div class="row">
+													<div class="col col-12 px-lg-4">
+														<div class="row">
+															<div class="col col-12">
+																<p class="h5">Panel content #01</p>
+																<p>Insert whatever content needed. Image, card, link, etc.</p>
+																<p>Adjust tab label (Lorem ipsum tab 01) element accordingly. Use <code>h3</code>, <code>h4</code>, <code>p</code>, etc. Please ensure that heading level (if using <code>hx</code>) is sequential.</p>
+																<p>
+																	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium quod eveniet perspiciatis doloremque soluta modi sunt omnis mollitia. Exercitationem ea excepturi, incidunt blanditiis consequuntur quo odio
+																	molestiae placeat illum quisquam.
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="tab-pane w-100" id="tab-panel-02" role="tabpanel">
+											<div class="container">
+												<div class="row">
+													<div class="col col-12 px-lg-4">
+														<div class="row">
+															<div class="col col-12">
+																<p class="h5">Panel content #02</p>
+																<p>Insert whatever content needed. Image, card, link, etc.</p>
+																<p>Adjust tab label (Lorem ipsum tab 02) element accordingly. Use <code>h3</code>, <code>h4</code>, <code>p</code>, etc. Please ensure that heading level (if using <code>hx</code>) is sequential.</p>
+																<p>
+																	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium quod eveniet perspiciatis doloremque soluta modi sunt omnis mollitia. Exercitationem ea excepturi, incidunt blanditiis consequuntur quo odio
+																	molestiae placeat illum quisquam.
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<button href="#" class="btn btn-success border-radius-0 px-5 mt-2 mbp-link reveal-code" data-code="code-mc03">Reveal/hide code</button>
+								<div id="code-mc03" class="col px-0 d-none">
+									<div class="code">
+										<span class="title">MC03 Code</span>
+										<div class="code-block">
+											<span class="level-1">&lt;div class="col pt-0"&gt;</span>
+											<span class="level-2">&lt;div class="border-lg border-silver"&gt;</span>
+											<span class="level-3">&lt;ul class="nav nav-tabs responsive bg-silver" role="tablist"&gt;</span>
+											<span class="level-4">&lt;li class="nav-item" role="tab"&gt;</span>
+
+											<span class="level-5">&lt;a</span>
+											<span class="level-6">
+												class="nav-link tabs-to-collapse <span class="text-primary d-inline font-weight-bold">active</span>
+												text-body p-0 p-lg-3 border-0"
+											</span>
+											<span class="level-6">data-toggle="tab"</span>
+											<span class="level-6">data-disable-scroll="true"</span>
+											<span class="level-6 text-primary">href="#tab-panel-sample-01"</span>
+											<span class="level-5">&gt;</span>
+
+											<span class="level-6 usercontent">&lt;h3 class="no-margin-block"&gt;Tab 01&lt;/h3&gt;</span>
+											<span class="level-5">&lt;/a&gt;</span>
+											<span class="level-4">&lt;/li&gt;</span>
+											<span class="level-4">&lt;li class="nav-item mt-3 mt-lg-0" role="tab"&gt;</span>
+
+											<span class="level-5">&lt;a</span>
+											<span class="level-6">class="nav-link tabs-to-collapse text-body p-0 p-lg-3 border-0"</span>
+											<span class="level-6">data-toggle="tab"</span>
+											<span class="level-6">data-disable-scroll="true"</span>
+											<span class="level-6 text-primary">href="#tab-panel-sample-02"</span>
+											<span class="level-5">&gt;</span>
+
+											<span class="level-6 usercontent">&lt;h3 class="no-margin-block"&gt;Tab 02&lt;/h3&gt;</span>
+											<span class="level-5">&lt;/a&gt;</span>
+											<span class="level-4">&lt;/li&gt;</span>
+											<span class="level-3">&lt;/ul&gt;</span>
+											<span class="level-3">&lt;div class="tab-content responsive pt-4"&gt;</span>
+
+											<span class="level-4">&lt;div</span>
+											<span class="level-5 text-primary">id="tab-panel-sample-01"</span>
+											<span class="level-5 text-primary">class="tab-pane active w-100"</span>
+											<span class="level-5">role="tabpanel"</span>
+											<span class="level-4">&gt;</span>
+
+											<span class="level-5">&lt;div class="container"&gt;</span>
+											<span class="level-6">&lt;div class="row"&gt;</span>
+											<span class="level-7">&lt;div class="col col-12 px-lg-4"&gt;</span>
+											<span class="level-8">&lt;div class="row"&gt;</span>
+											<span class="level-9">&lt;div class="col col-12"&gt;</span>
+											<span class="level-10 usercontent">Lorem ipsum dolor sit amet</span>
+											<span class="level-9">&lt;/div&gt;</span>
+											<span class="level-8">&lt;/div&gt;</span>
+											<span class="level-7">&lt;/div&gt;</span>
+											<span class="level-6">&lt;/div&gt;</span>
+											<span class="level-5">&lt;/div&gt;</span>
+											<span class="level-4">&lt;/div&gt;</span>
+
+											<span class="level-4">&lt;div</span>
+											<span class="level-5 text-primary">id="tab-panel-sample-01"</span>
+											<span class="level-5 text-primary">class="tab-pane w-100"</span>
+											<span class="level-5">role="tabpanel"</span>
+											<span class="level-4">&gt;</span>
+
+											<span class="level-5"> &lt;div class="container"&gt;</span>
+											<span class="level-6">&lt;div class="row"&gt;</span>
+											<span class="level-7">&lt;div class="col col-12 px-lg-4"&gt;</span>
+											<span class="level-8">&lt;div class="row"&gt;</span>
+											<span class="level-9">&lt;div class="col col-12"&gt;</span>
+											<span class="level-10 usercontent">Lorem ipsum dolor sit amet</span>
+											<span class="level-9">&lt;/div&gt;</span>
+											<span class="level-8">&lt;/div&gt;</span>
+											<span class="level-7">&lt;/div&gt;</span>
+											<span class="level-6">&lt;/div&gt;</span>
+											<span class="level-5">&lt;/div&gt;</span>
+											<span class="level-4">&lt;/div&gt;</span>
+											<span class="level-3">&lt;/div&gt;</span>
+											<span class="level-2">&lt;/div&gt;</span>
+											<span class="level-1">&lt;/div&gt;</span>
+										</div>
+										<div class="information bg-white text-black mt-3 p-3 h6">
+											<p><b>Important</b> The code needs to be inside container and row. Like the following:</p>
+											<div class="code-block">
+												<span class="level-3 line-height-12">
+													<code>&lt;div class="container"&gt;</code>
+												</span>
+												<span class="level-4 line-height-12">
+													<code>&lt;div class="row"&gt;</code>
+												</span>
+												<span class="level-5 line-height-12"><b>code above here</b></span>
+												<span class="level-4 line-height-12">
+													<code>&lt;/div&gt;</code>
+												</span>
+												<span class="level-3 line-height-12">
+													<code>&lt;/div&gt;</code>
+												</span>
+											</div>
+											<p>
+												Please note that if it is contained within same block of <b>MCH01</b>, then the <code>container</code> div element should be already there. In which case, instead of creating another <code>container</code> div, you just need
+												to add new <code>row</code> div.
+											</p>
+											<ul class="pl-3 pt-3">
+												<li>One and only one tab must be set to active by adding class of <code>active</code> to the <code>a</code> element (<code>a</code> with class of <code>nav-link tabs-to-collapse</code>).</li>
+												<li>The same class of <code>active</code> must also be set to the target <code>div</code>. Target div is the <code>div</code> with class of <code>tab-pane</code>.</li>
+												<li>Please set <code>href</code> on <code>a</code> element with class of <code>nav-link tabs-to-collapse</code> equals to the <code>id</code> of the target <code>div</code> with class of <code>tab-pane</code></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- ? MC04 - Image Text Side by Side -->
+					<div class="container pt-3 pb-4 mb-3">
+						<div class="row">
+							<div class="col">
+								<h2 id="mc04-main-content-image-text-side-by-side" class="section-header"><b>MC04</b> - Image Text Side by Side</h2>
+							</div>
+						</div>
+						<div class="row py-2 d-block clearfix">
+							<div class="col col-12 col-lg-6 py-3 float-sm-left">
+								<img src="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0-content/template/images/sample-card.jpg" alt="lorem" class="w-100" />
+							</div>
+							<div class="col col-12 col-lg-6 py-3 float-sm-right">
+								<h3 class="mb-4">Lorem header 01</h3>
+								<p class="mb-4">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores consectetur veniam, magnam tempora quidem temporibus mollitia laudantium et vel hic, suscipit aliquam voluptas quos non, ab voluptate debitis itaque expedita.
+								</p>
+								<a href="#" class="text-black font-weight-bold">Lorem ipsum</a><span class="icon-chevron_right_thick pl-2 text-70 font-weight-bold text-primary"></span>
+							</div>
+						</div>
+						<div class="row py-2 d-block clearfix">
+							<div class="col col-12 col-lg-6 py-3 float-sm-right">
+								<img src="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0-content/template/images/sample-card.jpg" alt="lorem" class="w-100" />
+							</div>
+							<div class="col col-12 col-lg-6 py-3 float-sm-left">
+								<h3 class="mb-4">Lorem header 02</h3>
+								<p class="mb-4">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores consectetur veniam, magnam tempora quidem temporibus mollitia laudantium et vel hic, suscipit aliquam voluptas quos non, ab voluptate debitis itaque expedita.
+								</p>
+								<a href="#" class="text-black font-weight-bold">Lorem ipsum</a><span class="icon-chevron_right_thick pl-2 text-70 font-weight-bold text-primary"></span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<button href="#" class="btn btn-success border-radius-0 px-5 mt-2 mbp-link reveal-code" data-code="code-mc04">Reveal/hide code</button>
+								<div id="code-mc04" class="col px-0 d-none">
+									<div class="code">
+										<span class="title">MC04 Code</span>
+										<div class="code-block">
+											<span class="level-1">&lt;div class="row py-2 d-block clearfix"&gt;</span>
+											<span class="level-2">&lt;div class="col col-12 col-lg-6 py-3 <span class="d-inline text-primary font-weight-bold">float-sm-left</span>"&gt;</span>
+											<span class="level-3 usercontent">&lt;img src="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0-content/template/images/sample-card.jpg" alt="lorem" class="w-100" /&gt;</span>
+											<span class="level-2">&lt;/div&gt;</span>
+											<span class="level-2">&lt;div class="col col-12 col-lg-6 py-3 <span class="d-inline text-primary font-weight-bold">float-sm-right</span>"&gt;</span>
+											<span class="level-3 usercontent">&lt;h3 class="mb-4"&gt;Lorem header 01&lt;/h3&gt;</span>
+											<span class="level-3 usercontent">&lt;p class="mb-4"&gt;</span>
+											<span class="level-4 usercontent">Lorem ipsum dolor sit amet.</span>
+											<span class="level-3 usercontent">&lt;/p&gt;</span>
+											<span class="level-2">&lt;/div&gt;</span>
+											<span class="level-1">&lt;/div&gt;</span>
+
+											<span class="level-1">&lt;div class="row py-2 d-block clearfix"&gt;</span>
+											<span class="level-2">&lt;div class="col col-12 col-lg-6 py-3 <span class="d-inline text-primary font-weight-bold">float-sm-right</span>"&gt;</span>
+											<span class="level-3 usercontent">&lt;img src="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0-content/template/images/sample-card.jpg" alt="lorem" class="w-100" /&gt;</span>
+											<span class="level-2">&lt;/div&gt;</span>
+											<span class="level-2">&lt;div class="col col-12 col-lg-6 py-3 <span class="d-inline text-primary font-weight-bold">float-sm-left</span>"&gt;</span>
+											<span class="level-3 usercontent">&lt;h3 class="mb-4"&gt;Lorem header 02&lt;/h3&gt;</span>
+											<span class="level-3 usercontent">&lt;p class="mb-4"&gt;</span>
+											<span class="level-4 usercontent">Lorem ipsum dolor sit amet.</span>
+											<span class="level-3 usercontent">&lt;/p&gt;</span>
+											<span class="level-2">&lt;/div&gt;</span>
+											<span class="level-1">&lt;/div&gt;</span>
+										</div>
+										<div class="information bg-white text-black mt-3 p-3 h6">
+											<p><b>Important</b> The code needs to be inside container. Like the following:</p>
+											<div class="code-block">
+												<span class="level-3 line-height-12">
+													<code>&lt;div class="container"&gt;</code>
+												</span>
+												<span class="level-4 line-height-12"><b>code above here</b></span>
+												<span class="level-3 line-height-12">
+													<code>&lt;/div&gt;</code>
+												</span>
+											</div>
+											<p>Please note that <code>row</code> is already included in the code snippet above. So, unlike the other MCxx snippets, this one doesn't need to be wrapped in a <code>&lt;div&gt; class="row"&lt;/div&gt;</code></p>
+											<p class="pt-3">
+												Please note the usage of class <code>float-sm-left</code> and <code>float-sm-right</code>. This is to set the layout of side-by-side image and text. On screen size of small and up, both will sits side-by-side. On mobile, image
+												will be on top. Image on top is achieve by <b>placing the image block code before the text block code</b>.
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- ? MC05 - Table Layout -->
+					<div class="container pt-3 pb-4 mb-3">
+						<div class="row">
+							<div class="col">
+								<h2 id="mc05-main-content-table-layout" class="section-header"><b>MC05</b> - Table</h2>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<p>Table is tough to execute. Please ensure to follow the instruction carefully.</p>
+								<p class="mb-0">
+									When possible, try to 'flatten' the table and avoid spanned cells and multiple levels of header cells. For example, if possible, <span class="text-primary"><b>avoid doing the following</b></span
+									>:
+								</p>
+								<div class="table-responsive-lg small pt-0">
+									<small class="d-block d-lg-none"><i>Geser ke kanan jika tampilan tabel terpotong</i></small>
+									<table class="table table-hover table-sm table-bordered w-md">
+										<thead class="bg-light">
+											<tr>
+												<th class="align-top text-center" scope="col" rowspan="2">Item</th>
+												<th class="text-center" scope="col" colspan="2">Transfer</th>
+												<th class="text-center" scope="col" colspan="2">Checking</th>
+											</tr>
+											<tr>
+												<th class="text-center w-20" scope="col">ATM</th>
+												<th class="text-center w-20" scope="col">Internet Banking</th>
+												<th class="text-center w-20" scope="col">ATM</th>
+												<th class="text-center w-20" scope="col">Internet Banking</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th scope="row">Lorem 1</th>
+												<td class="text-right">Rp250,000</td>
+												<td class="text-left">Not applicable</td>
+												<td class="text-left">10% of amount (max Rp50,000)</td>
+												<td class="text-right">Rp175,000</td>
+											</tr>
+											<tr>
+												<th scope="row">Lorem 2</th>
+												<td class="text-left">Not applicable</td>
+												<td class="text-right">Rp25,000</td>
+												<td class="text-left">10% of amount (max Rp50,000)</td>
+												<td class="text-right">Rp75,250</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p class="pt-3 mb-0">
+									Instead, <span class="text-success"><b>do the following</b></span
+									>:
+								</p>
+								<div class="table-responsive-lg small">
+									<small class="d-block d-lg-none"><i>Geser ke kanan jika tampilan tabel terpotong</i></small>
+									<table class="table table-hover table-sm table-bordered w-md">
+										<thead class="bg-light">
+											<tr>
+												<th class="text-center" scope="col">Item</th>
+												<th class="text-center w-20" scope="col">Transfer via ATM</th>
+												<th class="text-center w-20" scope="col">Transfer via Internet Banking</th>
+												<th class="text-center w-20" scope="col">Checking via ATM</th>
+												<th class="text-center w-20" scope="col">Checking via Internet Banking</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th scope="row">Lorem 1</th>
+												<td class="text-right">Rp250,000</td>
+												<td class="text-left">Not applicable</td>
+												<td class="text-left">10% of amount (max Rp50,000)</td>
+												<td class="text-right">Rp175,000</td>
+											</tr>
+											<tr>
+												<th scope="row">Lorem 2</th>
+												<td class="text-left">Not applicable</td>
+												<td class="text-right">Rp25,000</td>
+												<td class="text-left">10% of amount (max Rp50,000)</td>
+												<td class="text-right">Rp75,250</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="row pt-3">
+							<div class="col col-12">
+								<h3><b>MC05 Version 1</b> - Horizontal Scrolling on Smaller Screen Size</h3>
+							</div>
+							<div class="col col-12">
+								<div class="table-responsive-lg small">
+									<small class="d-block d-lg-none"><i>Geser ke kanan jika tampilan tabel terpotong</i></small>
+									<table class="table table-hover table-sm table-bordered w-md">
+										<thead class="bg-light">
+											<tr>
+												<th class="text-center w-20" scope="col">Item</th>
+												<th class="text-center w-40" scope="col">Lorem 1</th>
+												<th class="text-center w-40" scope="col">Lorem 2</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th scope="row">Lorem 1</th>
+												<td class="text-right">Rp100,000</td>
+												<td class="text-left">Not applicable starting from 1 December 2020. Please contact your relationship manager for further information.</td>
+											</tr>
+											<tr>
+												<th scope="row">Lorem 2</th>
+												<td class="text-right">Rp150,000</td>
+												<td class="text-right">Rp25,000</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<button href="#" class="btn btn-success border-radius-0 px-5 mt-2 mbp-link reveal-code" data-code="code-mc05-01">Reveal/hide code</button>
+								<div id="code-mc05-01" class="col px-0 d-none">
+									<div class="code">
+										<span class="title">MC05 Version 01 Code</span>
+										<div class="code-block">
+											<span class="level-1">&lt;div class="<span class="text-primary d-inline font-weight-bold">table-responsive-lg</span> <span class="text-primary d-inline font-weight-bold">small</span>"&gt;</span>
+											<span class="level-2 usercontent">&lt;small class="d-block d-lg-none"&gt;&lt;i&gt;Scroll to the right if table is not fully displayed&lt;/i&gt;&lt;/small&gt;</span>
+											<span class="level-2">&lt;table class="table table-hover table-sm table-bordered w-md"&gt;</span>
+											<span class="level-3">&lt;thead class="bg-light"&gt;</span>
+											<span class="level-4">&lt;tr&gt;</span>
+											<span class="level-5 usercontent"
+												>&lt;th class="<span class="text-primary d-inline font-weight-bold">text-center</span> <span class="text-primary d-inline font-weight-bold">w-20</span>"
+												<span class="text-primary d-inline font-weight-bold">scope="col"</span>&gt;Item&lt;/th&gt;</span
+											>
+											<span class="level-5 usercontent"
+												>&lt;th class="<span class="text-primary d-inline font-weight-bold">text-center</span> <span class="text-primary d-inline font-weight-bold">w-40</span>"
+												<span class="text-primary d-inline font-weight-bold">scope="col"</span>&gt;Lorem A&lt;/th&gt;</span
+											>
+											<span class="level-5 usercontent"
+												>&lt;th class="<span class="text-primary d-inline font-weight-bold">text-center</span> <span class="text-primary d-inline font-weight-bold">w-40</span>"
+												<span class="text-primary d-inline font-weight-bold">scope="col"</span>&gt;Lorem B&lt;/th&gt;</span
+											>
+											<span class="level-4">&lt;/tr&gt;</span>
+											<span class="level-3">&lt;/thead&gt;</span>
+											<span class="level-3">&lt;tbody&gt;</span>
+											<span class="level-4">&lt;tr&gt;</span>
+											<span class="level-5 usercontent">&lt;th <span class="text-primary d-inline font-weight-bold">scope="row"</span>&gt;Lorem 1&lt;/th&gt;</span>
+											<span class="level-5 usercontent">&lt;td class="<span class="text-primary d-inline font-weight-bold">text-right</span>"&gt;Rp100,000&lt;/td&gt;</span>
+											<span class="level-5 usercontent">&lt;td class="<span class="text-primary d-inline font-weight-bold">text-left</span>"&gt;Lorem ipsum dolor sit amet.&lt;/td&gt;</span>
+											<span class="level-4">&lt;/tr&gt;</span>
+											<span class="level-4">&lt;tr&gt;</span>
+											<span class="level-5 usercontent">&lt;th <span class="text-primary d-inline font-weight-bold">scope="row"</span>&gt;Lorem 2&lt;/th&gt;</span>
+											<span class="level-5 usercontent">&lt;td class="<span class="text-primary d-inline font-weight-bold">text-right</span>"&gt;Rp150,000&lt;/td&gt;</span>
+											<span class="level-5 usercontent">&lt;td class="<span class="text-primary d-inline font-weight-bold">text-right</span>"&gt;Rp25,000&lt;/td&gt;</span>
+											<span class="level-4">&lt;/tr&gt;</span>
+											<span class="level-3">&lt;/tbody&gt;</span>
+											<span class="level-2">&lt;/table&gt;</span>
+											<span class="level-1">&lt;/div&gt;</span>
+										</div>
+										<div class="information bg-white text-black mt-3 p-3 h6">
+											<p><b>Important</b> The code needs to be inside container, row and col <code>div</code>.</p>
+											<ul>
+												<li><code>table-responsive-lg</code> is to set the table to be responsive (scrollable horizontally) on larger and lower screen size.</li>
+												<li><code>small</code> is to reduce paddings. Please refer to <a href="https://getbootstrap.com/docs/4.5/content/tables/" target="_blank">bootstrap table</a> for more information,.</li>
+												<li>
+													<code>text-left</code>, <code>text-center</code>, and <code>text-right</code> are used to set the alignment of the text. <b>Title</b> should be <b>center-aligned</b>. <b>Number</b> must be <b>right-aligned</b> and any
+													<b>other text</b> should be <b>left-aligned</b>.
+												</li>
+												<li>
+													<code>w-20</code> and <code>w-40</code> are used to set the width of each columns. This must be used on the <code>thead</code> > <code>tr</code> > <code>th</code> element(s).<br />
+													Available class: <code>w-10, w-20, w-30, w-40...w-100</code>. <br />
+													Each number suffix represent width in %. So, <code>w-20</code> means a width of 20%.
+												</li>
+												<li>
+													<code>scope="col"</code> and <code>scope="row"</code> are very important for accessibility purpose and <b>must be used</b>. It has to be used on <code>th</code> element.<br />
+													<code>scope="col"</code> sets the <code>th</code> as the <b>header</b> for its column. <br />
+													<code>scope="row"</code> sets the <code>th</code> as the <b>header</b> for its row.
+												</li>
+												<li><b>Not reommended</b>. To allow one cell to span multiple rows, use <code>rowspan="x"</code> where x equals to the number of rows it'll span through. Similarly for multiple columns, use <code>colspan="x"</code></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row pt-5">
+							<div class="col col-12">
+								<h3><b>MC05 Version 2</b> - Transformed on mobile</h3>
+							</div>
+							<div class="col col-12">The previous version is preferred.</div>
+							<div class="col col-12 col-sm-8">
+								<p>Desktop view</p>
+								<table class="table table-hover table-sm table-bordered w-md table-transformed-mobile" data-rtContainerBreakPoint="400">
+									<thead>
+										<tr>
+											<th class="text-center" scope="col">Sequi</th>
+											<th class="text-center" scope="col">Lorem</th>
+											<th class="text-center" scope="col">Ipsum</th>
+											<th class="text-center" scope="col">Dolor</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th scope="row" class="xtable-row-header">Michael</th>
+											<td>Gary</td>
+											<td>Scott</td>
+											<td class="text-lg-right">Rp777,250</td>
+										</tr>
+										<tr>
+											<th scope="row" class="xtable-row-header">Dwight</th>
+											<td>Kurt</td>
+											<td>Schrute</td>
+											<td class="text-lg-right">Rp450,000</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="col col-12 col-sm-4">
+								<p>Mobile view</p>
+								<table class="table table-hover table-sm table-bordered w-md table-transformed-mobile" data-rtContainerBreakPoint="600">
+									<thead>
+										<tr>
+											<th class="text-center" scope="col">Sequi</th>
+											<th class="text-center" scope="col">Lorem</th>
+											<th class="text-center" scope="col">Ipsum</th>
+											<th class="text-center" scope="col">Dolor</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th scope="row" class="xtable-row-header">Michael</th>
+											<td>Gary</td>
+											<td>Scott</td>
+											<td class="text-left">Rp777,250</td>
+										</tr>
+										<tr>
+											<th scope="row" class="xtable-row-header">Dwight</th>
+											<td>Kurt</td>
+											<td>Schrute</td>
+											<td class="text-left">Rp450,000</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="col col-12">
+								<button href="#" class="btn btn-success border-radius-0 px-5 mt-2 mbp-link reveal-code" data-code="code-mc05-02">Reveal/hide code</button>
+								<div id="code-mc05-02" class="col px-0 d-none">
+									<div class="code">
+										<span class="title">MC05 Version 02 Code</span>
+										<div class="code-block">
+											<span class="level-1"
+												>&lt;table class="table table-hover table-sm table-bordered w-md <span class="text-primary d-inline font-weight-bold">table-transformed-mobile</span>"
+												<span class="text-primary d-inline font-weight-bold">data-rtContainerBreakPoint="800"</span>&gt;</span
+											>
+											<span class="level-2">&lt;thead&gt;</span>
+											<span class="level-3">&lt;tr&gt;</span>
+											<span class="level-4 usercontent">&lt;th class="text-center" scope="col"&gt;Lorem&lt;/th&gt;</span>
+											<span class="level-4 usercontent">&lt;th class="text-center" scope="col"&gt;Ipsum&lt;/th&gt;</span>
+											<span class="level-3">&lt;/tr&gt;</span>
+											<span class="level-2">&lt;/thead&gt;</span>
+											<span class="level-2">&lt;tbody&gt;</span>
+											<span class="level-3">&lt;tr&gt;</span>
+											<span class="level-4 usercontent">&lt;th scope="row" class="xtable-row-header"&gt;Dolor&lt;/th&gt;</span>
+											<span class="level-4 usercontent">&lt;td&gt;Sit amet&lt;/td&gt;</span>
+											<span class="level-3">&lt;/tr&gt;</span>
+											<span class="level-3">&lt;tr&gt;</span>
+											<span class="level-4 usercontent">&lt;th scope="row" class="xtable-row-header"&gt;Dulur&lt;/th&gt;</span>
+											<span class="level-4 usercontent">&lt;td&gt;Set omit&lt;/td&gt;</span>
+											<span class="level-3">&lt;/tr&gt;</span>
+											<span class="level-2">&lt;/tbody&gt;</span>
+											<span class="level-1">&lt;/table&gt;</span>
+										</div>
+										<div class="information bg-white text-black mt-3 p-3 h6">
+											<ul>
+												<li>The <code>table-transformed-mobile</code> class is used to transform the table to mobile view. Without this, the table will be treated as regular table.</li>
+												<li>
+													The <code>data-rtContainerBreakPoint="800"</code> is used to set the breakpoint on where the table will start transforming to mobile view. <code>800</code> is the parent container width on where the change will happen.
+													Please note that this is the parent container width, not the window width.
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- ? MC06 - Regular Grid/Column Layout -->
+					<div class="container pt-3 pb-4 mb-3">
+						<div class="row">
+							<div class="col">
+								<h2 id="mc06-regular-grid-column-layout" class="section-header"><b>MC06</b> - Regular Grid/Column Layout</h2>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<p>Follow the grid layout system of <a href="https://getbootstrap.com/docs/4.5/layout/grid/" target="_blank">bootstrap</a>.</p>
+								<p>Column layout is a 12-column layout system. Total of column size in any given row cannot exceed 12 columns. If exceeds, then the next column will be wrapped to the next line/row.</p>
+								<p>
+									You can also refer to the <a href="#mc01-main-content-card-layout"><b>MC01</b></a> for the grid system explanation.
+								</p>
+							</div>
+						</div>
+						<div class="row px-2">
+							<div class="col col-12 border border-silver">
+								<b>12 columns layout.</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt architecto ad cum, sint sed accusamus eos perferendis, quos nihil magni at, dicta soluta quae neque odit rerum excepturi aut quia!
+							</div>
+							<div class="col col-6 border border-silver">
+								<b>6 columns layout.</b> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam iure magni tenetur veniam atque repellendus, ducimus minus praesentium vero sit sequi iste odio itaque eaque dolorum error nam earum illo?
+							</div>
+							<div class="col col-6 border border-silver">
+								<b>6 columns layout.</b> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam iure magni tenetur veniam atque repellendus, ducimus minus praesentium vero sit sequi iste odio itaque eaque dolorum error nam earum illo?
+							</div>
+							<div class="col col-4 border border-silver"><b>4 columns layout.</b> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi deserunt voluptate consequuntur.</div>
+							<div class="col col-4 border border-silver"><b>4 columns layout.</b> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi deserunt voluptate consequuntur.</div>
+							<div class="col col-4 border border-silver"><b>4 columns layout.</b> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi deserunt voluptate consequuntur.</div>
+							<div class="col col-3 border border-silver"><b>3 columns layout.</b> Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+							<div class="col col-3 border border-silver"><b>3 columns layout.</b> Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+							<div class="col col-3 border border-silver"><b>3 columns layout.</b> Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+							<div class="col col-3 border border-silver"><b>3 columns layout.</b> Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<button href="#" class="btn btn-success border-radius-0 px-5 mt-2 mbp-link reveal-code" data-code="code-mc06">Reveal/hide code</button>
+								<div id="code-mc06" class="col px-0 d-none">
+									<div class="code">
+										<span class="title">MC06 Code</span>
+										<div class="code-block">
+											<span class="level-1">&lt;div class="col col-12"&gt;Lorem 12 columns&lt;/div&gt;</span>
+											<span class="level-1">&lt;div class="col col-6"&gt;Lorem 6 columns&lt;/div&gt;</span>
+											<span class="level-1">&lt;div class="col col-6"&gt;Lorem 6 columns&lt;/div&gt;</span>
+											<span class="level-1">&lt;div class="col col-4"&gt;Lorem 4 columns&lt;/div&gt;</span>
+											<span class="level-1">&lt;div class="col col-4"&gt;Lorem 4 columns&lt;/div&gt;</span>
+											<span class="level-1">&lt;div class="col col-4"&gt;Lorem 4 columns&lt;/div&gt;</span>
+											<span class="level-1">&lt;div class="col col-3"&gt;Lorem 3 columns&lt;/div&gt;</span>
+											<span class="level-1">&lt;div class="col col-3"&gt;Lorem 3 columns&lt;/div&gt;</span>
+											<span class="level-1">&lt;div class="col col-3"&gt;Lorem 3 columns&lt;/div&gt;</span>
+											<span class="level-1">&lt;div class="col col-3"&gt;Lorem 3 columns&lt;/div&gt;</span>
+										</div>
+										<div class="information bg-white text-black mt-3 p-3 h6">
+											<p><b>Important</b> The code needs to be inside container and row <code>div</code>.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- ?sixth section -->
+					<div class="container pt-5">
+						<div class="row">
+							<div class="col col-12">
+								<div>
+									<h2 class="section-header">Useful Links</h2>
+								</div>
+							</div>
+						</div>
+						<div class="row py-2">
+							<div class="container">
+								<ul class="row list-unstyled">
+									<li class="col col-12 col-md-6 py-2">
+										<a href="https://www.hsbc.co.id/1/2/id/misc/tariff-and-charges" class="text-body">Tarif dan biaya HSBC Advance<span class="icon-chevron_right_thick text-primary text-70 font-weight-bold d-inline-block pl-2 pb-1"></span></a>
+									</li>
+									<li class="col col-12 col-md-6 py-2">
+										<a href="https://www.hsbc.co.id/1/2/id/personal/kartu-kredit/visa-platinum" class="text-body"
+											>Kartu Kredit HSBC Visa Platinum<span class="icon-chevron_right_thick text-primary text-70 font-weight-bold d-inline-block pl-2 pb-1"></span
+										></a>
+									</li>
+									<li class="col col-12 col-md-6 py-2">
+										<a href="https://www.hsbc.co.id/1/PA_esf-ca-app-content/content/indonesia/home/doc/201901-syarat-ketentuan-pembukaan-rekening.pdf" class="text-body">
+											<span class="icon-download font-weight-bold d-inline-block pr-1 pb-1"></span>
+											Syarat dan ketentuan pembukaan rekening (PDF)
+										</a>
+									</li>
+									<li class="col col-12 col-md-6 py-2">
+										<a href="https://www.hsbc.co.id/1/PA_esf-ca-app-content/content/indonesia/home/important-notice/tnc/Syarat-dan-Ketentuan-Umum-HSBC-2019.pdf" class="text-body">
+											<span class="icon-download font-weight-bold d-inline-block pr-1 pb-1"></span>
+											Syarat dan ketentuan perbankan umum (PDF)
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<!-- ? notes  -->
+					<div class="container pt-3">
+						<div class="row py-2">
+							<div class="container">
+								<div class="row">
+									<div class="col col-12 col-sm-9">
+										<p>
+											<small>
+												<sup>1</sup> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi illum corporis voluptatum repellendus cum quasi ex laborum adipisci aliquam aspernatur facere eaque totam nemo, nostrum veniam est optio accusantium
+												amet?
+											</small>
+										</p>
+										<p>
+											<small
+												><span class="font-weight-bold">+62 21 11111111</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam debitis, quo necessitatibus itaque, rerum dicta et, repellendus accusamus voluptates explicabo reiciendis
+												omnis! Impedit error omnis asperiores, quas aperiam eligendi similique?</small
+											>
+										</p>
+										<p>
+											<small>
+												Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis tempore dolores voluptatibus quo reprehenderit excepturi cupiditate optio, modi neque, nesciunt quasi quas necessitatibus praesentium nobis id autem expedita,
+												facilis beatae?
+											</small>
+											<small>
+												Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur hic iste dolorem distinctio cumque praesentium porro in, nobis sunt modi dolores, vitae natus ad. Impedit quia dolor voluptates veniam quisquam?
+											</small>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- ? back to top -->
+					<div class="row py-3">
+						<div class="col col-12">
+							<a href="#" class="text-body">Kembali ke atas</a>
+							<span class="icon-anchor_up pt-1 font-weight-bolder h6" aria-hidden="true"></span>
+						</div>
+					</div>
+				</div>
+			</main>
+
+			<!-- ? footer link template -->
+			<script id="desktop-footer-link-template" type="text/template">
+				{{#desktopfooterlink}}
+					<li class="list-inline-item">
+						<a class="text-white" href="{{link}}" target="{{target}}">
+							{{caption}}
+						</a>
+					</li>
+				{{/desktopfooterlink}}
+			</script>
+
+			<!-- ? desktop upper footer template -->
+			<script id="desktop-upper-footer-template" type="text/template">
+				{{#desktopupperfooter}}
+					{{#content}}
+						<li class="dufs col col-lg-3 d-flex flex-row w-100">
+							<div>
+								<i class="{{icon}}" role="presentation"></i>
+							</div>
+							<div class="pl-3">
+								<div>
+									<h2 class="h6 mb-3 font-weight-bold">{{header}}</h2>
+								</div>
+								{{#link}}
+									<a href="{{url}}" class="text-white text-90">
+										{{caption}}
+										<span class="icon-chevron_right text-60em"></span>
+									</a>
+								{{/link}}
+							</div>
+						</li>
+					{{/content}}
+				{{/desktopupperfooter}}
+			</script>
+
+			<!-- ! footer -->
+			<div class="container-fluid bg-dark d-none d-lg-block">
+				<nav class="container bg-dark text-white py-4" aria-label="important links navigation">
+					<ul id="desktop-upper-footer-section" class="list-unstyled list-inline row my-auto"></ul>
+				</nav>
+			</div>
+			<div class="container-fluid bg-black footer py-2">
+				<footer id="footer" class="container bg-black text-white py-2 px-0">
+					<div class="row">
+						<div class="col col-lg-6 d-none d-lg-block">
+							<ul id="desktop-footer-link-section" class="list-unstyled list-inline mb-0 text-90 font-weight-bold text-left d-none d-lg-block"></ul>
+						</div>
+						<div class="col col-12 col-lg-6 text-center text-lg-right text-light text-90">
+							<p class="mb-2">Diterbitkan oleh PT Bank HSBC Indonesia yang terdaftar dan diawasi oleh Otoritas Jasa Keuangan (OJK). PT Bank HSBC Indonesia merupakan peserta penjaminan LPS.</p>
+							<img src="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/common-images/OJK_LPS_Logo.png" class="h-30p" alt="" />
+						</div>
+					</div>
+				</footer>
+			</div>
+		</div>
+		<script src="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/js/vendor.bundle.min.js"></script>
+
+		<!-- content js -->
+		<script src="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/global-content/header-footer-content-id.js"></script>
+		<script src="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0-content/template/content-template.js"></script>
+
+		<!-- client library - must come last -->
+		<script src="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/js/client-main.js?v=1.01"></script>
+
+		<script>
+			$(function () {
+				$('[data-toggle="popover"]').popover();
+				$(".reveal-code").on("click", function (e) {
+					e.preventDefault;
+					var target = "#" + $(this).data("code");
+					$(target).toggleClass("d-none");
+				});
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,1830 @@
+// sass scss/custom.scss 1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/stylev2.build.css --watch
+// sass scss/custom.scss:1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/stylev2.min.css --style=compressed && postcss 1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/stylev2.min.css --replace --use autoprefixer --watch
+
+// font
+@font-face {
+	font-family: "HSBC Univers Next Regular";
+	font-style: normal;
+	font-weight: 400;
+	src: url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-Rg.eot.txt#iefix") format("embedded-opentype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-Rg.woff.txt") format("woff"), url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-Rg.ttf.txt") format("truetype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-Rg.svg.txt#Univers%20Next%20for%20HSBC%20Regular") format("svg");
+}
+
+@font-face {
+	font-family: "HSBC Univers Next Light";
+	font-style: normal;
+	font-weight: 300;
+	src: url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-Lt.eot.txt#iefix") format("embedded-opentype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-Lt.woff.txt") format("woff"), url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-Lt.ttf.txt") format("truetype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-Lt.svg.txt#Univers%20Next%20for%20HSBC%20Light") format("svg");
+}
+
+@font-face {
+	font-family: "HSBC Univers Next LightItalic";
+	font-style: italic;
+	font-weight: 300;
+	src: url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-LtIt.eot.txt#iefix") format("embedded-opentype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-LtIt.woff.txt") format("woff"), url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-LtIt.ttf.txt") format("truetype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-LtIt.svg.txt#Univers%20Next%20for%20HSBC%20Light%20Italic") format("svg");
+}
+
+@font-face {
+	font-family: "HSBC Univers Next Bold";
+	font-style: normal;
+	font-weight: 700;
+	src: url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-Bd.eot.txt#iefix") format("embedded-opentype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-Bd.woff.txt") format("woff"), url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-Bd.ttf.txt") format("truetype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-Bd.svg.txt#Univers%20Next%20for%20HSBC%20Bold") format("svg");
+}
+
+@font-face {
+	font-family: "HSBC Univers Next Ultra";
+	font-style: normal;
+	font-weight: 100;
+	src: url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-UltLt.eot.txt#iefix") format("embedded-opentype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-UltLt.woff.txt") format("woff"), url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-UltLt.ttf.txt") format("truetype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-UltLt.svg.txt#Univers%20Next%20for%20HSBC%20Ultra") format("svg");
+}
+
+@font-face {
+	font-family: "HSBC Univers Next UltraItalic";
+	font-style: italic;
+	font-weight: 100;
+	src: url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-UtLtI.eot.txt#iefix") format("embedded-opentype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-UtLtI.woff.txt") format("woff"), url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-UtLtI.ttf.txt") format("truetype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-UtLtI.svg.txt#Univers%20Next%20for%20HSBC%20Ultra%20Italic") format("svg");
+}
+
+@font-face {
+	font-family: "HSBC Univers Next Thin";
+	font-style: normal;
+	font-weight: 200;
+	src: url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-Th.eot.txt#iefix") format("embedded-opentype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-Th.woff.txt") format("woff"), url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-Th.ttf.txt") format("truetype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-Th.svg.txt#Univers%20Next%20for%20HSBC%20Thin") format("svg");
+}
+
+@font-face {
+	font-family: "HSBC Univers Next ThinItalic";
+	font-style: italic;
+	font-weight: 200;
+	src: url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-ThIt.eot.txt#iefix") format("embedded-opentype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-ThIt.woff.txt") format("woff"), url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-ThIt.ttf.txt") format("truetype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-ThIt.svg.txt#Univers%20Next%20for%20HSBC%20Thin%20Italic") format("svg");
+}
+
+@font-face {
+	font-family: "HSBC Univers Next Medium";
+	font-style: normal;
+	font-weight: 500;
+	src: url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-Md.eot.txt#iefix") format("embedded-opentype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-Md.woff.txt") format("woff"), url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-Md.ttf.txt") format("truetype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-Md.svg.txt#Univers%20Next%20for%20HSBC%20Medium") format("svg");
+}
+
+@font-face {
+	font-family: "HSBC Neue Helvetica Regular";
+	font-style: normal;
+	font-weight: 400;
+	src: url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-Rm.eot.txt#iefix") format("embedded-opentype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-Rm.woff.txt") format("woff"), url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-Rm.ttf.txt") format("truetype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-Rm.svg.txt#89cf8e70-13f3-4ce9-af6f-6863df9033eb") format("svg");
+}
+
+@font-face {
+	font-family: "HSBC Neue Helvetica Light";
+	font-style: normal;
+	font-weight: 300;
+	src: url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-Lt.eot.txt#iefix") format("embedded-opentype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-Lt.woff.txt") format("woff"), url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-Lt.ttf.txt") format("truetype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-Lt.svg.txt#5cc3fbf1-35b7-4092-b60d-b56a452707aa") format("svg");
+}
+
+@font-face {
+	font-family: "HSBC Neue Helvetica LightItalic";
+	font-style: italic;
+	font-weight: 300;
+	src: url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-LIt.eot.txt#iefix") format("embedded-opentype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-LIt.woff.txt") format("woff"), url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-LIt.ttf.txt") format("truetype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-LIt.svg.txt#52eac5ac-4995-46cd-8a6f-4d5d6ad7b8e9") format("svg");
+}
+
+@font-face {
+	font-family: "HSBC Neue Helvetica Bold";
+	font-style: normal;
+	font-weight: 700;
+	src: url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-Bd.eot.txt#iefix") format("embedded-opentype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-Bd.woff.txt") format("woff"), url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-Bd.ttf.txt") format("truetype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-Bd.svg.txt#b7181275-081d-4c5c-ac2a-ee82f7e8da66") format("svg");
+}
+
+@font-face {
+	font-family: "HSBC Neue Helvetica Ultra";
+	font-style: normal;
+	font-weight: 100;
+	src: url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-UL.eot.txt#iefix") format("embedded-opentype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-UL.woff.txt") format("woff"), url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-UL.ttf.txt") format("truetype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-UL.svg.txt#4e2db563-8f71-437a-bbae-16b258aa3ec1") format("svg");
+}
+
+@font-face {
+	font-family: "HSBC Neue Helvetica UltraItalic";
+	font-style: italic;
+	font-weight: 100;
+	src: url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-ULI.eot.txt#iefix") format("embedded-opentype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-ULI.woff.txt") format("woff"), url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-ULI.ttf.txt") format("truetype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-ULI.svg.txt#d61ee40e-308b-40e5-9013-c7acdc3e8b84") format("svg");
+}
+
+@font-face {
+	font-family: "HSBC Neue Helvetica Thin";
+	font-style: normal;
+	font-weight: 200;
+	src: url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-Th.eot.txt#iefix") format("embedded-opentype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-Th.woff.txt") format("woff"), url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-Th.ttf.txt") format("truetype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-Th.svg.txt#47ce2868-b987-46cf-b462-ef520aeb7f02") format("svg");
+}
+
+@font-face {
+	font-family: "HSBC Neue Helvetica ThinItalic";
+	font-style: italic;
+	font-weight: 200;
+	src: url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-ThI.eot.txt#iefix") format("embedded-opentype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-ThI.woff.txt") format("woff"), url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-ThI.ttf.txt") format("truetype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-ThI.svg.txt#8dee997e-a3fc-49ab-8bd5-c0deb72c23bb") format("svg");
+}
+
+@font-face {
+	font-family: "HSBC Neue Helvetica Medium";
+	font-style: normal;
+	font-weight: 500;
+	src: url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-Md.eot.txt#iefix") format("embedded-opentype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-Md.woff.txt") format("woff"), url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-Md.ttf.txt") format("truetype"),
+		url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/HelveticaNeueforHSBCW84-Md.svg.txt#11caabb0-ad95-4836-8d1d-8690598fd7ab") format("svg");
+}
+
+// custom variables
+$enable-caret: false;
+
+$body-color: #333;
+$enable-responsive-font-sizes: true;
+$rfs-base-font-size: 1rem;
+$theme-colors: (
+	"primary": #db0011,
+	"secondary": #3e505d,
+	"success": #3cb4bf,
+	"light": #f3f3f3,
+	"warning": #a8000b,
+	"dark": #404040,
+	"black": #000,
+);
+$grid-gutter-width: 15px;
+
+// $font-family-monospace: "UniversNextforHSBC-Regular", Arial, Helvetica, sans-serif;
+$font-family-base: "HSBC Univers Next Regular", "HSBC Neue Helvetica Regular", Arial, Helvetica, sans-serif;
+
+/*!
+ * Bootstrap v4.5.3 (https://getbootstrap.com/)
+ * Copyright 2011-2020 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
+
+// required
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+// remove color
+$theme-colors: map-remove($theme-colors, "info", "danger");
+
+// utilities
+@import "../node_modules/bootstrap/scss/utilities/align";
+@import "../node_modules/bootstrap/scss/utilities/background";
+@import "../node_modules/bootstrap/scss/utilities/borders";
+@import "../node_modules/bootstrap/scss/utilities/clearfix";
+@import "../node_modules/bootstrap/scss/utilities/display";
+@import "../node_modules/bootstrap/scss/utilities/flex";
+@import "../node_modules/bootstrap/scss/utilities/float";
+@import "../node_modules/bootstrap/scss/utilities/interactions";
+@import "../node_modules/bootstrap/scss/utilities/overflow";
+@import "../node_modules/bootstrap/scss/utilities/position";
+@import "../node_modules/bootstrap/scss/utilities/screenreaders";
+@import "../node_modules/bootstrap/scss/utilities/sizing";
+@import "../node_modules/bootstrap/scss/utilities/spacing";
+@import "../node_modules/bootstrap/scss/utilities/text";
+@import "../node_modules/bootstrap/scss/utilities/visibility";
+
+// Optional
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/images";
+@import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/buttons";
+@import "../node_modules/bootstrap/scss/forms";
+@import "../node_modules/bootstrap/scss/card";
+@import "../node_modules/bootstrap/scss/alert";
+@import "../node_modules/bootstrap/scss/button-group";
+@import "../node_modules/bootstrap/scss/carousel";
+@import "../node_modules/bootstrap/scss/close";
+@import "../node_modules/bootstrap/scss/code";
+// @import "../node_modules/bootstrap/scss/custom-forms";
+@import "../node_modules/bootstrap/scss/dropdown";
+// @import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/list-group";
+@import "../node_modules/bootstrap/scss/media";
+// @import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/modal";
+@import "../node_modules/bootstrap/scss/nav";
+@import "../node_modules/bootstrap/scss/navbar";
+@import "../node_modules/bootstrap/scss/pagination";
+@import "../node_modules/bootstrap/scss/popover";
+@import "../node_modules/bootstrap/scss/progress";
+// @import "../node_modules/bootstrap/scss/root";
+@import "../node_modules/bootstrap/scss/spinners";
+@import "../node_modules/bootstrap/scss/tables";
+@import "../node_modules/bootstrap/scss/toasts";
+@import "../node_modules/bootstrap/scss/tooltip";
+@import "../node_modules/bootstrap/scss/transitions";
+// @import "../node_modules/bootstrap/scss";
+// @import "../node_modules/bootstrap/scss";
+
+/*!
+ * (C) art. Licensed under MIT.
+ */
+
+// image
+@media (max-width: 575px) {
+	.img-sm-cover {
+		min-height: 400px;
+		object-fit: cover;
+		object-position: right;
+	}
+}
+
+// typography
+h1 {
+	font-family: "HSBC Univers Next Light", "HSBC Neue Helvetica Light";
+	font-style: normal;
+	font-weight: 300;
+}
+
+h2,
+h3,
+h4 {
+	font-family: "HSBC Univers Next Light", "HSBC Neue Helvetica Light";
+	font-style: normal;
+	font-weight: 300;
+}
+
+b,
+strong,
+th,
+.font-weight-bold {
+	font-family: "HSBC Univers Next Bold", "HSBC Neue Helvetica Bold";
+	font-style: normal;
+	font-weight: 700 !important;
+}
+
+a {
+	color: #333;
+	font-weight: 400;
+	&:hover {
+		color: #333;
+	}
+}
+
+.font-weight-bolder {
+	font-family: "HSBC Univers Next Bold";
+	font-style: normal;
+}
+
+.hsbc-icon::before {
+	font-family: "HSBCIcon-Font";
+	vertical-align: 0;
+	line-height: 1;
+	font-weight: normal;
+	font-style: normal;
+	speak: none;
+	text-decoration: inherit;
+	text-transform: none;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+}
+
+.hsbc-icon-menu:not(.link-icon)::after {
+	content: "\F00B";
+}
+
+// text-utility
+.text-50em {
+	font-size: 0.5em;
+}
+
+.text-60em {
+	font-size: 0.6em;
+}
+
+.text-70 {
+	font-size: 0.7rem;
+}
+
+.text-75 {
+	font-size: 0.75rem;
+}
+
+.text-80 {
+	font-size: 0.8rem;
+}
+
+.text-90 {
+	font-size: 0.9rem;
+}
+
+.text-110 {
+	font-size: 1.1rem;
+}
+
+.text-120 {
+	font-size: 1.2rem;
+}
+
+.text-140 {
+	font-size: 1.4rem;
+}
+
+.text-150 {
+	font-size: 1.5rem;
+}
+
+.line-height-09 {
+	line-height: 0.9;
+}
+
+.line-height-12 {
+	line-height: 1.2;
+}
+
+.line-height-13 {
+	line-height: 1.3;
+}
+
+.text-underline {
+	text-decoration: underline;
+}
+
+.hover-no-decoration {
+	text-decoration: none !important;
+	&:hover,
+	&:focus,
+	&:after:hover,
+	&:before:hover,
+	&:after:focus,
+	&:before:focus {
+		text-decoration: none !important;
+	}
+}
+
+// dimension utility
+.h-10p {
+	height: 10px !important;
+}
+
+.h-20p {
+	height: 20px !important;
+}
+
+.h-30p {
+	height: 30px !important;
+}
+
+.h-40p {
+	height: 40px !important;
+}
+
+.h-50p {
+	height: 50px !important;
+}
+
+.h-100p {
+	height: 100px !important;
+}
+
+.h-125p {
+	height: 125px !important;
+}
+
+.h-150p {
+	height: 150px !important;
+}
+
+.h-300p {
+	height: 300px !important;
+}
+
+.w-30p {
+	width: 30px !important;
+}
+
+.w-40p {
+	width: 40px !important;
+}
+
+.w-50p {
+	width: 50px !important;
+}
+
+.w-5 {
+	width: 5% !important;
+}
+
+.w-10 {
+	width: 10% !important;
+}
+
+.w-20 {
+	width: 20% !important;
+}
+
+.w-30 {
+	width: 30% !important;
+}
+
+.w-40 {
+	width: 40% !important;
+}
+
+.w-60 {
+	width: 60% !important;
+}
+
+.w-70 {
+	width: 70% !important;
+}
+
+.w-80 {
+	width: 80% !important;
+}
+
+.w-90 {
+	width: 90% !important;
+}
+
+.no-margin-block {
+	margin-block-start: 0 !important;
+	margin-block-end: 0 !important;
+}
+
+.max-h-300p {
+	max-height: 300px !important;
+	overflow-y: auto;
+}
+
+.max-h-400p {
+	max-height: 400px !important;
+	overflow-y: auto;
+}
+
+.max-h-500p {
+	max-height: 500px !important;
+	overflow-y: auto;
+}
+
+.border-radius-50 {
+	border-radius: 50% !important;
+}
+
+.border-radius-0 {
+	border-radius: 0 !important;
+}
+
+.border-none {
+	border: none;
+}
+
+.border-right,
+.border {
+	border-right: 1px solid;
+}
+
+.border-bottom,
+.border {
+	border-bottom: 1px solid;
+}
+.border-left,
+.border {
+	border-left: 1px solid;
+}
+.border-top,
+.border {
+	border-top: 1px solid;
+}
+
+.nav-tab {
+	text-align: left;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
+@media (max-width: 575px) {
+	.w-sm {
+		width: 575px;
+	}
+	.btn-block-sm{
+		display: block;
+	}
+    .nav-tab .nav-item {
+        text-align: left;
+		padding: 15px 0px;
+		border-bottom: 1px solid #d7d8d6;
+	}
+}
+
+@media (min-width: 576px) {
+	.border-sm-none {
+		border: none;
+	}
+
+	.border-sm-right,
+	.border-sm {
+		border-right: 1px solid;
+	}
+
+	.border-sm-bottom,
+	.border-sm {
+		border-bottom: 1px solid;
+	}
+	.border-sm-left,
+	.border-sm {
+		border-left: 1px solid;
+	}
+	.border-sm-top,
+	.border-sm {
+		border-top: 1px solid;
+	}
+	.btn-block-sm{
+		display: block;
+	}
+    .nav-tab .nav-item {
+        text-align: left;
+        padding: 0px 10px;
+    }
+}
+
+@media (max-width: 767px) {
+	.w-md {
+		width: 767px;
+	}
+}
+
+@media (min-width: 768px) {
+	.border-md-none {
+		border: none;
+	}
+
+	.border-md-right,
+	.border-md {
+		border-right: 1px solid;
+	}
+
+	.border-md-bottom,
+	.border-md {
+		border-bottom: 1px solid;
+	}
+	.border-md-left,
+	.border-md {
+		border-left: 1px solid;
+	}
+	.border-md-top,
+	.border-md {
+		border-top: 1px solid;
+	}
+}
+
+@media (max-width: 992px) {
+	.w-lg {
+		width: 991px;
+	}
+}
+
+@media (min-width: 992px) {
+	.border-lg-none {
+		border: none;
+	}
+
+	.border-lg-right,
+	.border-lg {
+		border-right: 1px solid;
+	}
+
+	.border-lg-bottom,
+	.border-lg {
+		border-bottom: 1px solid;
+	}
+	.border-lg-left,
+	.border-lg {
+		border-left: 1px solid;
+	}
+	.border-lg-top,
+	.border-lg {
+		border-top: 1px solid;
+	}
+	.btn-block-sm{
+		display: inline-block;
+	}
+	.nav-tab {
+        text-align: center;
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+    .nav-tab .nav-item {
+		text-align: center;
+		padding: 20px 10px;
+	}
+	.nav-tab .nav-item .nav-link {
+		border-right: 1px solid #d7d8d6;
+	}
+	.nav-tab .nav-item .nav-link.last-item {
+		border-right: 0px solid #d7d8d6;
+    }
+}
+
+@media (min-width: 1200px) {
+	.border-xl-none {
+		border: none;
+	}
+
+	.border-xl-right,
+	.border-xl {
+		border-right: 1px solid;
+	}
+
+	.border-xl-bottom .border-xl {
+		border-bottom: 1px solid;
+	}
+	.border-xl-left .border-xl {
+		border-left: 1px solid;
+	}
+	.border-xl-top .border-xl {
+		border-top: 1px solid;
+	}
+}
+
+.content {
+	padding-top: 45px;
+}
+
+.footer {
+	min-height: 95px;
+}
+
+li.dufs + li.dufs {
+	border-left: 1px solid #767676;
+	padding-left: 24px;
+}
+
+.header {
+	min-height: 25px;
+}
+
+.header-bar::after {
+	background-color: rgba(255, 255, 255, 0);
+	background: linear-gradient(to bottom, #d7d8d6, rgba(255, 255, 255, 0));
+	bottom: -4px;
+	content: "";
+	display: block;
+	height: 4px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	z-index: -1;
+}
+
+.mobile-banking-download {
+	height: 60px;
+}
+
+.close-mobile-banking {
+	left: 5px;
+	top: 1px;
+}
+
+.outside-link-container {
+	position: fixed;
+	display: block;
+	width: 100%;
+	height: 100%;
+	z-index: 999999;
+	background: #fff;
+	top: 0 !important;
+	left: 0 !important;
+	right: 0 !important;
+	bottom: 0 !important;
+}
+
+.close-x {
+	background: none;
+	border: none;
+}
+
+.initially-hidden {
+	display: none;
+}
+
+// color utility
+.bg-lightpearl {
+	background: #f3f3f3;
+}
+
+.bg-pearl {
+	background: #ededed;
+}
+
+.bg-silver {
+	background: #d7d8d6;
+}
+
+.text-silver {
+	color: #d7d8d6;
+}
+
+.border-silver {
+	border-color: #d7d8d6 !important;
+}
+
+.bg-pewter {
+	background: #767676;
+}
+
+.border-pewter {
+	border-color: #767676 !important;
+}
+
+.bg-charcoal {
+	background: #333;
+}
+
+.bg-info {
+	background: rgba(55, 103, 152, 0.15);
+}
+
+.border-info {
+	border: 1px solid #376798;
+}
+
+.link-with-chevron {
+	position: relative;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	.link-image {
+		width: 100%;
+		padding: 0 0 10px 0;
+	}
+
+	.link-text {
+		font-family: "HSBC Univers Next Light", "HSBC Neue Helvetica Light";
+		font-style: normal;
+		font-weight: 300;
+	}
+
+	.link-text:hover {
+		text-decoration: underline;
+	}
+
+	.link-chevron:after {
+		font-family: "HSBCGeneralIcon";
+		content: "\ea1e";
+		font-size: 0.45em;
+		font-weight: bold;
+		position: absolute;
+		bottom: 5px;
+		right: -16px;
+	}
+}
+
+.card-link-container {
+	min-height: 1px;
+
+	img {
+		width: 100%;
+	}
+
+	.text {
+		position: relative;
+		padding: 1.25rem 1.25rem 0 1.25rem !important;
+
+		.text-caption {
+			margin-bottom: 0 !important;
+			padding-bottom: 0 !important;
+			margin-right: -5px !important;
+		}
+
+		.text-chevron::after {
+			display: inline-block;
+			font-family: "HSBCGeneralIcon";
+			content: "\ea1e";
+			font-size: 0.45em;
+			font-weight: bold;
+			text-decoration-style: solid;
+			text-decoration-line: none;
+			padding-left: 5px;
+			text-align: center;
+			vertical-align: middle;
+		}
+	}
+}
+
+.card-ie-f {
+	display: block;
+}
+
+// remove button shadow
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:active:focus:not(:disabled):not(.disabled),
+.btn:focus,
+.btn:active,
+.btn:hover {
+	box-shadow: none !important;
+}
+
+
+
+.accordion-btn {
+	&:hover,
+	&:focus {
+		background: #f3f3f3;
+	}
+}
+
+// system bar styling
+.system-bar {
+	height: 30px;
+}
+
+.system-bar-group {
+	padding-top: 6px;
+}
+
+.system-bar-toggle {
+	&:focus,
+	&:focus-within {
+		text-decoration: underline;
+	}
+
+	&:after {
+		font-family: "HSBCGeneralIcon";
+		content: "\ea19";
+		font-size: 0.8em;
+		font-weight: bolder;
+		float: right;
+		padding-top: 3px;
+		padding-left: 5px;
+		transition: all 0.3s;
+	}
+}
+
+.logon-app-bar:hover {
+	background: #6f0008;
+}
+
+.system-bar-dd-activate {
+	background: #ededed !important;
+	color: #333 !important;
+
+	& > .dropdown-container > .system-bar-toggle {
+		color: #333 !important;
+		text-decoration: none !important;
+	}
+}
+
+.system-bar-toggle[aria-expanded="true"] {
+	outline: none !important;
+
+	&:after {
+		font-family: "HSBCGeneralIcon";
+		content: "\ea1f";
+		// transform: rotate(180deg);
+		font-size: 0.8em;
+		font-weight: bolder;
+		float: right;
+		padding-top: 3px;
+		padding-left: 5px;
+		transition: all 0.3s;
+	}
+}
+
+// apply bar
+.apply-bar {
+	position: fixed;
+	width: 100%;
+	z-index: 25;
+	background: #fff;
+	border-top: 2px solid #d7d8d6;
+	border-bottom: 1px solid #d7d8d6;
+	transition: all 0.45s ease-in-out;
+	.container {
+		padding: 1rem 0.75rem;
+	}
+}
+
+.apply-bar.margin-top-0 {
+	transition: all 0.45s ease-in-out;
+	margin-top: 0 !important;
+	top: 0 !important;
+}
+
+.apply-bar.mobile-nav-push {
+	position: fixed !important;
+	transition: none !important;
+}
+
+/* .margin-top-0 {
+	transition: all 1s ease-in-out;
+} */
+
+#main-header-wrapper {
+	transition: transform 0.45s ease-in-out;
+	// transition-delay: 0.35s;
+}
+
+#main {
+	transition: transform 0.45s ease-in-out;
+}
+
+#header {
+	transition: transform 0.45s ease-in-out;
+}
+
+.mhw-hidden {
+	// position: absolute;
+	transition: all 1s ease-in-out;
+	transform: translateY(-25px);
+}
+
+// additional class
+.major-announcement {
+	background: #003466;
+	color: #fff;
+	border-bottom: 2px solid #fff;
+}
+
+.close-major-announcement {
+	position: absolute;
+	top: 5px;
+	right: 9px;
+}
+
+a.selected:after {
+	content: "";
+	position: absolute;
+	top: 23px;
+	width: 0;
+	height: 0;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 7px solid #fff;
+	clear: both;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.skiplink {
+	z-index: 100;
+	top: 6px;
+	min-height: 5px !important;
+	width: 250px !important;
+	font-size: 0.8rem;
+	padding: 1px 5px;
+}
+
+.container {
+	max-width: 1280px;
+	width: 100%;
+}
+
+.x-container {
+	max-width: 1124px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+@media (max-width: 575px) {
+	.menu-button,
+	.logo-container,
+	.logon-button {
+		display: inline-block !important;
+		flex-basis: unset;
+		flex-grow: unset;
+		width: auto !important;
+		margin: 0;
+	}
+	.menu-button,
+	.logo-container {
+		float: left;
+	}
+
+	.logo-container {
+		padding-left: 0;
+		flex-grow: 1;
+	}
+
+	.logon-button {
+		float: right;
+		text-align: right;
+	}
+
+	.main-logo {
+		display: inline;
+		margin: 0;
+		padding: 7px 10px;
+		svg {
+			padding-top: 4px;
+			height: 30px;
+		}
+	}
+}
+
+#mobile-menu-button:focus {
+	outline: 1px solid #333;
+}
+
+.menu-button-span-text {
+	padding-top: 5px;
+	padding-left: 5px;
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
+}
+
+// mobile menu
+#mobile-nav-drawer {
+	position: fixed;
+	z-index: 99999;
+	width: 281px !important;
+	height: 100vh !important;
+	background: #fff;
+	overflow-x: hidden;
+	overflow-y: auto;
+	box-shadow: -3px 0px 3px -3px #929292 inset;
+}
+
+.off-canvas {
+	margin-left: -281px;
+}
+
+.toggled {
+	margin-left: 0;
+	transition: 0.1s ease all;
+}
+
+.mobile-nav-push {
+	margin-left: 281px;
+	position: relative !important;
+	width: 100%;
+	overflow: hidden !important;
+	transition: 0.1s ease all;
+}
+
+.no-overflow {
+	overflow: hidden;
+}
+
+.main-overlay {
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.45);
+	z-index: 999;
+	cursor: pointer;
+}
+
+.overflow-y-off {
+	overflow-y: hidden;
+}
+
+.mnd-list {
+	margin-top: 50px;
+}
+
+.mnd-opening {
+	position: absolute;
+	top: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.mnd-menuitem {
+	line-height: 1.4;
+	margin: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	height: 50px;
+	display: block;
+	width: 280px;
+	cursor: pointer;
+
+	padding: 15px 20px 15px 53px;
+	border-left: 5px solid #fff;
+	position: relative;
+	.mnd-menuitem-icon {
+		font-size: 1.3rem;
+		right: auto;
+		left: 14px;
+		margin-left: -2px;
+		position: absolute;
+		margin-top: 2px;
+		line-height: 0.8;
+		font-weight: 500;
+	}
+	.mnd-menuitem-caption {
+		font-size: 0.875rem;
+		display: inline;
+	}
+	.mnd-menuitem-chevron {
+		position: absolute;
+		font-size: 0.7rem;
+		left: auto;
+		right: 15px;
+		margin-top: 2px;
+		line-height: 1.3;
+		font-weight: 600;
+
+		&:after {
+			font-family: "HSBCGeneralIcon" !important;
+			content: "\ea1e";
+		}
+	}
+	&.mnd-menuitem-active {
+		border-left: 5px solid #db0011;
+		background: #ededed;
+		&:focus {
+			outline: none;
+		}
+	}
+}
+
+.mnd-footer {
+	bottom: 0;
+	left: 0;
+	width: 281px;
+	background: #f1f1f1;
+	.mnd-footer-item {
+		text-align: right;
+		padding: 15px 15px;
+		height: 50px;
+		display: block;
+		line-height: 1.9;
+		text-decoration: none;
+		color: #333;
+		font-size: 0.75rem;
+		&::after {
+			content: "";
+			border-bottom: 1px solid #c9c9c9;
+			display: block;
+			height: 0;
+			margin: 12px auto 0;
+		}
+	}
+	.mnd-footer-chevron {
+		font-size: 0.6rem;
+		line-height: 1.3;
+		padding-left: 3px;
+		color: #db0011;
+		font-weight: 600;
+		&:after {
+			font-family: "HSBCGeneralIcon" !important;
+			content: "\ea1e";
+		}
+	}
+	.mnd-footer-first {
+		background: #d7d8d6;
+	}
+}
+
+.mnd-menucontent {
+	right: auto;
+	left: 58px;
+	position: absolute;
+	top: 0;
+	width: 223px;
+	height: 100% !important;
+	padding-bottom: 50px;
+	visibility: hidden;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background: #ededed;
+	box-sizing: border-box;
+	z-index: 9999;
+	cursor: default;
+}
+
+.mobile-important-info-section {
+	background: #404040;
+	color: #fff;
+	padding-left: 17px !important;
+	padding-right: 17px !important;
+	padding-bottom: 100px !important;
+}
+
+.mnd-menucontent-active {
+	display: block;
+	visibility: visible;
+}
+
+.close-mnd-content {
+	font-size: 1rem;
+	padding: 13px 20px 10px;
+	position: absolute;
+	background: #fff;
+	width: 58px;
+	top: 0;
+	.cmc-icon {
+		padding-bottom: 14px;
+		&:after {
+			font-family: "HSBCGeneralIcon" !important;
+			content: "\ea1c";
+		}
+	}
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+	.logo-container {
+		width: 100%;
+		margin: 0 auto;
+		text-align: center;
+	}
+	.main-logo {
+		width: 100%;
+		display: inline;
+		padding: 7px 0;
+		margin: 0 auto;
+		svg {
+			padding-top: 4px;
+			height: 38px;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.main-logo {
+		display: inline-block;
+		height: 66px;
+		width: 177px;
+		padding-top: 28px;
+		svg {
+			width: 177px;
+		}
+	}
+}
+
+.menu-list-placeholder {
+	margin-left: -1px !important;
+}
+
+.menu-list-item {
+	padding-left: 17px !important;
+	padding-right: 17px !important;
+	margin-left: -3px !important;
+}
+
+.menu-list li a {
+	display: inline-block;
+	padding-left: 17px !important;
+	margin-left: -16px !important;
+}
+
+.menu-list li + li a {
+	border-left: 1px solid #ededed;
+}
+
+// drop down mega menu
+@media all and (min-width: 992px) {
+	.navbar {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	.navbar .has-megamenu {
+		position: static !important;
+	}
+
+	.megamenu {
+		background: #ededed;
+		max-width: 1400px !important;
+		width: 101.5%;
+		padding: 20px;
+		margin: 15px auto;
+		border: 1px solid transparent;
+		z-index: 100;
+		top: auto !important;
+	}
+
+	.navbar .nav-link {
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+	color: #fff !important;
+	background-color: #767676 !important;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+	color: #333;
+	text-decoration: underline;
+	background: transparent !important;
+}
+
+.custom-dropdown-menu {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	float: left;
+	font-size: 1rem;
+	color: #333;
+	text-align: left;
+	list-style: none;
+	display: none;
+}
+
+.megamenu-visible {
+	visibility: visible !important;
+}
+
+.dropdown-doormat-selected {
+	background: #ededed;
+}
+
+.megamenu .important-info {
+	background: #404040;
+	color: #fff;
+}
+
+.doormat-container,
+li.dropdown.show {
+	background: #ededed;
+}
+
+a.doormat-trigger {
+	outline: none;
+}
+
+// main
+.main {
+	margin-top: 127px;
+}
+
+@media all and (max-width: 991px) {
+	#main-banner-secondary {
+		padding-left: 12px !important;
+		padding-right: 12px !important;
+	}
+
+	.mbs-border-right {
+		border-right: 1px solid #aaaaa9;
+	}
+
+	.mbs-border-left {
+		border-left: 1px solid #f1f1f1;
+	}
+}
+
+.mbs-border-bottom {
+	border-bottom: 1px solid #aaaaa9;
+}
+
+@media all and (min-width: 576px) {
+	.mb-panel {
+		position: absolute;
+		top: 50%;
+		left: 2%;
+		width: 50%;
+		transform: translateY(-50%);
+	}
+
+	.mb-panel-40 {
+		position: absolute;
+		top: 50%;
+		left: 2%;
+		width: 40%;
+		transform: translateY(-50%);
+	}
+}
+
+@media all and (min-width: 992px) {
+	.mb-panel-lg-50 {
+		position: absolute;
+		top: 50%;
+		left: 2%;
+		width: 50%;
+		transform: translateY(-50%);
+	}
+
+	.mb-panel-lg-40 {
+		position: absolute;
+		top: 50%;
+		left: 2%;
+		width: 40%;
+		transform: translateY(-50%);
+	}
+}
+
+@media all and (max-width: 575px) {
+	.mbp-link {
+		width: 100%;
+	}
+
+	.mb-panel {
+		padding-left: 12px !important;
+		padding-right: 12px !important;
+	}
+}
+
+.x-container {
+	max-width: 1280px;
+	width: 100%;
+	margin: 0 auto;
+
+	.row,
+	.col {
+		padding-right: 0;
+		padding-left: 0;
+		margin-right: 0;
+		margin-left: 0;
+	}
+}
+
+.box-loader {
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	background-color: #dddbdd;
+
+	&::after {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		transform: translateX(-100%);
+		background-image: linear-gradient(90deg, rgba(#fff, 0) 0, rgba(#fff, 0.2) 20%, rgba(#fff, 0.5) 60%, rgba(#fff, 0));
+		animation: shimmer 5s infinite;
+		content: "";
+	}
+
+	@keyframes shimmer {
+		100% {
+			transform: translateX(100%);
+		}
+	}
+}
+
+// text
+.section-header {
+	padding-left: 20px;
+	&::after {
+		right: auto;
+		left: 8px;
+		background: #db0011;
+		content: "";
+		display: block;
+		width: 5px;
+		position: absolute;
+		top: 0.25em;
+		bottom: 0.5em;
+	}
+}
+
+// tabs to collapse
+@media all and (min-width: 992px) {
+	.nav-link.tabs-to-collapse.active {
+		border-top: 5px solid #db0011 !important;
+		padding-top: 11px !important;
+		&:focus {
+			border-top: 5px solid #333 !important;
+			background: #f1f1f1;
+		}
+	}
+}
+
+.collapsible-tabs {
+	background: #fff;
+}
+
+@media all and (max-width: 991px) {
+	.tabs-to-collapse {
+		&::after,
+		&[aria-expanded="false"]::after {
+			font-family: HSBCGeneralIcon;
+			content: "\ea1a";
+			font-size: 0.6rem;
+			font-weight: 700;
+			position: absolute;
+			right: 15px;
+			top: 15px;
+			display: block;
+			float: right;
+			transition: all 0.3s ease;
+		}
+		&[aria-expanded="true"]::after {
+			font-family: HSBCGeneralIcon;
+			content: "\ea1a";
+			transform: rotate(-180deg);
+			font-size: 0.6rem;
+			font-weight: 700;
+			position: absolute;
+			right: 15px;
+			top: 15px;
+			display: block;
+			float: right;
+			transition: all 0.3s ease;
+		}
+	}
+}
+
+.collapse-chevron {
+	&::after,
+	&[aria-expanded="false"]::after {
+		font-family: HSBCGeneralIcon;
+		content: "\ea1a";
+		transform: translateY(-50%);
+		font-size: 0.6rem;
+		font-weight: 700;
+		position: absolute;
+		right: 20px;
+		top: 50%;
+		display: inline-block;
+		transition: all 0.3s ease;
+	}
+	&[aria-expanded="true"]::after {
+		font-family: HSBCGeneralIcon;
+		content: "\ea20";
+		transform: translateY(-50%);
+		font-size: 0.6rem;
+		font-weight: 700;
+		position: absolute;
+		right: 20px;
+		top: 50%;
+		display: inline-block;
+		transition: all 0.3s ease;
+	}
+}
+
+// footnote
+.footnote-link {
+	color: #db0011;
+}
+
+.footnote-container {
+	display: inline-block !important;
+	width: 100%;
+	background: #fff;
+	transition: background 6s;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.footnote-container.active {
+	background: #eee;
+}
+
+.footnote-identifier {
+	font-size: 0.9em;
+	font-family: "HSBC Univers Next LightItalic";
+	font-style: italic;
+	font-weight: 300;
+	display: block;
+	float: left;
+	margin-top: -5px;
+}
+
+.footnote-content {
+	display: block;
+	margin-left: 10px;
+}
+
+.footnote-temporary-link {
+	color: #333;
+}
+
+*:after,
+*::after,
+*:before,
+*::before {
+	text-decoration: none;
+}
+/* jQuery rt Responsive Tables - v1.0.6 - 2020-01-13
+* Copyright (c) 2020 Nathan Stazewski; Licensed MIT */
+table.rt-responsive-table {
+	width: 100%;
+	border-collapse: collapse;
+	border: none;
+}
+table.rt-responsive-table tr:nth-of-type(odd) {
+	background: #f7f7f7;
+}
+table.rt-responsive-table th {
+	background: #eee;
+	color: #333;
+	font-weight: 700;
+}
+table.rt-responsive-table td,
+table.rt-responsive-table th {
+	padding: 6px;
+	border: 1px solid #ccc;
+	text-align: left;
+}
+table.rt-responsive-table.rt-vertical-table,
+table.rt-responsive-table.rt-vertical-table tbody,
+table.rt-responsive-table.rt-vertical-table td,
+table.rt-responsive-table.rt-vertical-table th,
+table.rt-responsive-table.rt-vertical-table thead,
+table.rt-responsive-table.rt-vertical-table tr {
+	display: block;
+	overflow: hidden;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	float: left;
+	clear: left;
+	width: 100%;
+}
+table.rt-responsive-table.rt-vertical-table thead tr {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
+table.rt-responsive-table.rt-vertical-table tbody td div.responsive-container {
+	float: left;
+	width: 50%;
+	display: block;
+}
+table.rt-responsive-table.rt-vertical-table tr {
+	border: 1px solid #ccc;
+	margin-top: 1rem;
+}
+
+table.rt-responsive-table.rt-vertical-table tr:first-child {
+	margin-top: 0rem !important;
+}
+
+table.rt-responsive-table.rt-vertical-table td,
+table.rt-responsive-table.rt-vertical-table th {
+	border: none;
+	border-bottom: 1px solid #ddd;
+	position: relative;
+}
+table.rt-responsive-table.rt-vertical-table td:before {
+	position: relative;
+	width: 45%;
+	padding-right: 10px;
+	font-weight: 700;
+	float: left;
+	word-break: break-all;
+}
+
+$base-padding-code: 15px;
+
+.code {
+	font-family: "Courier New", Courier, monospace !important;
+	font-size: 85%;
+	background: #f1f1f1;
+	width: 100%;
+	padding: 10px 20px;
+	line-height: 1.1;
+	.title {
+		font-family: "Courier New", Courier, monospace !important;
+		font-size: 120% !important;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	.code-block {
+		padding-top: 12px;
+		span {
+			display: block;
+		}
+		.level-1 {
+			padding-left: $base-padding-code * 0;
+		}
+		.level-2 {
+			padding-left: $base-padding-code * 1;
+		}
+		.level-3 {
+			padding-left: $base-padding-code * 2;
+		}
+		.level-4 {
+			padding-left: $base-padding-code * 3;
+		}
+		.level-5 {
+			padding-left: $base-padding-code * 4;
+		}
+		.level-6 {
+			padding-left: $base-padding-code * 5;
+		}
+		.level-7 {
+			padding-left: $base-padding-code * 6;
+		}
+		.level-8 {
+			padding-left: $base-padding-code * 7;
+		}
+		.level-9 {
+			padding-left: $base-padding-code * 8;
+		}
+		.level-10 {
+			padding-left: $base-padding-code * 9;
+		}
+		.usercontent {
+			color: blue;
+			font-weight: bold;
+		}
+	}
+
+	.information {
+		font-family: $font-family-base !important;
+		line-height: 1.5;
+		p {
+			margin-bottom: 0 !important;
+		}
+	}
+}
+
+span.social-link {
+	.social-icon-facebook {
+		background: url('/1/PA_esf-ca-app-content/content/indonesia/pws-2.0-content/hsbc-premier/facebook.svg');
+	}
+	.social-image {
+		display: inline-block;
+		width: 36px;
+		height: 36px;
+	}
+}
+
+.nav-tab {
+    border: 1px solid #d7d8d6;
+	padding: 0rem 1.25rem;
+
+	li.nav-item {
+		a.nav-link {
+			font-family: "HSBC Univers Next Regular", "HSBC Neue Helvetica Regular";
+			padding: 0;
+			color: #333;
+		}
+		a.nav-link.active {
+			font-family: "HSBC Univers Next Bold", "HSBC Neue Helvetica Bold";
+			font-weight: 700;
+		}
+		a.nav-link:hover {
+			text-decoration: underline;
+		}
+	}
+}
+// lists
+.normal-list {
+    font-family: "HSBC Univers Next Regular", "HSBC Neue Helvetica Regular";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.5;
+	margin-left: 0px;
+    padding-left: 20px;
+	list-style-position: outside;
+	li {
+		margin: 11px 0 11px 0;
+	}
+}
+
+.check-list {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+    margin-left: 0;
+	padding-left: 0;
+	li {
+		font-family: "HSBC Univers Next Bold", "HSBC Neue Helvetica Bold";
+		display: flex;
+		list-style: none;
+		margin-bottom: 20px;
+		.icon {
+			margin-right: 10px;
+			font-size: 42px;
+			margin-top: -15px;
+		}
+	}
+}

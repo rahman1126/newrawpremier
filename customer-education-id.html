@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="summary" content="" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<title>PWS 2.0 Draft - Edukasi Nasabah</title>
+
+		<!-- ? preload key fonts -->
+		<link rel="preload" href="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-Rg.woff.txt" as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-Lt.woff.txt" as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/UniversNextforHSBCW02-Bd.woff.txt" as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/font/hsbc-general-icon.ttf.txt" as="font" type="font/ttf" crossorigin />
+
+		<link rel="stylesheet" href="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/icon-general.css" />
+		<link rel="stylesheet" href="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/css/stylev2.build.min.css" />
+		<style>
+			body {
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="main-wrapper" class="d-flex flex-column min-vh-100">
+			<header class="wrapper">
+				<div id="header" class="container-fluid bg-white header-bar fixed-top header header-shadow py-0 px-0">
+					<!-- ? mobile menu template -->
+					<script id="mobile-menu-template" type="text/template">
+						{{#mobilemenu}}
+							<div class="{{class}}">
+								{{#content}}
+									{{#header}}
+										<div class="mb-3">
+											<div class="border-bottom border-silver">
+												<h2 class="mb-2 h6"><b>{{.}}</b></h2>
+											</div>
+											<ul class="list-unstyled pt-2 pb-3">
+												{{#link}}
+												<li class="ml-0 pl-0 py-2">
+													<a href="{{url}}" class="text-90 text-body"> {{caption}} </a>
+												</li>
+												{{/link}}
+											</ul>
+										</div>
+									{{/header}}
+									{{#headerLink}}
+									<a href="{{headerLink}}" class="text-body dropdown-item py-1">
+										<h2 class="py-1 h6">{{caption}}</h2>
+									</a>
+									{{/headerLink}}
+								{{/content}}
+							</div>
+						{{/mobilemenu}}
+					</script>
+
+					<!-- ? mobile important-info template -->
+					<script id="important-info-mobile-template" type="text/template">
+						{{#importantinfomobile}}
+							<div class="border-bottom border-silver pt-2">
+								<h2 class="mb-2 h6"><b>Bantuan dan layanan</b></h2>
+							</div>
+							{{#headerLink}}
+								<a href="{{url}}" class="text-white text-90 d-block mt-2 mb-1 py-1 border-0">{{caption}}</a>
+							{{/headerLink}}
+							{{#content}}
+								<a href="{{url}}" class="text-white text-90 d-block mt-2 mb-1 py-1 border-0">{{caption}}</a>
+							{{/content}}
+						{{/importantinfomobile}}
+					</script>
+
+					<!-- ! mobile navigation -->
+					<div id="mobile-nav-drawer" class="off-canvas">
+						<div class="container">
+							<div class="row d-flex">
+								<div class="m-0 p-0">
+									<span class="mnd-opening m-0 p-0">Menu</span>
+								</div>
+								<div class="close-mnd-content initially-hidden" role="button" tabindex="0" aria-label="Close submenu">
+									<span class="cmc-icon"></span>
+								</div>
+								<div class="mnd-header px-0 flex-grow-1">
+									<ul class="list-unstyled p-0 m-0 text-90" role="menu">
+										<li class="mnd-list" role="presentation">
+											<div class="mnd-menuitem" data-target="mnd-perbankan-container" tabindex="0" role="menuitem" aria-haspopup="true" aria-expanded="false">
+												<span class="mnd-menuitem-icon icon-account" aria-hidden="true"></span>
+												<span class="mnd-menuitem-caption">Perbankan</span>
+												<span class="mnd-menuitem-chevron"></span>
+											</div>
+											<div id="" class="mnd-menucontent min-vh-100" aria-hidden="true" data-source="mnd-perbankan-container">
+												<div class="container px-0 py-2 vh-100">
+													<div class="row">
+														<!-- ? mobile menu section -->
+														<div id="mobile-menu-perbankan-section" class="col pt-2 pb-3"></div>
+													</div>
+													<div class="row px-2">
+														<div class="mobile-important-info-section col pt-2"></div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li role="presentation">
+											<div class="mnd-menuitem" data-target="mnd-pinjaman-container" tabindex="0" role="menuitem" aria-haspopup="true" aria-expanded="false">
+												<span class="mnd-menuitem-icon icon-card" aria-hidden="true"></span>
+												<span class="mnd-menuitem-caption">Pinjaman</span>
+												<span class="mnd-menuitem-chevron"></span>
+											</div>
+											<div id="" class="mnd-menucontent min-vh-100" aria-hidden="true" data-source="mnd-pinjaman-container">
+												<div class="container px-0 py-2 vh-100">
+													<div class="row">
+														<!-- ? mobile menu section -->
+														<div id="mobile-menu-pinjaman-section" class="col pt-2 pb-3"></div>
+													</div>
+													<div class="row px-2">
+														<div class="mobile-important-info-section col pt-2"></div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li role="presentation">
+											<div class="mnd-menuitem" data-target="mnd-wem-container" tabindex="0" role="menuitem" aria-haspopup="true" aria-expanded="false">
+												<span class="mnd-menuitem-icon icon-investment" aria-hidden="true"></span>
+												<span class="mnd-menuitem-caption">Wealth Management</span>
+												<span class="mnd-menuitem-chevron"></span>
+											</div>
+											<div id="" class="mnd-menucontent min-vh-100" aria-hidden="true" data-source="mnd-wem-container">
+												<div class="container px-0 py-2 vh-100">
+													<div class="row">
+														<!-- ? mobile menu section -->
+														<div id="mobile-menu-wem-section" class="col pt-2 pb-3"></div>
+													</div>
+													<div class="row px-2">
+														<div class="mobile-important-info-section col pt-2"></div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li role="presentation">
+											<div class="mnd-menuitem" data-target="mnd-offers-container" tabindex="0" role="menuitem" aria-haspopup="true" aria-expanded="false">
+												<span class="mnd-menuitem-icon icon-shopping_cart" aria-hidden="true"></span>
+												<span class="mnd-menuitem-caption">Offers</span>
+												<span class="mnd-menuitem-chevron"></span>
+											</div>
+											<div id="" class="mnd-menucontent" aria-hidden="true" data-source="mnd-offers-container">
+												<div class="container px-0 py-2 vh-100">
+													<div class="row">
+														<!-- ? mobile menu section -->
+														<div id="mobile-menu-offers-section" class="col pt-2 pb-3"></div>
+													</div>
+													<div class="row px-2">
+														<div class="mobile-important-info-section col pt-2"></div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li role="presentation">
+											<div class="mnd-menuitem" data-target="mnd-language-container" tabindex="0" role="menuitem" aria-haspopup="true" aria-expanded="false">
+												<span class="mnd-menuitem-icon icon-settings" aria-hidden="true"></span>
+												<span class="mnd-menuitem-caption">Change language</span>
+												<span class="mnd-menuitem-chevron"></span>
+											</div>
+											<div id="" class="mnd-menucontent" aria-hidden="true" data-source="mnd-language-container">
+												<p class="text-body">language</p>
+											</div>
+										</li>
+										<li role="presentation">
+											<div class="mnd-menuitem" data-target="mnd-tentang-container" tabindex="0" role="menuitem" aria-haspopup="true" aria-expanded="false">
+												<span class="mnd-menuitem-icon icon-document_article" aria-hidden="true"></span>
+												<span class="mnd-menuitem-caption">Tentang HSBC</span>
+												<span class="mnd-menuitem-chevron"></span>
+											</div>
+											<div id="" class="mnd-menucontent min-vh-100" aria-hidden="true" data-source="mnd-tentang-container">
+												<div class="container px-0 py-2 vh-100">
+													<div class="row border-bottom border-pewter">
+														<!-- ? mobile menu section -->
+														<div id="mobile-menu-tentang-section" class="col pt-2 pb-1"></div>
+													</div>
+													<div class="row">
+														<div class="col pl-4 pt-2 pb-3">
+															<!-- ? footer link template -->
+															<script id="mobile-footer-link-template" type="text/template">
+																{{#mobilefooterlink}}
+																	<li class="py-2">
+																		<a class="text-body" href="{{link}}" target="{{target}}">
+																			{{caption}}
+																		</a>
+																	</li>
+																{{/mobilefooterlink}}
+															</script>
+															<ul id="mobile-footer-link-section" class="list-unstyled pt-3 mb-0 text-80 text-left"></ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="mnd-footer">
+									<ul class="list-unstyled p-0 m-0 text-90">
+										<li>
+											<a href="http://www.hsbc.co.id/register" class="text-body mnd-footer-item mnd-footer-first">
+												Register Personal Internet Banking
+												<span class="mnd-footer-chevron"></span>
+											</a>
+										</li>
+										<li>
+											<a href="https://www.hsbc.co.id/1/2/HUB_IDV2/IDV_EPP?__IWCountry=US&__IWLang=en&__Destination=HUB_IDV_REGISTRATION&__registrationType=IB-Registration&__menuType=__LOGON&PROPOSITION_TYPE=CMBPFS" class="text-body mnd-footer-item">
+												Register Business Internet Banking
+												<span class="mnd-footer-chevron"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#" class="text-body mnd-footer-item">
+												UKM
+												<span class="mnd-footer-chevron"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#" class="text-body mnd-footer-item">
+												Business
+												<span class="mnd-footer-chevron"></span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- ? MAJOR NOTIFICATION -->
+					<div class="major-announcement initially-hidden" data-store-var="HBID_IMP_ANN_001" data-store-dur="1.00004">
+						<div class="container">
+							<div class="row">
+								<div class="col">
+									<div class="d-inline-block align-middle pl-0 pr-5 py-2">
+										<div class="d-block p-0 m-0">
+											<h2>Announcement</h2>
+											<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum, accusamus maiores officia dolor fuga eligendi beatae quisquam quasi inventore ratione suscipit illo id veritatis omnis non qui. Blanditiis, molestiae quod!</p>
+										</div>
+									</div>
+									<div class="close-major-announcement">
+										<button type="button" class="close-x close-major-announcement-button" data-dismiss="alert" aria-label="Close">
+											<span class="text-white font-weight-bold h2" aria-hidden="true">&times;</span>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="major-announcement initially-hidden" data-store-var="HBID_COOKIE_USG_GLB" data-store-dur="14.00004">
+						<div class="container">
+							<div class="row">
+								<div class="col">
+									<div class="d-inline-block align-middle pl-0 pr-5 py-2">
+										<div class="d-block p-0 m-0">
+											<p class="mb-0 text-90">
+												We use cookies to give you the best possible experience on our website. For more details please read our <a href="#" class="text-white text-underline">cookie policy</a>. By continuing to browse this site, you give consent for
+												cookies to be used.
+											</p>
+										</div>
+									</div>
+									<div class="close-major-announcement">
+										<button type="button" class="close-x close-major-announcement-button" data-dismiss="alert" aria-label="Close">
+											<span class="text-white font-weight-bold h2" aria-hidden="true">&times;</span>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- ! download mobile banking app -->
+					<div id="mobile-banking" class="bg-dark text-white initially-hidden-container initially-hidden">
+						<div class="container">
+							<div class="row">
+								<div class="col">
+									<div class="px-0 mx-0 position-absolute close-mobile-banking">
+										<button type="button" class="close-x" data-dismiss="alert" aria-label="Close">
+											<span class="text-white" aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="d-inline pl-3">
+										<img src="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0-content/home/images/mobile_banking.png" class="py-2 mobile-banking-download" alt="" />
+									</div>
+									<div class="d-inline-block align-middle pl-2">
+										<div class="d-block p-0 m-0">
+											<small><b>Unduh aplikasi</b></small>
+										</div>
+										<div class="d-block p-0 m-0">
+											<small>HSBC Mobile Banking</small>
+										</div>
+									</div>
+									<div class="d-inline-block h-100 float-right align-end">
+										<div class="d-flex h-100 align-items-end align-content-end">
+											<a href="https://play.google.com/store/apps/details?id=com.htsu.hsbcpersonalbanking" target="_blank" class="mobile-banking-android initially-hidden text-80 btn btn-success bg-cyan px-3 py-1 mb-2 text-white">Unduh</a>
+											<a href="http://itunes.apple.com/us/app/hsbc-personal-banking/id565993818?ls=1&mt=8" target="_blank" class="mobile-banking-ios initially-hidden text-80 btn btn-success bg-cyan px-3 py-1 mb-2 text-white">Unduh</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- ! system bar -->
+					<div class="bg-black text-white system-bar d-none d-lg-block px-0 mx-0">
+						<div class="container bg-black system-bar">
+							<!-- ? business line menu -->
+							<div class="d-inline-block align-middle float-left text-75">
+								<a class="sr-only sr-only-focusable text-white position-absolute bg-black skiplink" href="#main"> Skip to main content</a>
+								<ul class="list-unstyled list-inline mb-0 text-left d-inline align-middle h-100">
+									<li class="list-inline-item align-middle position-relative h-100 system-bar-group">
+										<a href="#" class="text-white px-1 selected">Personal<span class="sr-only">currently selected</span></a>
+									</li>
+									<li class="list-inline-item align-middle position-relative h-100 system-bar-group">
+										<a href="#" class="text-white px-1">UKM</a>
+									</li>
+									<li class="list-inline-item align-middle position-relative h-100 system-bar-group">
+										<a href="#" class="text-white px-1">Business</a>
+									</li>
+								</ul>
+							</div>
+
+							<!-- ? language and internet banking menu -->
+							<div class="d-inline-block align-middle float-right text-75 h-100">
+								<ul class="list-unstyled list-inline mb-0 text-left d-inline align-middle h-100">
+									<li class="list-inline-item align-middle position-relative px-2 h-100 system-bar-group">
+										<div class="btn-group dropdown-container">
+											<a href="#" class="text-white dropdown-toggle pt-0 mt-0 px-1 h-100 system-bar-toggle" data-toggle="dropdown" data-offset="8px" aria-haspopup="true" aria-expanded="false"> Language (bahasa) </a>
+											<div class="dropdown-menu dropdown-menu-right bg-pearl border-0 border-radius-0 text-80 text-body px-2">
+												<div class="d-flex justify-content-between w-100">
+													<a href="#" class="dropdown-item px-1 d-inline h-100">Bahasa Indonesia <span class="sr-only">currently selected</span></a>
+													<span class="icon-chevron_right text-decoration-none text-60em font-weight-bold px-1 my-auto h-100"></span>
+												</div>
+												<div class="d-flex justify-content-between w-100">
+													<a href="https://www.google.co.id" class="dropdown-item px-1 d-inline h-100">English</a>
+													<span class="icon-chevron_right text-decoration-none text-60em font-weight-bold px-1 my-auto h-100"></span>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="list-inline-item align-middle position-relative h-100 system-bar-group">
+										<div class="btn-group dropdown-container">
+											<a href="#" class="text-white dropdown-toggle pt-0 mt-0 px-1 h-100 system-bar-toggle" data-toggle="dropdown" data-offset="0px" aria-haspopup="true" aria-expanded="false"> Register </a>
+											<div class="dropdown-menu dropdown-menu-right bg-pearl border-0 border-radius-0 text-80 text-body px-2">
+												<div class="d-flex justify-content-between w-100">
+													<a href="#" class="dropdown-item px-1 d-inline h-100"> Register HSBC Personal Internet Banking </a>
+													<span class="icon-chevron_right text-decoration-none text-60em font-weight-bold px-1 my-auto h-100"></span>
+												</div>
+												<div class="d-flex justify-content-between w-100">
+													<a href="#" class="dropdown-item px-1 d-inline h-100"> Register HSBC Business Internet Banking </a>
+													<span class="icon-chevron_right text-decoration-none text-60em font-weight-bold px-1 my-auto h-100"></span>
+												</div>
+
+												<!-- <a href="#" class="dropdown-item pl-1">
+													Register HSBC Business Internet Banking
+													<span class="icon-chevron_right hover-no-decoration"></span>
+												</a> -->
+											</div>
+										</div>
+									</li>
+									<li class="list-inline-item align-middle bg-primary position-relative px-2 h-100 system-bar-group">
+										<!-- <a href="#" class="text-white px-1">Log On</a> -->
+										<div class="btn-group dropdown-container">
+											<a href="#" class="text-white dropdown-toggle pt-0 mt-0 px-1 h-100 system-bar-toggle" data-toggle="dropdown" data-offset="8px" aria-haspopup="true" aria-expanded="false"> Log On </a>
+											<div class="dropdown-menu dropdown-menu-right bg-pearl border-0 border-radius-0 text-80 text-body px-2">
+												<div class="d-flex justify-content-between w-100">
+													<a href="#" class="dropdown-item px-1 d-inline h-100">HSBC Personal Internet Banking</a>
+													<span class="icon-chevron_right text-decoration-none text-60em font-weight-bold px-1 my-auto h-100"></span>
+												</div>
+												<div class="d-flex justify-content-between w-100">
+													<a href="#" class="dropdown-item px-1 d-inline h-100">HSBC Business Internet Banking</a>
+													<span class="icon-chevron_right text-decoration-none text-60em font-weight-bold px-1 my-auto h-100"></span>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div id="mobile-menu-wrapper">
+						<div class="container bg-white">
+							<nav class="row position-relative" aria-label="mobile navigation">
+								<div class="col col-lg-2 min">
+									<div class="row align-items-center py-2 py-lg-0 flex-nowrap">
+										<!-- ? mobile menu -->
+										<div class="col d-lg-none menu-button pl-1 pr-0">
+											<div class="d-inline-flex text-90 pr-0">
+												<button id="mobile-menu-button" type="button" class="btn ml-2 px-0 align-content-center align-items-center d-inline-flex" aria-label="Open menu">
+													<span class="text-body align-middle">
+														<svg viewBox="0 0 80 50" width="30" height="15">
+															<rect width="80" height="8"></rect>
+															<rect y="20" width="80" height="8"></rect>
+															<rect y="40" width="80" height="8"></rect>
+														</svg>
+													</span>
+													<span class="d-none d-sm-inline text-body menu-button-span-text">Menu</span>
+												</button>
+												<span class="border-right pl-2"></span>
+											</div>
+										</div>
+										<div class="col logo-container">
+											<div class="main-logo">
+												<svg
+													version="1.1"
+													id="HSBC_x5F_MASTERBRAND_x5F_LOGO_x5F_WW_x5F_CMYK"
+													xmlns="http://www.w3.org/2000/svg"
+													xmlns:xlink="http://www.w3.org/1999/xlink"
+													x="0px"
+													y="0px"
+													viewBox="0 0 177 38"
+													style="enable-background: new 0 0 177 38"
+													xml:space="preserve"
+												>
+													<style type="text/css">
+														.st0 {
+															fill: #ffffff;
+														}
+														.st1 {
+															fill: #db0011;
+														}
+														.st2 {
+															display: none;
+														}
+														.st3 {
+															display: inline;
+														}
+														.st4 {
+															display: none;
+															fill: #fef382;
+														}
+													</style>
+													<g>
+														<path d="M94.3,20.1h-6.7v6.6h-3.4V11.2h3.4v6.3h6.7v-6.3h3.4v15.5h-3.4V20.1z" />
+														<path
+															d="M105.8,27c-3.3,0-6.1-1.3-6.2-5h3.4c0,1.7,1,2.6,2.9,2.6c1.4,0,2.9-0.7,2.9-2.2c0-1.2-1.1-1.6-2.8-2.1l-1.1-0.3c-2.4-0.7-4.9-1.7-4.9-4.4c0-3.5,3.2-4.6,6.2-4.6c3,0,5.6,1.1,5.6,4.5h-3.4c-0.1-1.4-0.9-2.2-2.5-2.2c-1.2,0-2.5,0.7-2.5,2c0,1.1,1,1.5,3.2,2.2l1.3,0.4c2.7,0.8,4.3,1.8,4.3,4.3C112.2,25.7,108.8,27,105.8,27z"
+														/>
+														<path
+															d="M114.1,11.2h5.4c1.7,0,2.4,0,3,0.2c1.9,0.4,3.3,1.7,3.3,3.7c0,2-1.3,3-3.1,3.5c2.1,0.4,3.6,1.5,3.6,3.8c0,3.5-3.5,4.3-6.2,4.3h-6.1V11.2z M119.5,17.7c1.5,0,3-0.3,3-2.1c0-1.6-1.4-2-2.8-2h-2.4v4.1H119.5z M119.9,24.4c1.6,0,3.1-0.4,3.1-2.3c0-1.8-1.3-2.3-2.9-2.3h-2.7v4.5H119.9z"
+														/>
+														<path d="M135.2,27c-5,0-7.3-3.2-7.3-7.9c0-4.7,2.5-8.2,7.4-8.2c3.1,0,6.1,1.4,6.2,4.9h-3.5c-0.2-1.5-1.2-2.4-2.7-2.4c-3,0-3.9,3.3-3.9,5.7c0,2.5,0.9,5.3,3.8,5.3c1.5,0,2.6-0.8,2.9-2.4h3.5C141.2,25.7,138.4,27,135.2,27z" />
+														<g>
+															<rect x="22.5" y="0.5" class="st0" width="37" height="37" />
+															<polygon class="st1" points="59.6,37.5 78.1,19 59.6,0.5 59.6,0.5 		" />
+															<polygon class="st1" points="22.5,37.5 4,19 22.5,0.5 22.5,0.5 		" />
+															<polygon class="st1" points="59.6,0.5 41,19 22.5,0.5 22.5,0.5 		" />
+															<polygon class="st1" points="22.5,37.5 41,19 59.6,37.5 59.6,37.5 		" />
+														</g>
+													</g>
+													<g class="st2">
+														<path class="st3" d="M88.6,13.8l0.1,0.1l1.2-1.7l-0.1-0.1C89,11,87,9.8,85.6,9.2l-0.1,0l-1,1.5l0.2,0.1C86.1,11.3,87.5,12.3,88.6,13.8z" />
+														<path class="st3" d="M88.1,18.3l0.1,0.1l1.1-1.7l-0.1-0.1c-0.9-1.1-2.9-2.4-4.4-2.9l-0.1,0l-1,1.6l0.2,0.1C85.2,15.8,86.9,16.9,88.1,18.3z" />
+														<polygon class="st3" points="93.4,11.6 102.7,11.6 102.7,9.7 91.4,9.7 91.4,27.5 103.6,27.5 103.6,25.6 93.4,25.6" />
+														<path class="st3" d="M88.5,19.6c-1.1,3-2.2,5.2-4.5,7.5l-0.1,0.1l1.5,1.4l0.1-0.1c2.5-2.3,3.8-5.6,4.6-8l0.1-0.2l-1.7-0.8L88.5,19.6z" />
+														<polygon
+															class="st3"
+															points="119.7,21.6 119.7,18.6 127,18.6 127,16.7 119.7,16.7 119.7,13.9 127.3,13.9 127.3,12 119.7,12 119.7,8.8 117.7,8.8 117.7,12 110,12 110,13.9 117.7,13.9 117.7,16.7 110.3,16.7 110.3,18.6 117.7,18.6 117.7,21.6 109.1,21.6 109.1,23.5 117.7,23.5 117.7,29.2 119.7,29.2 119.7,23.5 128.4,23.5 128.4,21.6 	"
+														/>
+														<g class="st3">
+															<rect x="22.5" y="0.5" class="st0" width="37" height="37" />
+															<polygon class="st1" points="59.6,0.5 59.6,37.5 78.1,19 		" />
+															<polygon class="st1" points="22.5,0.5 41,19 59.6,0.5 		" />
+															<polygon class="st1" points="22.5,0.5 4,19 22.5,37.5 		" />
+															<polygon class="st1" points="22.5,37.5 59.6,37.5 41,19 		" />
+														</g>
+													</g>
+													<g class="st2">
+														<g class="st3"></g>
+														<g class="st3"></g>
+														<g class="st3"></g>
+														<g class="st3"></g>
+													</g>
+													<g class="st2">
+														<g class="st3">
+															<g>
+																<polygon class="st1" points="78.2,19 59.6,0.5 59.6,37.6 			" />
+																<polygon class="st1" points="41.1,19 59.6,0.5 22.5,0.5 			" />
+																<polygon class="st1" points="4,19 22.5,37.6 22.5,0.5 			" />
+																<polygon class="st1" points="41.1,19 22.5,37.6 59.6,37.6 			" />
+															</g>
+														</g>
+														<path
+															class="st3"
+															d="M84.4,15.2l1-1.1c1,0.7,2.4,1.9,3.1,3.3l-1.1,1.1C86.8,17.4,85.7,16,84.4,15.2z M84.4,28.4c2.2-2.5,3.2-5.7,3.7-8.2l1.3,0.6c-0.5,3-2,6.1-3.9,8.5L84.4,28.4z M85.9,10.1L87,9.2c1.2,0.7,2.1,1.6,2.8,2.8L88.7,13C88,11.5,86.9,10.7,85.9,10.1z M90.2,9.8h15v1.4h-6.6c0.8,0.6,1.3,1.1,1.8,2l-0.6,0.4h5V15h-4.6v2.4h3.8v1.4h-3.8v2.3h3.8v1.4h-3.8v2.6h4.7v1.4H93.8l0-8.7c-0.3,0.5-0.8,1-1.2,1.5c-0.2-0.1-0.6-0.4-0.9-0.8c0,0.8,0,6.5,0,9.5h14l0,1.4c-5.2,0-10.3,0-15.5,0L90.2,9.8z M91.7,18.2c0.9-1,2.7-4.4,3.1-7h-3.1V18.2z M97.9,11.2h-3c0.4,0.2,0.7,0.3,1.2,0.5c-0.1,0.7-0.3,1.3-0.5,1.9H99c-0.3-0.7-1-1.3-1.7-1.9L97.9,11.2z M95.2,17.4h3.5V15h-3.5V17.4z M95.2,21.1h3.5v-2.3h-3.5V21.1z M95.2,22.5v2.6h3.5v-2.6H95.2z"
+														/>
+														<path
+															class="st3"
+															d="M117,28c-0.2-0.5-0.7-0.9-1.1-1.3l-0.6-0.5l-2,0l0-4l13.8,0l0,3.9h-2.3c-0.3,0.7-0.7,1.3-1.2,1.9l6.8,0v1.4		H110V28L117,28z M129.6,21.2h-18.9v-1.3l18.9,0V21.2z M127.4,17.6l0-7h1.5l0,8.3h-17.5v-8.2l1.5,0v6.9l6.6,0V9.2h1.5v8.4H127.4z		 M118.7,16.3h-2l0,1.1h-1.4l0-1.1h-1.9l0-1h1.9l0-1.3l-1.9,0v-1h1.9l0-1.2l-1.9,0l0-1h1.9V9.5h1.4v1.3l2,0l0,0.9h-2V13l2,0v1h-2		v1.3h2L118.7,16.3z M114.8,25l10.8,0v-1.6l-10.8,0L114.8,25z M121.7,28c0.7-0.5,1.2-1.2,1.5-1.9h-6c0.6,0.6,1.1,1.2,1.4,1.9		L121.7,28z M124.9,17.4h-1.3v-1.2l-2,0v-1h2v-1.3h-2V13h2l0-1.3h-2l0-0.9l1.9,0l0-1.3h1.3v1.3l2,0v0.9l-2,0l0,1.3l2,0l0,0.9h-2v1.2		h2.1v1h-2L124.9,17.4z"
+														/>
+													</g>
+													<rect y="19.4" class="st4" width="4" height="4" />
+												</svg>
+											</div>
+										</div>
+										<div class="col d-lg-none pl-0 logon-button text-right">
+											<div class="btn-group">
+												<div class="bg-primary py-1 px-2 text-70 logon-app-bar">
+													<a href="#" class="text-white dropdown-toggle pt-0 mt-0 px-1 h-100 system-bar-toggle" data-toggle="dropdown" data-offset="20,3" aria-haspopup="true" aria-expanded="false"> Log On </a>
+													<div class="dropdown-menu dropdown-menu-right bg-pearl border-0 border-radius-0 text-80 text-body px-2">
+														<ul class="list-unstyled py-1 mb-0">
+															<li class="py-1">
+																<a href="#" class="dropdown-item pl-1 pr-1 py-1 d-inline">HSBC Personal Internet Banking<span class="icon-chevron_right text-decoration-none text-60em font-weight-bold pl-3 pr-0"></span></a>
+															</li>
+															<li class="py-1">
+																<a href="#" class="dropdown-item pl-1 pr-1 py-1 d-inline">HSBC Business Internet Banking<span class="icon-chevron_right text-decoration-none text-60em font-weight-bold pl-3 pr-0"></span></a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- <img src="/images/hsbc-logo.png" alt="HSBC logo" class="d-block w-100" /> -->
+										<!-- <img src="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/images/hsbc-logo.png" alt="HSBC logo" class="d-block" /> -->
+									</div>
+								</div>
+
+								<!-- ? desktop menu template -->
+								<script id="desktop-menu-template" type="text/template">
+									{{#desktopmenu}}
+										<div class="{{class}}">
+											{{#content}}
+												{{#header}}
+													<div class="mb-4">
+														<h2 class="mb-2 h5"><b>{{.}}</b></h2>
+														<ul class="list-unstyled">
+															{{#link}}
+															<li class="ml-0">
+																<a href="{{url}}" class="text-90 text-body dropdown-item"> {{caption}} </a>
+															</li>
+															{{/link}}
+														</ul>
+													</div>
+												{{/header}}
+												{{#headerLink}}
+												<a href="{{headerLink}}" class="text-body dropdown-item py-1">
+													<h2 class="py-1 h6">{{caption}}</h2>
+												</a>
+												{{/headerLink}}
+											{{/content}}
+										</div>
+									{{/desktopmenu}}
+								</script>
+
+								<!-- ? important-info template -->
+								<script id="important-info-desktop-template" type="text/template">
+									{{#importantinfodesktop}}
+										{{#headerLink}}
+											<a href="{{url}}" class="text-white d-block font-weight-bold border-0  text-wrap dropdown-item">{{caption}}</a>
+										{{/headerLink}}
+										<ul class="list-unstyled">
+											{{#content}}
+											<li>
+												<a href="{{url}}" class="text-white text-80 d-block mt-2 mb-1 ml-1 pl-2 border-0  text-wrap dropdown-item">{{caption}}</a>
+											</li>
+											{{/content}}
+										</ul>
+									{{/importantinfodesktop}}
+								</script>
+
+								<div class="col col-lg-10 d-none d-lg-inline-block pl-5 h-100 position-static">
+									<ul class="list-unstyled list-inline m-0 p-0 menu-list position-static">
+										<li class="dropdown list-inline-item menu-list-item px-3 py-4 m-0 float-left position-static">
+											<a class="dropdown-toggle text-decoration-none text-body doormat-trigger" href="#" role="button" id="drop-down-menu-perbankan" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+												<span class="mb-0 pb-0 d-block">Perbankan</span>
+												<span class="text-80 mt-0 pt-0">Rekening & kartu kredit</span>
+											</a>
+											<div class="dropdown-menu megamenu" aria-labelledby="drop-down-menu-perbankan">
+												<div class="container">
+													<div class="row">
+														<div class="col col-9">
+															<div class="container pt-3" ```````````>
+																<!-- ? menu perbankan section -->
+																<div id="desktop-menu-perbankan-section" class="row"></div>
+															</div>
+														</div>
+														<!-- ? important-info section -->
+														<div class="col col-3 important-info p-3 h-100"></div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="dropdown list-inline-item menu-list-item px-3 py-4 m-0 float-left position-static">
+											<a class="dropdown-toggle text-decoration-none text-body doormat-trigger" href="#" role="button" id="drop-down-menu-pinjaman" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+												<span class="mb-0 pb-0 d-block">Pinjaman</span>
+												<span class="text-80 mt-0 pt-0">Kartu Kredit & Pinjaman</span>
+											</a>
+											<div class="dropdown-menu megamenu" aria-labelledby="drop-down-menu-pinjaman">
+												<div class="container">
+													<div class="row">
+														<div class="col col-9">
+															<div class="container pt-3">
+																<!-- ? menu pinjaman section -->
+																<div id="desktop-menu-pinjaman-section" class="row"></div>
+															</div>
+														</div>
+														<!-- ? important-info section -->
+														<div class="col col-3 important-info p-3 h-100"></div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="dropdown list-inline-item menu-list-item px-3 py-4 m-0 float-left position-static">
+											<a class="dropdown-toggle text-decoration-none text-body doormat-trigger" href="#" role="button" id="drop-down-menu-wem" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+												<span class="mb-0 pb-0 d-block">Wealth Management</span>
+												<span class="text-80 mt-0 pt-0">Jangka pendek & panjang</span>
+											</a>
+											<div class="dropdown-menu megamenu" aria-labelledby="drop-down-menu-wem">
+												<div class="container">
+													<div class="row">
+														<div class="col col-9">
+															<span class="lead pl-2">#InvestWithTheBest</span>
+															<div class="container pt-3">
+																<!-- ? menu wem section -->
+																<div id="desktop-menu-wem-section" class="row"></div>
+															</div>
+														</div>
+														<!-- ? important-info section -->
+														<div class="col col-3 important-info p-3 h-100"></div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="dropdown list-inline-item menu-list-item px-3 py-4 m-0 float-left position-static">
+											<a class="dropdown-toggle text-decoration-none text-body doormat-trigger" href="#" role="button" id="drop-down-menu-offers" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+												<span class="mb-0 pb-0 d-block">Offers</span>
+												<span class="text-80 mt-0 pt-0">Rewards & gaya hidup terbaru</span>
+											</a>
+											<div class="dropdown-menu megamenu" aria-labelledby="drop-down-menu-offers">
+												<div class="container">
+													<div class="row">
+														<div class="col col-9">
+															<div class="container pt-3">
+																<!-- ? menu offers section -->
+																<div id="desktop-menu-offers-section" class="row"></div>
+															</div>
+														</div>
+														<!-- ? important-info section -->
+														<div class="col col-3 important-info p-3 h-100"></div>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div class="main-overlay initially-hidden" aria-hidden="true"></div>
+
+			<main id="main" class="main min-vh-100 px-0">
+				<div class="container">
+					<div class="row">
+						<div class="col px-4">
+							<div class="py-3 border-bottom border-silver">
+                <h1>Perbankan yang aman dan nyaman</h1>
+                <p>Kami berkomitmen untuk memastikan keamanan Anda ketika menggunakan produk dan layanan kami. Tips dan panduan berikut kami harapkan dapat membantu Anda untuk melindungi uang, privasi, dan data pribadi Anda</p>
+              </div>
+					</div>
+				</div>
+
+				<div id="main-content" class="container pt-4">
+					<!-- ? notification section -->
+					<!-- <div id="main-content-important-notice" class="row">
+						<div class="col">
+							<div class="alert bg-info border-info border-radius-0 d-flex" role="alert">
+								<div>
+									<span class="text-body pt-2 font-weight-lighter">
+										<svg
+											version="1.1"
+											id="Capa_1"
+											xmlns="http://www.w3.org/2000/svg"
+											xmlns:xlink="http://www.w3.org/1999/xlink"
+											x="0px"
+											y="0px"
+											width="20px"
+											height="20px"
+											viewBox="0 0 32 32"
+											style="enable-background: new 0 0 32 32"
+											xml:space="preserve"
+										>
+											<g>
+												<path
+													d="M17.962,24.725l1.806,0.096v2.531h-7.534v-2.406l1.045-0.094c0.568-0.063,0.916-0.254,0.916-1.014v-8.801c0-0.699-0.188-0.92-0.791-0.92l-1.06-0.062v-2.626h5.666L17.962,24.725L17.962,24.725z M15.747,4.648c1.394,0,2.405,1.047,2.405,2.374c0,1.331-1.014,2.313-2.438,2.313c-1.454,0-2.404-0.982-2.404-2.313C13.31,5.695,14.26,4.648,15.747,4.648z M16,32C7.178,32,0,24.822,0,16S7.178,0,16,0c8.82,0,16,7.178,16,16S24.82,32,16,32z M16,3 C8.832,3,3,8.832,3,16s5.832,13,13,13s13-5.832,13-13S23.168,3,16,3z"
+												/>
+											</g>
+											<g></g>
+											<g></g>
+											<g></g>
+											<g></g>
+											<g></g>
+											<g></g>
+											<g></g>
+											<g></g>
+											<g></g>
+											<g></g>
+											<g></g>
+											<g></g>
+											<g></g>
+											<g></g>
+											<g></g>
+										</svg>
+									</span>
+								</div>
+								<div class="row mx-1 mx-lg-2 w-100">
+									<div class="col col-12 text-90">
+										<p>
+											<b>Important</b>. <i>Lorem ipsum</i> dolor sit amet consectetur adipisicing elit. Doloremque nulla deleniti tempora eos delectus quisquam doloribus, iusto distinctio ea enim mollitia
+											<a href="#" class="text-body text-underline">temporibus</a> officiis consequuntur earum nisi sunt fuga nesciunt necessitatibus.
+										</p>
+									</div>
+								</div>
+
+								<button type="button" class="close align-self-start" data-dismiss="alert" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+						</div>
+					</div> -->
+
+					<!-- ? breadcrumb template -->
+					<script id="breadcrumb-template" type="text/template">
+						{{#breadcrumb}}
+							{{^current}}
+							<li class="list-inline-item">
+								<a href="{{url}}" class="text-body"> {{caption}} </a>
+								<span class="icon-chevron_right_thick pl-1 text-primary font-weight-bolder text-70"></span>
+							</li>
+							{{/current}}
+							{{#current}}
+							<li class="list-inline-item font-weight-bold">{{caption}}</li>
+							{{/current}}
+						{{/breadcrumb}}
+					</script>
+
+          <!-- ? breadcrumb section -->
+          <div class="container d-none d-sm-block pt-4 px-0">
+						<div class="row">
+							<nav aria-label="You are here" class="col">
+								<ol id="breadcrumb-section" class="list-unstyled list-inline"></ol>
+							</nav>
+						</div>
+          </div>
+          
+          <!-- ? content section -->
+					<div class="container d-sm-block pt-4 px-0">
+						<div class="row">
+              <div class="col col-12 col-lg-9 pb-3">
+                <div class="">
+                  <div class="row">
+                    <div class="col col-12">
+                      <div>
+                        <h2 id="pengkinian-data" class="section-header">Pengkinian Data Anda</h2>
+                      </div>
+                    </div>    
+                  </div>
+                  <div class="row pt-3">
+                    <div class="col col-12">
+                        <h3 class="h6">Pastikan akurasi informasi pribadi Anda</h3>
+                        <p>
+                          Informasikan kepada Bank setiap kali terjadi perubahan data pribadi Anda (atau kuasa yang Anda tunjuk) dilengkapi dengan dokumen pendukung yang diperlukan. 
+                        </p>
+                        <p>
+                          Pengkinian data ini merupakan kewajiban dari nasabah mengacu pada Peraturan Otoritas Jasa Keuangan (POJK) No.12/POJK.01/2017 tentang Penerapan Program Anti Pencucian Uang dan Pencegahan Pendanaan Terorisme di Sektor Jasa Keuangan.
+                        </p>
+                        <p class="mb-1">
+                          Data-data tersebut termasuk namun tidak terbatas pada:
+                        </p>
+                        <div class="row pr-3">
+                          <div class="col pt-0">
+                            <div class="border-lg border-silver">
+                              <ul class="nav nav-tabs responsive bg-silver" role="tablist">
+                                <li class="nav-item" role="tab">
+                                  <a class="nav-link tabs-to-collapse active text-body p-0 p-lg-3 border-0" data-toggle="tab" data-disable-scroll="true" href="#tab-panel-data-nasabah-perorangan">
+                                    <p class="no-margin-block">Data nasabah perorangan</p>
+                                  </a>
+                                </li>
+                                <li class="nav-item mt-3 mt-lg-0" role="tab">
+                                  <a class="nav-link tabs-to-collapse text-body p-0 p-lg-3 border-0" data-toggle="tab" data-disable-scroll="true" href="#tab-panel-data-nasabah-korporasi">
+                                    <p class="no-margin-block">Data nasabah korporasi</p>
+                                  </a>
+                                </li>
+                              </ul>
+                              <!-- Tab panes -->
+                              <div class="tab-content responsive pt-4">
+                                <div class="tab-pane active w-100" id="tab-panel-data-nasabah-perorangan" role="tabpanel">
+                                  <div class="container">
+                                    <div class="row">
+                                      <div class="col col-12 px-lg-4">
+                                        <div class="row">
+                                          <div class="col col-12">
+                                            <ul class="pl-2">
+                                              <li>
+                                                Nama lengkap
+                                              </li>
+                                              <li>
+                                                Pekerjaan atau bidang usaha.
+                                              </li>
+                                              <li>
+                                                Alamat tempat tinggal / alamat tempat kerja.
+                                              </li>
+                                              <li>
+                                                Alamat email.
+                                              </li>
+                                              <li>
+                                                Nomor telepon rumah/ tempat kerja/ telepon genggam.
+                                              </li>
+                                              <li>
+                                                Nomor dan masa berlaku identitas (KTP/paspor/kartu izin tinggal).
+                                              </li>
+                                              <li>
+                                                Nomor NPWP (wajib bagi pemilik/calon pemilik rekening sekuritas).
+                                              </li>
+                                              <li>
+                                                Jenis transaksi yang akan sering dilakukan.
+                                              </li>
+                                              <li>
+                                                Tujuan pembukaan rekening.
+                                              </li>
+                                              <li>
+                                                Kewarganegaraan.
+                                              </li>
+                                              <li>
+                                                Status perkawinan.
+                                              </li>
+                                              <li>
+                                                Sumber dana dan penghasilan.
+                                              </li>
+                                            </ul>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="tab-pane w-100" id="tab-panel-data-nasabah-korporasi" role="tabpanel">
+                                  <div class="container">
+                                    <div class="row">
+                                      <div class="col col-12 px-lg-4">
+                                        <div class="row">
+                                          <div class="col col-12">
+                                            <ul class="pl-2">
+                                              <li>
+                                                Izin Usaha.
+                                              </li>
+                                              <li>
+                                                Anggaran Dasar Perusahaan (termasuk perubahannya jika ada).
+                                              </li>
+                                              <li>
+                                                Alamat dan nomor telepon.
+                                              </li>
+                                              <li>
+                                                Sumber dana dan tujuan pembukaan rekening.
+                                              </li>
+                                              <li>
+                                                Nomor Pokok Wajib Pajak (NPWP).
+                                              </li>
+                                              <li>
+                                                Susunan Direksi dan Komisaris (termasuk dokumen identitas berupa KTP/paspor/kartu izin tinggal).
+                                              </li>
+                                              <li>
+                                                Susunan pemegang saham Perusahaan sampai pada individu pemegang saham terakhir (setiap individu yang memiliki minimum 10% saham dalam perusahaan Anda, langsung dan/atau tidak langsung).
+                                              </li>
+                                            </ul>
+                                          </div>
+                                        </div class="pl-2">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row pt-5">
+                  <div class="col col-12">
+                    <div>
+                      <h2 id="lindungi-kartu-dan-nomor-ponsel" class="section-header">Lindungi kartu dan nomor ponsel Anda</h2>
+                    </div>
+                  </div>    
+                </div>
+                <div class="row pt-3">
+                  <div class="col col-12">
+                    <h3 class="h5">Lindungi Kartu Kredit dan Kartu Debit HSBC Anda dari pengambilalihan rekening oleh pihak lain </h3>
+                    <p>
+                      HSBC tidak pernah memberikan wewenang kepada pihak manapun untuk datang mengambil kembali Kartu Kredit/Debit dan PIN Anda dengan alasan apapun. Mohon berhati-hati dengan penipuan yang mengatasnamakan HSBC. Segala kerugian yang timbul akibat berpindahtangannya Kartu Kredit/Debit Anda menjadi tanggung jawab Anda sepenuhnya.
+                    </p>
+                    <h3 class="h5 pt-3">Lindungi diri Anda dari pengambil-alihan nomor ponsel (SIM swap)</h3>
+                    <p>
+                      Lindungi Diri Anda dari Pengambilalihan Nomor Ponsel (SIM Swap). SIM Swap adalah penggantian SIM card ponsel melalui operator seluler secara ilegal oleh pihak yang tidak bertanggung jawab, dengan tujuan memperoleh akses transaksi perbankan Anda seperti menerima OTP (One-Time Password) atas suatu transaksi online yang tidak Anda lakukan.
+                    </p>
+                    <p>
+                      <b>
+                        Berikut Tips untuk Menghindari SIM Swap:
+                      </b>
+                    </p>
+                    <ul class="pl-4">
+                      <li>
+                        Segera hubungi operator seluler Anda ketika layanan komunikasi melalui ponsel tidak berfungsi, seperti tidak dapat melakukan / menerima panggilan maupun SMS.
+                      </li>
+                      <li>
+                        Segera hubungi HSBC Phone Banking di 1500 700 (Premier), 1500 808 (Signature & Platinum), 64722 dari telepon genggam (Kartu Kredit HSBC Lainnya) jika menemukan indikasi / memperoleh informasi bahwa Anda menjadi korban SIM Swap.
+                      </li>
+                      <li>
+                        Tidak mempublikasikan nomor ponsel di media sosial atau gunakanlah nomor ponsel yang berbeda untuk aktivitas perbankan Anda.
+                      </li>
+                      <li>
+                        Berhati-hatilah saat Anda memberikan data pribadi (tanggal lahir, nomor ponsel) kepada pihak lain, dan saat menggunakan informasi kartu kredit Anda (nomor kartu, masa berlaku, nomor CVV/CVC - 3 angka di bagian belakang kartu).
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="row pt-5">
+                  <div class="col col-12">
+                    <div>
+                      <h2 id="transaksi-perbankan-dan-atm" class="section-header">Transaksi perbankan dan ATM</h2>
+                    </div>
+                  </div>    
+                </div>
+                <div class="row pt-3">
+                  <div class="col col-12">
+                    <h3 class="h5">
+                      Transaksi perbankan - jagalah kepentingan Anda
+                    </h3>
+                    <!-- <p>Jagalah kepentingan Anda:</p> -->
+                    <ul class="pl-4">
+                      <li>
+                        Jangan menandatangani blanko formulir kosong. Pastikan Anda telah memahami setiap informasi yang perlu dilengkapi sebelum menandatangani setiap blanko formulir transaksi.
+                      </li>
+                      <li>
+                        Untuk setiap transaksi produk investasi dan asuransi, pastikan Anda telah dijelaskan tentang fitur produk (termasuk risiko produk) dari produk yang ditawarkan.
+                      </li>
+                      <li>
+                        Pastikan Anda telah mengetahui dan memahami syarat dan ketentuan yang berlaku untuk setiap produk dan layanan Bank yang ditawarkan
+                      </li>
+                    </ul>
+                    <h3 class="h5 pt-3">
+                      Transaksi ATM
+                    </h3>
+                    <!-- <p><b>Penggunaan ATM</b></p> -->
+                    <ul class="pl-4">
+                      <li>
+                        Pastikan tidak ada orang yang melihat Anda memasukkan nomor PIN Anda. Jangan informasikan nomor PIN Anda kepada siapapun termasuk kepada Bank/Contact Centre.
+                      </li>
+                      <li>
+                        Tetap waspada dan laporkan kepada HSBC jika Anda melihat alat yang mencurigakan (misal: pin hole camera).
+                      </li>
+                      <li>
+                        Tolak bantuan dari orang yang tidak dikenal ketika Anda sedang melakukan transaksi di ATM.
+                      </li>
+                      <li>
+                        Jika Anda mendapat masalah dalam menggunakan ATM, batalkan transaksi Anda dan informasikan kepada HSBC.
+                      </li>
+                      <li>
+                        Tetaplah waspada jika kartu Anda tertelan di mesin ATM. Jika Anda mencurigai adanya penipuan/pemalsuan kartu, segera laporkan melalui Layanan Phone Banking HSBC 24 jam atau cabang HSBC terdekat untuk memblokir dan mengganti kartu Anda.
+                      </li>
+                      <li>
+                        Jangan gunakan ATM jika Anda melihat stiker/pengumuman pada mesin ATM yang meminta Anda menghubungi nomor telpon selain Contact Centre HSBC yaitu Layanan Phone Banking HSBC 24 jam: (021) 5291 4722 / 0804-1-86-4722, dan Corporate Contact Centre: (021) 25514777 / 0807-1-86-4722). Jika Anda mengalami masalah saat menggunakan mesin ATM, harap menghubungi nomor Contact Centre HSBC tersebut diatas.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col col-12 col-lg-3 pl-lg-3">
+								<h2 class="h4">Cara menghubungi kami</h2>
+                <h3 class="h6 font-weight-bold pt-4">Melalui kantor cabang</h3>
+                <p>Silakan kunjungi cabang terdekat kami untuk berbicara dengan staff kami.</p>
+
+                <h3 class="h6 font-weight-bold pt-4">Melalui telephone</h3>
+                <p>
+                  <b>1500 808</b> <br> 
+                  atau +62-21-2552 6603 (dari luar negeri)
+                </p>
+                <p>Nasabah HSBC Fusion: <b>1500 501</b></p>
+                <p>
+                  Nasabah HSBC Premier: <b>1500 700</b> <br>
+                  atau +62-21-2551 4722 (dari luar negeri)
+                </p>
+                
+                <h3 class="h6 font-weight-bold pt-4">Melalui online</h3>
+                <p>Silakan isi formulir di halaman <a href="">berikut</a></p>
+                <p>Log on ke HSBC Internet Banking dan kirim pesan</p>
+							</div>
+						</div>
+					</div>
+
+
+					<!-- <div class="container pt-4 px-0">
+						<div class="row">
+							<div class="col col-12 col-lg-9 pb-3">
+								<div class="border-lg-right border-silver">
+									<div class="row">
+										<div class="col">
+											<h2 id="h2header" class="section-header">Program dan Keuntungan HSBC Fusion</h2>
+										</div>
+									</div>
+									<p>HSBC Fusion menawarkan beragam program menarik dan keuntungan sesuai dengan karakteristik dan kebutuhan Anda:</p>
+									<ul class="pl-3">
+										<li>
+											<b>Cash back hingga Rp 5 Juta</b>
+											<p>Buka giro bisnis dan dapatkan cash back hingga Rp 5 Juta.</p>
+										</li>
+										<li>
+											<b>Cash back hingga Rp 8 Juta</b>
+											<p>Buka Deposito berjangka dan dapatkan bunga spesial dan cash back hingga Rp 8 Juta.</p>
+										</li>
+										<li>
+											<b>Bunga spesial pinjaman</b>
+											<p>Buka fasilitas pinjaman modal kerja dengan bunga special setara 0,5% per tahun.</p>
+										</li>
+										<li>
+											<b>Dapatkan <i>reward</i> tanpa batas</b>
+											<p>Ajak seluruh rekan bisnis dan bergabung bersama HSBC Fusion dan dapatkan reward tanpa batas.</p>
+										</li>
+										<li>
+											<b>Alihkan fasilitas pinjaman kerja Anda di bank lain dan dapatkan keuntungan sebagai berikut:</b>
+											<ul class="pl-3">
+												<li>Suku bunga kompetitif 9,8% fixed 1 tahun pertama</li>
+												<li>Bebas biaya appraisal hingga Rp3 Juta</li>
+												<li>Bebas biaya administrasi</li>
+												<li>Bebas biaya provisi</li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col col-12 col-lg-3 pl-lg-3">
+								<h3>Bergabung sekarang</h3>
+								<p>Apakah bisnis Anda beroperasi di Indonesia dengan omset tahunan tidak lebih dari Rp50 Milyar? Bila ya, maka Anda telah memenuhi ketentuan untuk bergabung bersama kami</p>
+								<p>Jelajahi bisnismu bersama HSBC Fusion</p>
+								<a href="" class="btn btn-secondary border-radius-0">Ajukan sekarang</a>
+							</div>
+						</div>
+					</div> -->
+
+					<!-- ? cards template -->
+
+					<!-- ? second section -->
+					<!-- <div class="container pt-5 px-0">
+						<div class="row">
+							<div class="col col-12">
+								<div>
+									<h2 id="h2header" class="section-header">Discover HSBC Advance’s range of exclusive services and support</h2>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="container">
+								<div id="card-section" class="row py-1">
+									<div class="col col-12 col-lg-6 py-3">
+										<div class="box-loader h-125p"></div>
+										<div class="box-loader h-30p mt-3"></div>
+										<div class="box-loader h-20p mt-3"></div>
+										<div class="box-loader h-20p mt-2"></div>
+									</div>
+									<div class="col col-12 col-lg-6 py-3">
+										<div class="box-loader h-125p"></div>
+										<div class="box-loader h-30p mt-3"></div>
+										<div class="box-loader h-20p mt-3"></div>
+										<div class="box-loader h-20p mt-2"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div> -->
+
+					<!-- ? second section - alternative -->
+					<div class="container pt-5 px-0">
+						<div class="row">
+							<div class="col col-12 col-lg-9">
+								<div>
+									<h2 id="h2header" class="section-header">Discover HSBC Advance’s range of exclusive services and support</h2>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<!-- ? cards section -->
+							<div class="container">
+								<div class="row py-2 d-block clearfix">
+									<div class="col col-12 col-lg-6 py-3 float-sm-left">
+										<img src="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0-content/home/images/cq5dam.web.590.1000 (3).jpg" alt="lorem" class="w-100" />
+									</div>
+									<div class="col col-12 col-lg-6 py-3 float-sm-right">
+										<h3 class="mb-4">Rekening dalam 12 mata uang</h3>
+										<p class="mb-4">Kemana pun Anda bepergian, penuhi kebutuhan mata uang asing Anda dengan membuka rekening tabungan dan deposito secara online hanya dalam beberapa klik</p>
+										<p class="mb-4">
+											Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, corrupti. Sint, sapiente placeat! Numquam dolorum adipisci sapiente, officia eveniet at perspiciatis vitae et totam placeat veritatis rerum necessitatibus nihil
+											esse?
+										</p>
+										<a href="https://www.hsbc.co.id/1/2/id/personal/accounts" class="text-black font-weight-bold">Akses sekarang</a><span class="icon-chevron_right_thick pl-2 text-70 font-weight-bold text-primary"></span>
+									</div>
+								</div>
+								<div class="row py-2 d-block clearfix">
+									<div class="col col-12 col-lg-6 py-3 float-sm-right">
+										<img src="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0-content/home/images/cq5dam.web.590.1000 (4).jpg" alt="lorem" class="w-100" />
+									</div>
+									<div class="col col-12 col-lg-6 py-3 float-sm-left">
+										<h3 class="mb-4">Akses produk wealth management</h3>
+										<p class="mb-4">Kemudahan berinvestasi reksa dana secara online hanya dengan Rp 500 ribu dan beragam produk asuransi untuk perlindungan masa depan Anda</p>
+										<p class="mb-4">
+											Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, corrupti. Sint, sapiente placeat! Numquam dolorum adipisci sapiente, officia eveniet at perspiciatis vitae et totam placeat veritatis rerum necessitatibus nihil
+											esse?
+										</p>
+										<ul class="mb-4">
+											<li>
+												Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, veritatis excepturi! Aspernatur blanditiis cum, ab, asperiores animi tempore reiciendis autem ad velit soluta dicta sunt laudantium eaque, pariatur atque harum?
+											</li>
+											<li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim aperiam sunt id libero pariatur aliquam quae quos, excepturi quo quaerat labore facilis ab voluptate sint modi vitae ratione expedita totam?</li>
+										</ul>
+										<a href="https://www.hsbc.co.id/1/2/id/personal/wealth-management/investasi" class="text-black font-weight-bold">Baca mengenai produk wealth management</a
+										><span class="icon-chevron_right_thick pl-2 text-70 font-weight-bold text-primary"></span>
+									</div>
+								</div>
+								<div class="row py-2 d-block clearfix">
+									<div class="col col-12 col-lg-6 py-3 float-sm-left">
+										<img src="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0-content/home/images/cq5dam.web.590.1000 (5).jpg" alt="lorem" class="w-100" />
+									</div>
+									<div class="col col-12 col-lg-6 py-3 float-sm-right">
+										<h3 class="mb-4">Kartu kredit tanpa iuran tahunan</h3>
+										<p class="mb-4">
+											Nikmati cash back 25% untuk setiap transaksi dengan kartu kredit HSBC Platinum Cash Back atau double rewards setiap hari dengan kartu kredit HSBC Visa Platinum, bebas iuran tahunan khusus untuk Nasabah HSBC Advance
+										</p>
+										<p class="mb-4">
+											Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, corrupti. Sint, sapiente placeat! Numquam dolorum adipisci sapiente, officia eveniet at perspiciatis vitae et totam placeat veritatis rerum necessitatibus nihil
+											esse?
+										</p>
+										<a href="https://www.hsbc.co.id/1/2/id/personal/kartu-kredit" class="text-black font-weight-bold">Dapatkan kartunya sekarang juga</a><span class="icon-chevron_right_thick pl-2 text-70 font-weight-bold text-primary"></span>
+									</div>
+								</div>
+								<div class="row py-2 d-block clearfix">
+									<div class="col col-12 col-lg-6 py-3 float-sm-right">
+										<img src="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0-content/home/images/cq5dam.web.590.1000 (6).jpg" alt="lorem" class="w-100" />
+									</div>
+									<div class="col col-12 col-lg-6 py-3 float-sm-left">
+										<h3 class="mb-4">Bebas transaksi kartu debit</h3>
+										<p class="mb-4">Gratis tarik tunai, transfer, dan cek saldo di jaringan ATM Bersama dan Prima di seluruh Indonesia</p>
+										<ul class="mb-4">
+											<li>
+												Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, veritatis excepturi! Aspernatur blanditiis cum, ab, asperiores animi tempore reiciendis autem ad velit soluta dicta sunt laudantium eaque, pariatur atque harum?
+											</li>
+											<li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim aperiam sunt id libero pariatur aliquam quae quos, excepturi quo quaerat labore facilis ab voluptate sint modi vitae ratione expedita totam?</li>
+										</ul>
+										<a href="https://www.hsbc.co.id/1/2/id/personal/kartu-debit" class="text-black font-weight-bold">Gunakan kartu debit sekarang</a><span class="icon-chevron_right_thick pl-2 text-70 font-weight-bold text-primary"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- ? third section -->
+					<div class="container pt-5 px-0">
+						<div class="row">
+							<div class="col col-12">
+								<div>
+									<h2 class="section-header">How HSBC Advance can help you</h2>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col pt-3">
+								<div class="border-lg border-silver">
+									<ul class="nav nav-tabs responsive bg-silver" role="tablist">
+										<li class="nav-item" role="tab">
+											<a class="nav-link tabs-to-collapse active text-body p-0 p-lg-3 border-0" data-toggle="tab" data-disable-scroll="true" href="#tab-panel-grow">
+												<h3 class="h5 no-margin-block">Grow your wealth</h3>
+											</a>
+										</li>
+										<li class="nav-item mt-3 mt-lg-0" role="tab">
+											<a class="nav-link tabs-to-collapse text-body p-0 p-lg-3 border-0" data-toggle="tab" data-disable-scroll="true" href="#tab-panel-trend">
+												<h3 class="h5 no-margin-block">Keep up with the latest trend</h3>
+											</a>
+										</li>
+										<li class="nav-item mt-3 mt-lg-0" role="tab">
+											<a class="nav-link tabs-to-collapse text-body p-0 p-lg-3 border-0" data-toggle="tab" data-disable-scroll="true" href="#tab-panel-home">
+												<h3 class="h5 no-margin-block">Own your dream home</h3>
+											</a>
+										</li>
+										<li class="nav-item mt-3 mt-lg-0" role="tab">
+											<a class="nav-link tabs-to-collapse text-body p-0 p-lg-3 border-0" data-toggle="tab" data-disable-scroll="true" href="#tab-panel-future">
+												<h3 class="h5 no-margin-block">Prepare your children's future</h3>
+											</a>
+										</li>
+									</ul>
+									<!-- Tab panes -->
+									<div class="tab-content responsive pt-4">
+										<div class="tab-pane active w-100" id="tab-panel-grow" role="tabpanel">
+											<div class="container">
+												<div class="row">
+													<div class="col col-12 px-lg-4">
+														<div class="row">
+															<div class="col col-12 col-lg-6">
+																<h4 class="mt-3">Mengapa merencanakan keuangan sekarang?</h4>
+																<p>Mengelola dan mengembangkan kekayaan untuk mencapai tujuan dan gaya hidup yang Anda inginkan hanya bisa diraih melalui perencanaan keuangan yang bijak dan investasi yang tepat.</p>
+
+																<p class="mb-0">Berikut alasan mengapa Anda harus mulai merencanakan keuangan sekarang:</p>
+																<ul class="ml-0">
+																	<li>
+																		Tingginya laju inflasi di Indonesia. Berdasarkan data dari Bank Indonesia, laju inflasi rata-rata di 2018 - 2019 (hingga Juni 2019) adalah 3,09%, dengan laju inflasi tertinggi di bulan Maret sebesar 3,41% dan
+																		terendah di bulan Agustus sebesar 2,48%, sebelum naik ke 3,28% di bulan Juni 2019. Perubahan seperti ini adalah sesuatu yang mesti Anda pertimbangkan dengan seksama.
+																	</li>
+																	<li>Agar Anda mulai menabung dan berinvestasi, siap untuk kejadian apapun dalam hidup.</li>
+																	<li>Memastikan keluarga Anda terlindungi, apapun kejadian tak terduga yang mungkin terjadi.</li>
+																	<li>Agar Anda lebih optimis dan antusias menyambut masa depan, terutama setelah akhir masa kerja.</li>
+																</ul>
+
+																<p class="mb-0">Persiapan Jadi Kuncinya</p>
+																<p>
+																	Jika mengatur keuangan jadi cara merencanakan masa depan Anda dan keluarga, maka mengembangkan kekayaan jadi cara menjamin masa depan mereka. Caranya dengan membuat perencanaan keuangan dan investasi yang matang dan
+																	memulai segera.
+																</p>
+															</div>
+
+															<div class="col col-12 col-lg-6">
+																<h4 class="mt-4">Bagaimana HSBC Advance dapat membantu Anda meraih tujuan finansial Anda</h4>
+																<ul>
+																	<li>
+																		<div>Puluhan produk reksa dana dan obligasi dengan investasi awal mulai dari Rp 500 Ribu</div>
+																		<div>
+																			Optimalkan keuangan Anda dengan beragam <a href="https://www.hsbc.co.id/1/2/id/personal/wealth-management/investasi">produk investasi</a>, seperti reksa dana dan obligasi, melalui HSBC Advance. Dapatkan kemudahan
+																			untuk melakukan transaksi dan memantau perkembangan portofolio investasi Anda kapan pun dan di mana pun melalui Wealth Dashboard di HSBC Internet Banking.
+																		</div>
+																	</li>
+																	<li>
+																		<div>Asuransi dengan manfaat perlindungan dan investasi dengan premi terjangkau</div>
+																		<div>
+																			Anda ingin tetap terlindungi dan memastikan agar keadaan finansial Anda tak terganggu meskipun ada kejadian tak diinginkan menimpa Anda. Temukan beragam produk asuransi yang sesuai dengan kebutuhan Anda
+																			<a href="https://www.hsbc.co.id/1/2/id/personal/wealth-management/asuransi">di sini</a>.
+																		</div>
+																	</li>
+																	<li>
+																		<div>Tabungan dan deposito dalam 12 mata uang</div>
+																		<div>
+																			Akses ke rekening tabungan dan deposito dalam 12 mata uang (IDR, USD, GBP, SGD, AUD, NZD, CAD, EUR, HKD, JPY, CHF dan CNY) . Nikmati pula, bunga tabungan tinggi hingga 4% melalui
+																			<a href="https://www.hsbc.co.id/1/2/id/personal/accounts/highrate">HSBC High Rate Savings</a>.
+																		</div>
+																	</li>
+																	<li>
+																		<div>Diskusi pribadi dengan tim finansial HSBC</div>
+																		<div>Advance Manager kami siap untuk memahami kebutuhan finansial Anda dan membantu melakukan perencanaan keuangan untuk membantu Anda meraih tujuan finansial Anda.</div>
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="tab-pane w-100" id="tab-panel-trend" role="tabpanel">
+											<div class="container">
+												<div class="row">
+													<div class="col col-12 px-lg-4">
+														<div class="row">
+															<div class="col col-12 col-lg-6">
+																<h4 class="mt-3">Raih gaya hidup impian bersama HSBC Advance</h4>
+																<p>Siapa yang tak ingin hidup dengan mapan - miliki gadget terkini, busana yang mewakili style terbaik Anda, akses pada berbagai hiburan untuk membuat hidup lebih ceria tanpa khawatir cash flow terganggu?</p>
+
+																<p class="mb-0">Yuk, simak cara jitu dan praktis untuk menggapai semua yang terbaik dalam hidup tanpa besar pasak daripada tiang:</p>
+																<ul class="ml-0">
+																	<li>
+																		<div>Semua bisa dicicil!</div>
+																		<div>
+																			Kartu kredit tak semata jadi alat konsumtif namun bisa jadi alat bantu finansial yang tepat. Cari tahu fitur dan fasilitas apa saja yang ada dalam kartu kredit Anda dan gunakan dengan bijak. Dengan kartu kredit
+																			HSBC Platinum Cash Back, Anda dapat mengubah transaksi Anda menjadi cicilian mulai dari Rp 50 ribuan per bulan.
+																		</div>
+																	</li>
+																	<li>
+																		<div>Smart shopping, selalu hemat!</div>
+																		<div>
+																			Sebelum Anda <em>shop till you drop</em>, ketahui dulu bahwa dengan kartu kredit HSBC Visa Platinum atau Platinum Cash Back, Anda selalu bisa berhemat dengan begitu banyak promo dari HSBC. Cek beragam promo
+																			dining, shopping, dan traveling terbaru <a href="https://www.hsbc.co.id/1/2/id/personal/offers/kartu-kredit/offers">di sini</a>.
+																		</div>
+																	</li>
+																	<li>
+																		<div>Rajinlah bertransaksi dengan kartu kredit HSBC Visa Platinum dan kumpulkan terus Poin Rewards Anda!</div>
+																		<div>
+																			Dapatkan 2x Poin Rewards untuk transaksi fashion, dining, dan transaksi di luar negeri menggunakan kartu kredit HSBC Visa Platinum. Sehingga, Anda dapat mendapatkan Poin Rewards lebih banyak dan lebih cepat.
+																		</div>
+																	</li>
+																	<li>
+																		<div>Manfaatkan semua yang "gratis"</div>
+																		<div>
+																			Tukarkan Poin Rewards kartu kredit HSBC Anda dengan:
+																			<ul>
+																				<li>Beragam e-voucher belanja di 30+ merchant favorit seperti Alfamart, Gojek, H&M, Metro, Tokopedia, dan lainnya.</li>
+																				<li>Terbang gratis dengan penukaran Poin Rewards Anda ke mileage.</li>
+																				<li>Nikmati hingga 50% OFF di 80+ merchant dengan poin rewards HSBC Anda.</li>
+																			</ul>
+																			Temukan informasi penukanan Poin Rewards lebih lanjut <a href="https://www.hsbc.co.id/1/2/id/personal/offers/kartu-kredit/rewards">di sini</a>.
+																		</div>
+																	</li>
+																</ul>
+															</div>
+
+															<div class="col col-12 col-lg-6">
+																<h4 class="mt-4">Bagaimana HSBC Advance dapat membantu Anda meraih gaya hidup impian</h4>
+																<ul>
+																	<li>
+																		<div>Kartu kredit HSBC Visa Platinum atau Platinum Cash Back bebas iuran tahunan</div>
+																		<div>
+																			Khusus Nasabah HSBC Advance, Anda dapat menikmati kartu kredit HSBC Visa Platinum atau Platinum Cash Back bebas iuran tahunan untuk 1 kartu utama dan 3 kartu tambahan. Dapatkan juga, limit kartu kredit tinggi
+																			hingga 60% dari Total Relationship Balance Anda.
+																		</div>
+																	</li>
+																	<li>
+																		<div>Pinjaman hingga Rp 125 Juta</div>
+																		<div>
+																			<a href="https://www.hsbc.co.id/1/2/id/personal/pinjaman/flexi-credit">HSBC FlexiCredit</a> siap mendukung Anda setiap saat dengan fasilitas pinjaman yang fleksibel untuk mewujudkan setiap keinginan Anda, kapan
+																			pun dan di mana pun Anda berada.
+																		</div>
+																	</li>
+																	<li>
+																		<div>Kemudahan transaksi dengan Kartu Debit HSBC Advance</div>
+																		<div>
+																			Nikmati transaksi (tarik tunai, transfer, cek saldo) bebas biaya 30x per bulan di seluruh jaringan ATM Bersama dan Prima di Indonesia. Dapatkan pula kemudahan belanja online di e-commerce favorit menggunakan
+																			Kartu Debit Visa HSBC Advance.
+																		</div>
+																	</li>
+																	<li>
+																		<div>Tabungan dan deposito dalam 12 mata uang</div>
+																		<div>
+																			Nikmati kemudahan membuka rekening tabungan dan deposito dalam 12 mata uang (IDR, USD, GBP, SGD, AUD, NZD, CAD, EUR, HKD, JPY, CHF dan CNY) untuk keperluan traveling kapan pun dan di mana pun melalui HSBC
+																			Internet Banking.
+																		</div>
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="tab-pane w-100" id="tab-panel-home" role="tabpanel">
+											<div class="container">
+												<div class="row">
+													<div class="col col-12 px-lg-4">
+														<div class="row">
+															<div class="col col-12 col-lg-6">
+																<h4 class="mt-3">Beranikan diri beli rumah pertama!</h4>
+																<p>Membeli rumah butuh persiapan yang matang baik dari segi finansial maupun mental. Baca tips berikut agar Anda dapat memberanikan diri mengambil langkah membeli rumah pertama!</p>
+																<ul class="ml-0">
+																	<li>
+																		<div>Ketahui potensi penghematan Anda</div>
+																		<div>
+																			Lakukan audit atas pengeluaran rutin Anda dan pisahkan mana yang sungguh kebutuhan dan mana yang bukan. Semua pengeluaran yang bukan merupakan kebutuhan langsung adalah potensi penghematan. Mudah bukan? Namun
+																			Anda tidak perlu khawatir mengorbankan gaya hidup untuk berhemat. Manfaatkan penawaran spesial tiap hari untuk belanja, santap, dan traveling dari kartu kredit dan kartu debit HSBC!
+																		</div>
+																	</li>
+																	<li>
+																		<div>Disiplin menabung</div>
+																		<div>Berdisiplinlah untuk sisihkan dana tabungan sebelum pemasukan bulanan Anda terpotong untuk pengeluaran lainnya.</div>
+																	</li>
+																	<li>
+																		<div>Pilih solusi keuangan, bukan sekedar tabungan</div>
+																		<div>Bijak memilih produk tabungan dan mitra keuangan. Tabungan biasa tanpa keunggulan yang menjawab kebutuhan Anda tentu belum ideal untuk memulai rencana perwujudan rumah Anda.</div>
+																	</li>
+																	<li>
+																		<div>Gunakan bonus sebagai tabungan</div>
+																		<div>Selain gaji, Anda juga bisa menabung saat menerima bonus. Karena bonus bukan pendapatan rutin, jangan gunakan untuk kebutuhan sehari-hari, namun langsung simpan ke rekening tabungan.</div>
+																	</li>
+																</ul>
+															</div>
+
+															<div class="col col-12 col-lg-6">
+																<h4 class="mt-4">Bagaimana HSBC Advance dapat membantu Anda memiliki rumah impian</h4>
+																<ul>
+																	<li>
+																		<div>Home Loan hingga Rp 1,49 Miliar</div>
+																		<div>
+																			<a href="https://www.hsbc.co.id/1/2/id/personal/pinjaman/kpr">HSBC Home Loan</a> hadir memberikan fleksibilitas yang memungkinkan Anda mengendalikan keuangan lewat pilihan suku bunga, pembiayaan pembelian
+																			properti, alih pinjaman serta pembiayaan untuk mendukung setiap langkah Anda.
+																		</div>
+																	</li>
+																	<li>
+																		<div>Renovation Loan hingga Rp 125 Juta</div>
+																		<div>
+																			Rumah dapat terus berubah mengikuti kebutuhan dan kenyamanan penghuninya. <a href="https://www.hsbc.co.id/1/2/id/personal/pinjaman/flexi-credit">HSBC FlexiCredit</a> akan membantu Anda membangun rumah impian
+																			tempat berbagi aktivitas dan kebersamaan dengan seluruh anggota keluarga.
+																		</div>
+																	</li>
+																	<li>
+																		<div>Puluhan produk reksa dana dan obligasi dengan investasi awal mulai dari Rp 500 Ribu</div>
+																		<div>
+																			Optimalkan keuangan Anda dengan beragam <a href="https://www.hsbc.co.id/1/2/id/personal/wealth-management/investasi">produk investasi</a>, seperti reksa dana dan obligasi, melalui HSBC Advance. Dapatkan kemudahan
+																			untuk melakukan transaksi dan memantau perkembangan portofolio investasi Anda kapan pun dan di mana pun melalui Wealth Dashboard di HSBC Internet Banking.
+																		</div>
+																	</li>
+																	<li>
+																		<div>Diskusi pribadi dengan tim finansial HSBC</div>
+																		<div>Advance Manager kami siap untuk memahami kebutuhan finansial Anda dan membantu melakukan perencanaan keuangan untuk membantu Anda meraih tujuan finansial Anda.</div>
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="tab-pane w-100" id="tab-panel-future" role="tabpanel">
+											<div class="container">
+												<div class="row">
+													<div class="col col-12 px-lg-4">
+														<div class="row">
+															<div class="col col-12 col-lg-6">
+																<h4 class="mt-3">Mengapa merencanakan keuangan dari sekarang untuk pendidikan anak?</h4>
+																<p>
+																	Pendidikan adalah kunci menuju masa depan impian anak Anda. Kini, banyak dari keluarga Indonesia yang berkeinginan menguliahkan anaknya ke luar negeri demi mendapatkan pendidikan yang lebih baik dengan tambahan
+																	pengalaman hidup yang beragam. Namun pendidikan di luar negeri seringkali dianggap sebagai sebuah kemewahan, karena membutuhkan biaya yang tidak kecil. Untuk itu tidak sedikit orang tua rela melakukan beberapa
+																	pengorbanan untuk dapat mengumpulkan biaya bagi pendidikan anak.
+																</p>
+																<p>
+																	Berikut adalah temuan dari riset global HSBC di tahun 2018 ini "The Value of Education - Price of Success", yang menggambarkan hasil riset dan survey tentang tren pendidikan, harapan dan kekhawatiran orang tua di 15
+																	negara dan teritori termasuk Indonesia.
+																</p>
+																<img src="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0-content/advance/images/children-edu1.jpg" alt="" class="w-100 pb-3" />
+
+																<p>Dan, tahukah Anda?</p>
+																<img src="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0-content/advance/images/children-edu6.jpg" alt="" class="w-100" />
+															</div>
+
+															<div class="col col-12 col-lg-6">
+																<h4 class="mt-4">Bagaimana HSBC Advance dapat membantu Anda mempersiapkan biaya pendidikan sang buah hati</h4>
+																<ul>
+																	<li>
+																		<div>Puluhan produk reksa dana dan obligasi dengan investasi awal mulai dari Rp 500 Ribu</div>
+																		<div>
+																			Persiapkan dana pendidikannya sejak dini melaui beragam <a href="https://www.hsbc.co.id/1/2/id/personal/wealth-management/investasi">produk investasi</a>, seperti reksa dana dan obligasi, melalui HSBC Advance.
+																			Dapatkan kemudahan untuk melakukan transaksi dan memantau perkembangan portofolio investasi Anda kapan pun dan di mana pun melalui Wealth Dashboard di HSBC Internet Banking.
+																		</div>
+																	</li>
+																	<li>
+																		<div>Asuransi dengan manfaat perlindungan dan investasi dengan premi terjangkau</div>
+																		<div>
+																			Anda ingin tetap terlindungi dan memastikan agar persiapan pendidikan anak tak terganggu meskipun ada kejadian tak diinginkan menimpa Anda. Temukan beragam produk asuransi yang sesuai dengan kebutuhan Anda
+																			<a href="https://www.hsbc.co.id/1/2/id/personal/wealth-management/asuransi">di sini</a>.
+																		</div>
+																	</li>
+																	<li>
+																		<div>Pinjaman pendidikan hingga Rp 125 Juta</div>
+																		<div>Bersama <a href="https://www.hsbc.co.id/1/2/id/personal/pinjaman/flexi-credit">HSBC FlexiCredit</a>, dukung mimpi anak dan siapkan jalannya mencapai cita-cita dengan pendidikan tinggi dan berkualitas.</div>
+																	</li>
+																	<li>
+																		<div>Diskusi pribadi dengan tim finansial HSBC</div>
+																		<div>Advance Manager kami siap untuk memahami kebutuhan finansial Anda dan membantu melakukan perencanaan keuangan untuk membantu Anda meraih tujuan finansial Anda.</div>
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- ? fourth section -->
+					<div class="container pt-5 px-0">
+						<div class="row">
+							<div class="col col-12">
+								<div>
+									<h2 class="section-header">Discover more privileges of HSBC Advance</h2>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="container">
+								<div id="more-privileges-section" class="row py-1">
+									<div class="col col-12 col-lg-6 py-3">
+										<div class="box-loader h-125p"></div>
+										<div class="box-loader h-30p mt-3"></div>
+										<div class="box-loader h-20p mt-3"></div>
+										<div class="box-loader h-20p mt-2"></div>
+									</div>
+									<div class="col col-12 col-lg-6 py-3">
+										<div class="box-loader h-125p"></div>
+										<div class="box-loader h-30p mt-3"></div>
+										<div class="box-loader h-20p mt-3"></div>
+										<div class="box-loader h-20p mt-2"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- ? fifth section -->
+					<div class="container pt-5 px-0">
+						<div class="row">
+							<div class="col col-12">
+								<div>
+									<h2 class="section-header">HSBC Advance benefits</h2>
+								</div>
+							</div>
+						</div>
+						<div class="row py-2">
+							<div class="container">
+								<ul class="row list-unstyled">
+									<li class="col col-12 col-lg-12 py-2">
+										<a href="" class="text-body">home&Away<span class="icon-chevron_right_thick text-primary text-70 font-weight-bold d-inline-block pl-2 pb-1"></span></a>
+									</li>
+									<li class="col col-12 col-lg-12 py-2">
+										<a href="" class="text-body">Wealth Dashboard<span class="icon-chevron_right_thick text-primary text-70 font-weight-bold d-inline-block pl-2 pb-1"></span></a>
+									</li>
+									<li class="col col-12 col-lg-12 py-2">
+										<a href="" class="text-body">Personal Internet Banking<span class="icon-chevron_right_thick text-primary text-70 font-weight-bold d-inline-block pl-2 pb-1"></span></a>
+									</li>
+									<li class="col col-12 col-lg-12 py-2">
+										<a href="" class="text-body">Mobile Banking<span class="icon-chevron_right_thick text-primary text-70 font-weight-bold d-inline-block pl-2 pb-1"></span></a>
+									</li>
+									<li class="col col-12 col-lg-12 py-2">
+										<a href="" class="text-body">Phone Banking<span class="icon-chevron_right_thick text-primary text-70 font-weight-bold d-inline-block pl-2 pb-1"></span></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<!-- ?sixth section -->
+					<div class="container pt-5 px-0">
+						<div class="row">
+							<div class="col col-12">
+								<div>
+									<h2 class="section-header">Useful Links</h2>
+								</div>
+							</div>
+						</div>
+						<div class="row py-2">
+							<div class="container">
+								<ul class="row list-unstyled">
+									<li class="col col-12 col-md-6 py-2">
+										<a href="https://www.hsbc.co.id/1/2/id/misc/tariff-and-charges" class="text-body">Tarif dan biaya HSBC Advance<span class="icon-chevron_right_thick text-primary text-70 font-weight-bold d-inline-block pl-2 pb-1"></span></a>
+									</li>
+									<li class="col col-12 col-md-6 py-2">
+										<a href="https://www.hsbc.co.id/1/2/id/personal/kartu-kredit/visa-platinum" class="text-body"
+											>Kartu Kredit HSBC Visa Platinum<span class="icon-chevron_right_thick text-primary text-70 font-weight-bold d-inline-block pl-2 pb-1"></span
+										></a>
+									</li>
+									<li class="col col-12 col-md-6 py-2">
+										<a href="https://www.hsbc.co.id/1/PA_esf-ca-app-content/content/indonesia/home/doc/201901-syarat-ketentuan-pembukaan-rekening.pdf" class="text-body">
+											<span class="icon-download font-weight-bold d-inline-block pr-1 pb-1"></span>
+											Syarat dan ketentuan pembukaan rekening (PDF)
+										</a>
+									</li>
+									<li class="col col-12 col-md-6 py-2">
+										<a href="https://www.hsbc.co.id/1/PA_esf-ca-app-content/content/indonesia/home/important-notice/tnc/Syarat-dan-Ketentuan-Umum-HSBC-2019.pdf" class="text-body">
+											<span class="icon-download font-weight-bold d-inline-block pr-1 pb-1"></span>
+											Syarat dan ketentuan perbankan umum (PDF)
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<!-- ? notes  -->
+					<div class="container pt-3 px-0">
+						<div class="row py-2">
+							<div class="container">
+								<div class="row">
+									<div class="col col-12 col-sm-9">
+										<p>
+											<small>
+												<sup>1</sup> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi illum corporis voluptatum repellendus cum quasi ex laborum adipisci aliquam aspernatur facere eaque totam nemo, nostrum veniam est optio accusantium
+												amet?
+											</small>
+										</p>
+										<p>
+											<small
+												><span class="font-weight-bold">+62 21 11111111</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam debitis, quo necessitatibus itaque, rerum dicta et, repellendus accusamus voluptates explicabo reiciendis
+												omnis! Impedit error omnis asperiores, quas aperiam eligendi similique?</small
+											>
+										</p>
+										<p>
+											<small>
+												Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis tempore dolores voluptatibus quo reprehenderit excepturi cupiditate optio, modi neque, nesciunt quasi quas necessitatibus praesentium nobis id autem expedita,
+												facilis beatae?
+											</small>
+											<small>
+												Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur hic iste dolorem distinctio cumque praesentium porro in, nobis sunt modi dolores, vitae natus ad. Impedit quia dolor voluptates veniam quisquam?
+											</small>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- ? back to top -->
+					<div class="row py-3">
+						<div class="col col-12"><a href="#" class="text-body">Kembali ke atas</a><span class="icon-direction_up pl-2 font-weight-bolder text-80" aria-hidden="true"></span></div>
+					</div>
+				</div>
+			</main>
+
+			<!-- ? footer link template -->
+			<script id="desktop-footer-link-template" type="text/template">
+				{{#desktopfooterlink}}
+					<li class="list-inline-item">
+						<a class="text-white" href="{{link}}" target="{{target}}">
+							{{caption}}
+						</a>
+					</li>
+				{{/desktopfooterlink}}
+			</script>
+
+			<!-- ? desktop upper footer template -->
+			<script id="desktop-upper-footer-template" type="text/template">
+				{{#desktopupperfooter}}
+					{{#content}}
+						<li class="dufs col col-lg-3 d-flex flex-row w-100">
+							<div>
+								<i class="{{icon}}" role="presentation"></i>
+							</div>
+							<div class="pl-3">
+								<div>
+									<h2 class="h6 mb-3 font-weight-bold">{{header}}</h2>
+								</div>
+								{{#link}}
+									<a href="{{url}}" class="text-white text-90">
+										{{caption}}
+										<span class="icon-chevron_right text-60em"></span>
+									</a>
+								{{/link}}
+							</div>
+						</li>
+					{{/content}}
+				{{/desktopupperfooter}}
+			</script>
+
+			<!-- ! footer -->
+			<div class="container-fluid bg-dark d-none d-lg-block">
+				<nav class="container bg-dark text-white py-4" aria-label="important links navigation">
+					<ul id="desktop-upper-footer-section" class="list-unstyled list-inline row my-auto"></ul>
+				</nav>
+			</div>
+			<div class="container-fluid bg-black footer py-2">
+				<footer id="footer" class="container bg-black text-white py-2 px-0">
+					<div class="row">
+						<div class="col col-lg-6 d-none d-lg-block">
+							<ul id="desktop-footer-link-section" class="list-unstyled list-inline mb-0 text-90 font-weight-bold text-left d-none d-lg-block"></ul>
+						</div>
+						<div class="col col-12 col-lg-6 text-center text-lg-right text-light text-90">
+							<p class="mb-2">Diterbitkan oleh PT Bank HSBC Indonesia yang terdaftar dan diawasi oleh Otoritas Jasa Keuangan (OJK). PT Bank HSBC Indonesia merupakan peserta penjaminan LPS.</p>
+							<img src="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/common-images/OJK_LPS_Logo.png" class="h-30p" alt="" />
+						</div>
+					</div>
+				</footer>
+			</div>
+		</div>
+		<script src="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/js/vendor.min.js"></script>
+
+		<!-- content js -->
+		<script src="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/global-content/header-footer-content-id.js"></script>
+		<script src="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0-content/customer-education/content-customer-education-id.js"></script>
+
+		<!-- client library - must come last -->
+		<script src="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0/js/client-main.js?v=1.01"></script>
+
+		<script>
+			$(function () {
+				$('[data-toggle="popover"]').popover();
+			});
+		</script>
+	</body>
+</html>
