@@ -1828,3 +1828,15 @@ span.social-link {
 		}
 	}
 }
+
+.tnc-toggle{
+	.icon-cevron:before{
+		content: "\ea20"!important;
+	}
+}
+
+.tnc-toggle.collapsed{
+	.icon-cevron:before{
+		content: "\ea1a"!important;
+	}
+}

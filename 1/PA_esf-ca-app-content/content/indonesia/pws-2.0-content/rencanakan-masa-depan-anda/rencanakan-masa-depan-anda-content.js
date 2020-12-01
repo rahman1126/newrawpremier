@@ -25,10 +25,14 @@ var breadcrumb = [
 		caption: "HSBC Indonesia",
 	},
 	{
-        current: true,
+        current: false,
         url: "beranda.html",
 		caption: "HSBC Premier",
-    }
+    },
+    {
+		current: true,
+		caption: "Rencanakan Masa Depan Anda",
+	},
 ];
 
 var mainBanner = {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -311,7 +311,7 @@
 						<div class="container bg-black system-bar">
 							<!-- ? business line menu -->
 							<div class="d-inline-block align-middle float-left text-75">
-								<a class="sr-only sr-only-focusable text-white position-absolute bg-black skiplink" href="#main"> Skip to main content</a>
+								<a class="sr-only sr-only-focusable text-white position-absolute bg-black skiplink" href="#main-content" tabindex="1"> Skip to main content</a>
 								<ul class="list-unstyled list-inline mb-0 text-left d-inline align-middle h-100">
 									<li class="list-inline-item align-middle position-relative h-100 system-bar-group">
 										<a href="#" class="text-white px-1 selected">Personal<span class="sr-only">currently selected</span></a>
@@ -647,7 +647,7 @@
 					</div>
                 </div>
                 <!-- ! Apply bar -->
-				<!-- <div class="apply-bar">
+				<div class="apply-bar">
 					<div class="container">
 						<div class="row">
 							<div class="col col-12 col-sm-8 align-self-center">Bergabung dengan HSBC Premier, hubungi 1 500 700 atau apply online</div>
@@ -656,7 +656,7 @@
 							</div>
 						</div>
 					</div>
-				</div> -->
+				</div>
 			</header>
 			<div class="main-overlay initially-hidden" aria-hidden="true"></div>
 
@@ -718,7 +718,7 @@
 						</div>
 					</div>
 
-					<div class="container pt-3 pb-4 mb-3">
+					<div id="main-content" class="container pt-3 pb-4 mb-3">
 						<div class="row">
 							<div class="col col-12 col-lg-8">
 								<div class="border-lg-right pr-3 border-silver">
@@ -738,13 +738,13 @@
                                 <h4>Bergabung dengan HSBC Premier sekarang dan dapatkan cash back hingga Rp 12 Juta<sup>*</sup>.</h4>
                                 <a href="" class="btn btn-primary btn-block-sm border-radius-0 mt-3 py-2 px-5" aria-label="Join Premier">Join Premier</a>
                                 <p class="mt-4">
-                                    <a href="#" class="reveal-code font-weight-bold" data-code="code-oc01" aria-label="Syarat dan ketentuan berlaku"><sup>*</sup>Syarat dan ketentuan berlaku.&nbsp;<span class="icon-chevron_down_thick pl-2 text-70 font-weight-bold text-black"></span></a>
+                                    <a href="#" class="font-weight-bold tnc-toggle collapsed" data-toggle="collapse" data-target="#tncToggle" aria-expanded="false" aria-controls="tncToggle" aria-label="Syarat dan ketentuan berlaku"><sup>*</sup>Syarat dan ketentuan berlaku.&nbsp;<span class="icon-cevron icon-chevron_down_thick pl-2 text-70 font-weight-bold text-black"></span></a>
                                 </p>
-                                <div id="code-oc01" class="col px-0 d-none">
+                                <div id="tncToggle" class="collapse">
                                     <p class="text-90">
                                         <sup>*</sup>Cash back hingga Rp 9,5 Juta <sup>*</sup>, dengan melakukan financial review bersama relationship manager + Cash back Rp 2,5 Juta <sup>*</sup>, dengan mengaktifkan dan menggunakan kartu kredit HSBC Premier Mastercard.
                                     </p>
-                                </div>
+								</div>
 							</div>
 						</div>
                     </div>
@@ -821,7 +821,7 @@
 								<div class="card h-100 border-radius-0">
 									<div class="card-link-container">
 										<h3>
-											<a href="perencanaan-keuangan-anda.html" aria-label="Rencanakan Masa Depan Finansial Anda" class="font-weight-lighter text-body">
+											<a href="rencanakan-masa-depan-finansial-anda.html" aria-label="Rencanakan Masa Depan Finansial Anda" class="font-weight-lighter text-body">
 												<div>
                                                     <img class="link-image" src="/1/PA_esf-ca-app-content/content/indonesia/pws-2.0-content/hsbc-premier/duit.png" alt="Gambar setumpuk koin" />
 													<div class="text">
@@ -835,11 +835,11 @@
 									<div class="card-body pt-1">
 										<p class="card-text text-secondary">Rancang strategi finansial yang sesuai dengan kebutuhan dan ambisi Anda.</p>
 									</div>
-									<div class="card-footer align-right text-right"><a href="#" class="text-black font-weight-bold" aria-label="RM yang didukung pakar global">RM yang didukung pakar global</a><span class="icon-chevron_right_thick pl-2 text-70 font-weight-bold text-primary"></span></div>
-									<div class="card-footer align-right text-right"><a href="#" class="text-black font-weight-bold" aria-label="Analisa kebutuhan finansial Anda">Analisa kebutuhan finansial Anda</a><span class="icon-chevron_right_thick pl-2 text-70 font-weight-bold text-primary"></span></div>
-                                    <div class="card-footer align-right text-right"><a href="#" class="text-black font-weight-bold" aria-label="Solusi Komprehensif Pengelolaan Dana">Solusi Komprehensif Pengelolaan Dana</a><span class="icon-chevron_right_thick pl-2 text-70 font-weight-bold text-primary"></span></div>
-                                    <div class="card-footer align-right text-right"><a href="#" class="text-black font-weight-bold" aria-label="Kemudahan kelola investasi">Kemudahan kelola investasi</a><span class="icon-chevron_right_thick pl-2 text-70 font-weight-bold text-primary"></span></div>
-                                    <div class="card-footer align-right text-right"><a href="#" class="text-black font-weight-bold" aria-label="Wealth Dashboard">Wealth Dashboard</a><span class="icon-chevron_right_thick pl-2 text-70 font-weight-bold text-primary"></span></div>
+									<div class="card-footer align-right text-right"><a href="rencanakan-masa-depan-finansial-anda.html#pakarglobal" class="text-black font-weight-bold" aria-label="RM yang didukung pakar global">RM yang didukung pakar global</a><span class="icon-chevron_right_thick pl-2 text-70 font-weight-bold text-primary"></span></div>
+									<div class="card-footer align-right text-right"><a href="rencanakan-masa-depan-finansial-anda.html#analisakebutuhan" class="text-black font-weight-bold" aria-label="Analisa kebutuhan finansial Anda">Analisa kebutuhan finansial Anda</a><span class="icon-chevron_right_thick pl-2 text-70 font-weight-bold text-primary"></span></div>
+                                    <div class="card-footer align-right text-right"><a href="rencanakan-masa-depan-finansial-anda.html#solusikomprehensif" class="text-black font-weight-bold" aria-label="Solusi Komprehensif Pengelolaan Dana">Solusi Komprehensif Pengelolaan Dana</a><span class="icon-chevron_right_thick pl-2 text-70 font-weight-bold text-primary"></span></div>
+                                    <div class="card-footer align-right text-right"><a href="rencanakan-masa-depan-finansial-anda.html#kemudahankelola" class="text-black font-weight-bold" aria-label="Kemudahan kelola investasi">Kemudahan kelola investasi</a><span class="icon-chevron_right_thick pl-2 text-70 font-weight-bold text-primary"></span></div>
+                                    <div class="card-footer align-right text-right"><a href="rencanakan-masa-depan-finansial-anda.html#wealthdashboard" class="text-black font-weight-bold" aria-label="Wealth Dashboard">Wealth Dashboard</a><span class="icon-chevron_right_thick pl-2 text-70 font-weight-bold text-primary"></span></div>
 								</div>
 							</div>
 							<div class="col col-12 col-lg-4 py-3">
@@ -984,7 +984,7 @@
                                 <h3 class="text-150 mb-3">Wealth Connect Webinar</h3>
                                 <p class="text-secondary">Jumat 4 September 2020 | 19.00 - 21.00 WIB</p>
 								<p class="mb-4 text-secondary">
-									Bersama Rajeev Rajapakse, dapatkan beragam insight dan informasi eksklusif tentang seluk beluk perekonomian dari sudut pandang pebisnis.
+									Bersama HSBC Premier, mari kupas tuntas perkembangan industri farmasi Indonesia di era pandemi bersama para praktisi dan narasumber yang berpengalaman.
                                 </p>
                                 <p>
                                     <a href="#" class="btn btn-primary border-radius-0 py-2 px-5 btn-block-sm" aria-label="Join Premier">Join Seminar</a>

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "HSBC Univers Next Regular";
   font-style: normal;
@@ -11390,5 +11391,13 @@ span.social-link .social-image {
   margin-right: 10px;
   font-size: 42px;
   margin-top: -15px;
+}
+
+.tnc-toggle .icon-cevron:before {
+  content: "" !important;
+}
+
+.tnc-toggle.collapsed .icon-cevron:before {
+  content: "" !important;
 }
 /*# sourceMappingURL=clpv2.build.css.map */
