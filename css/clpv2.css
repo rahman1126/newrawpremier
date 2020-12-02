@@ -10192,16 +10192,15 @@ span.social-link .social-image {
 }
 
 .check-list li {
+  background-image: url("/1/PA_esf-ca-app-content/content/indonesia/pws-2.0-content/hsbc-premier/checklist-green.png");
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: 32px;
+  padding-left: 45px;
   font-family: "HSBC Univers Next Bold", "HSBC Neue Helvetica Bold";
   display: flex;
   list-style: none;
   margin-bottom: 20px;
-}
-
-.check-list li .icon {
-  margin-right: 10px;
-  font-size: 42px;
-  margin-top: -15px;
 }
 
 .tnc-toggle .icon-cevron:before {

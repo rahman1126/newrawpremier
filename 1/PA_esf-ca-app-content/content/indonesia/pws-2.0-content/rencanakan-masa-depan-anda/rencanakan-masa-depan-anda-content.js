@@ -26,7 +26,7 @@ var breadcrumb = [
 	},
 	{
         current: false,
-        url: "beranda.html",
+        url: "index.html",
 		caption: "HSBC Premier",
     },
     {

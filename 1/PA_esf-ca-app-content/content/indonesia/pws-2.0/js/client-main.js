@@ -163,7 +163,7 @@ $(function () {
 		var prevScrollpos = window.pageYOffset;
 		$(window).on("scroll", function (e) {
 			var currentScrollPos = window.pageYOffset;
-			if (currentScrollPos > 500) {
+			if (currentScrollPos > 1500) {
 				var height = $("#header").height();
 				if (prevScrollpos > currentScrollPos) {
 					if ($("#header").hasClass("mhw-hidden")) {
