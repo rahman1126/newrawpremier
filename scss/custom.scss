@@ -514,6 +514,20 @@ a {
 .border {
 	border-right: 1px solid;
 }
+.border-x-0{
+	border-left: 0px;
+	border-right: 0px;
+}
+.border-y-0{
+	border-top: 0px;
+	border-bottom: 0px;
+}
+.border-right-0{
+	border-right: 0px;
+}
+.border-left-0{
+	border-left: 0px;
+}
 
 .border-bottom,
 .border {
@@ -535,6 +549,9 @@ a {
 }
 
 @media (max-width: 575px) {
+	.btn-accordion{
+		padding-right: 30px;
+	}
 	.w-sm {
 		width: 575px;
 	}
@@ -545,6 +562,12 @@ a {
         text-align: left;
 		padding: 15px 0px;
 		border-bottom: 1px solid #d7d8d6;
+	}
+	.border-xs-right{
+		border-right: 1px solid;
+	}
+	.border-xs-bottom{
+		border-bottom: 1px solid;
 	}
 }
 
@@ -1865,4 +1888,12 @@ span.social-link {
 
 .text-mint{
 	color: #559591;
+}
+
+.break-word{
+	overflow-wrap: break-word;
+}
+
+.table-fixed{
+	table-layout: fixed;
 }
